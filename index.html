@@ -4,77 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ei-Weiss – Bio Protein Chips & Hühnerpatenschaft</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --cream: #F9F3E8;
-    --warm: #EDE4D0;
-    --yolk: #E8A020;
-    --yolk-dark: #C07010;
-    --forest: #2D4A2D;
-    --forest-light: #3D6B3D;
-    --earth: #8B6340;
-    --text: #1A1208;
-    --muted: #6B5A3E;
-    --white: #FFFDF8;
+    --cream: #F9F3E8; --warm: #EDE4D0; --yolk: #E8A020; --yolk-dark: #C07010;
+    --forest: #2D4A2D; --forest-light: #3D6B3D; --text: #1A1208; --muted: #6B5A3E; --white: #FFFDF8;
   }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--text);
-    font-size: 16px;
-    line-height: 1.65;
-    overflow-x: hidden;
-  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
   h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
  
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: var(--forest);
-    display: flex; align-items: center; justify-content: space-between;
+    background: var(--forest); display: flex; align-items: center; justify-content: space-between;
     padding: 0 40px; height: 64px;
   }
   .nav-logo { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--yolk); letter-spacing: 3px; }
-  .nav-links { display: flex; gap: 32px; }
-  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; font-weight: 300; letter-spacing: 1px; text-transform: uppercase; transition: color .2s; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 13px; font-weight: 300; letter-spacing: 1px; text-transform: uppercase; transition: color .2s; }
   .nav-links a:hover { color: var(--yolk); }
+  .nav-cart { background: var(--yolk); color: var(--text); border: none; border-radius: 40px; padding: 7px 18px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; position: relative; }
+  .cart-count { position: absolute; top: -6px; right: -6px; background: #E84040; color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center; font-weight: 500; }
  
-  .hero {
-    min-height: 100vh;
-    background: var(--forest);
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden;
-    padding-top: 64px;
-  }
-  .hero-bg-circles { position: absolute; inset: 0; pointer-events: none; }
+  .hero { min-height: 100vh; background: var(--forest); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding-top: 64px; }
+  .hero-bg { position: absolute; inset: 0; pointer-events: none; }
   .hero-content { text-align: center; z-index: 2; padding: 60px 40px; }
-  .hero-eyebrow {
-    display: inline-block;
-    background: rgba(232,160,32,0.2);
-    border: 1px solid rgba(232,160,32,0.4);
-    color: var(--yolk);
-    font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
-    padding: 6px 20px; border-radius: 40px; margin-bottom: 28px;
-  }
+  .hero-eyebrow { display: inline-block; background: rgba(232,160,32,0.2); border: 1px solid rgba(232,160,32,0.4); color: var(--yolk); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; padding: 6px 20px; border-radius: 40px; margin-bottom: 28px; }
   .hero h1 { font-size: clamp(52px, 8vw, 96px); color: var(--white); line-height: 1.0; margin-bottom: 16px; }
   .hero h1 span { color: var(--yolk); font-style: italic; }
   .hero-sub { font-size: 18px; color: rgba(255,255,255,0.65); max-width: 480px; margin: 0 auto 40px; font-weight: 300; }
-  .btn-primary {
-    display: inline-block; background: var(--yolk); color: var(--text);
-    font-weight: 500; font-size: 15px; padding: 14px 36px; border-radius: 40px;
-    text-decoration: none; letter-spacing: 0.5px; transition: background .2s, transform .15s;
-    cursor: pointer; border: none;
-  }
+  .btn-primary { display: inline-block; background: var(--yolk); color: var(--text); font-weight: 500; font-size: 15px; padding: 14px 36px; border-radius: 40px; text-decoration: none; transition: background .2s, transform .15s; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
   .btn-primary:hover { background: #F5B830; transform: translateY(-2px); }
-  .btn-outline {
-    display: inline-block; border: 1.5px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.8);
-    font-weight: 300; font-size: 15px; padding: 14px 36px; border-radius: 40px;
-    text-decoration: none; letter-spacing: 0.5px; transition: border-color .2s, color .2s;
-    cursor: pointer; background: none;
-  }
+  .btn-outline { display: inline-block; border: 1.5px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.8); font-weight: 300; font-size: 15px; padding: 14px 36px; border-radius: 40px; text-decoration: none; transition: border-color .2s, color .2s; cursor: pointer; background: none; font-family: 'DM Sans', sans-serif; }
   .btn-outline:hover { border-color: var(--yolk); color: var(--yolk); }
   .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
  
@@ -91,13 +53,10 @@
   .section-title { font-size: clamp(32px, 5vw, 52px); line-height: 1.1; margin-bottom: 20px; color: var(--text); }
   .section-body { font-size: 17px; color: var(--muted); max-width: 560px; font-weight: 300; }
  
+  /* CHIPS */
   .chips-section { background: var(--white); }
   .chips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 60px; }
-  .chip-pack {
-    background: var(--cream); border-radius: 20px; padding: 32px 28px;
-    position: relative; overflow: hidden; border: 1.5px solid var(--warm);
-    transition: transform .2s, box-shadow .2s;
-  }
+  .chip-pack { background: var(--cream); border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; border: 1.5px solid var(--warm); transition: transform .2s, box-shadow .2s; cursor: pointer; }
   .chip-pack:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.10); }
   .chip-pack-accent { position: absolute; top: 0; left: 0; right: 0; height: 6px; border-radius: 20px 20px 0 0; }
   .flavor-salt .chip-pack-accent { background: var(--yolk); }
@@ -106,10 +65,13 @@
   .chip-icon { font-size: 48px; margin-bottom: 16px; }
   .chip-pack h3 { font-size: 22px; margin-bottom: 6px; }
   .chip-ingredients { font-size: 13px; color: var(--muted); line-height: 1.6; margin: 12px 0 20px; }
-  .chip-macro-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .chip-macro-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
   .macro-pill { background: white; border: 1px solid var(--warm); border-radius: 40px; padding: 4px 12px; font-size: 12px; font-weight: 500; }
   .macro-pill.highlight { background: var(--yolk); border-color: var(--yolk); color: var(--text); }
+  .shop-link { display: inline-block; font-size: 13px; color: var(--forest); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--forest); transition: opacity .2s; cursor: pointer; background: none; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid var(--forest); padding-bottom: 2px; font-family: 'DM Sans', sans-serif; }
+  .shop-link:hover { opacity: 0.6; }
  
+  /* COMPARISON */
   .comparison-section { background: var(--forest); }
   .comparison-section .section-label { color: rgba(232,160,32,0.7); }
   .comparison-section .section-title { color: var(--white); }
@@ -123,22 +85,14 @@
   .bar-normal { background: rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); }
   .bar-metric { width: 80px; text-align: right; font-size: 13px; color: rgba(255,255,255,0.5); flex-shrink: 0; }
  
+  /* STORY */
   .story-section { background: var(--cream); }
-  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 60px; }
-  @media (max-width: 700px) {
-    .story-grid { grid-template-columns: 1fr; gap: 40px; }
-    .compare-label { width: 90px; font-size: 12px; }
-    nav { padding: 0 20px; }
-    .nav-links { gap: 16px; }
-    section { padding: 60px 20px; }
-  }
+  @media (max-width: 700px) { .story-grid { grid-template-columns: 1fr !important; gap: 40px !important; } }
  
+  /* PATEN */
   .paten-section { background: var(--white); }
   .paten-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 60px; }
-  .paten-card {
-    border-radius: 20px; padding: 32px 28px; border: 1.5px solid var(--warm);
-    background: var(--cream); transition: transform .2s;
-  }
+  .paten-card { border-radius: 20px; padding: 32px 28px; border: 1.5px solid var(--warm); background: var(--cream); transition: transform .2s; }
   .paten-card:hover { transform: translateY(-3px); }
   .paten-card.free { border-color: var(--yolk); background: linear-gradient(135deg, #FFF8E8 0%, #FFF3D0 100%); }
   .paten-badge { display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 14px; border-radius: 40px; margin-bottom: 16px; }
@@ -149,11 +103,7 @@
   .paten-includes { font-size: 13px; color: var(--muted); line-height: 1.7; }
   .paten-includes li { list-style: none; margin-bottom: 4px; }
   .paten-includes li::before { content: "✓  "; color: var(--forest); font-weight: 500; }
-  .paten-cta {
-    display: inline-block; margin-top: 20px; background: var(--forest); color: white;
-    padding: 10px 24px; border-radius: 40px; font-size: 14px; font-weight: 500;
-    text-decoration: none; transition: background .2s; cursor: pointer; border: none;
-  }
+  .paten-cta { display: inline-block; margin-top: 20px; background: var(--forest); color: white; padding: 10px 24px; border-radius: 40px; font-size: 14px; font-weight: 500; cursor: pointer; border: none; transition: background .2s; font-family: 'DM Sans', sans-serif; }
   .paten-cta:hover { background: var(--forest-light); }
  
   .perks-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-top: 80px; }
@@ -162,25 +112,91 @@
   .perk h4 { font-size: 18px; margin-bottom: 6px; }
   .perk p { font-size: 14px; color: var(--muted); }
  
-  footer { background: var(--text); color: rgba(255,255,255,0.5); text-align: center; padding: 40px; font-size: 14px; }
-  footer strong { color: var(--yolk); }
+  /* AKTUELLES */
+  .aktuelles-section { background: var(--cream); }
+  .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+  .news-card { background: var(--white); border-radius: 20px; padding: 32px 28px; border: 1.5px solid var(--warm); }
+  .news-date { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--yolk-dark); margin-bottom: 10px; }
+  .news-card h3 { font-size: 22px; margin-bottom: 10px; }
+  .news-card p { font-size: 15px; color: var(--muted); line-height: 1.75; }
+  .news-tag { display: inline-block; background: var(--warm); color: var(--muted); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 12px; border-radius: 40px; margin-bottom: 14px; }
  
-  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center; z-index: 999; }
+  /* SONNTAGSCAFÉ */
+  .cafe-section { background: var(--forest); }
+  .cafe-section .section-label { color: rgba(232,160,32,0.7); }
+  .cafe-section .section-title { color: var(--white); }
+  .cafe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 60px; }
+  @media (max-width: 700px) { .cafe-grid { grid-template-columns: 1fr; } }
+  .cafe-info p { color: rgba(255,255,255,0.7); font-size: 17px; font-weight: 300; line-height: 1.85; margin-bottom: 20px; }
+  .cafe-items { display: grid; gap: 14px; }
+  .cafe-item { background: rgba(255,255,255,0.07); border-radius: 14px; padding: 18px 22px; border: 1px solid rgba(255,255,255,0.1); }
+  .cafe-item h4 { color: var(--yolk); font-size: 16px; margin-bottom: 4px; }
+  .cafe-item p { color: rgba(255,255,255,0.6); font-size: 14px; margin: 0; }
+  .cafe-contact { margin-top: 32px; }
+  .cafe-contact a { display: inline-flex; align-items: center; gap: 10px; background: var(--yolk); color: var(--text); padding: 13px 28px; border-radius: 40px; font-weight: 500; font-size: 15px; text-decoration: none; transition: background .2s; }
+  .cafe-contact a:hover { background: #F5B830; }
+ 
+  /* SHOP */
+  .shop-section { background: var(--white); }
+  .shop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 60px; }
+  .shop-card { background: var(--cream); border-radius: 20px; border: 1.5px solid var(--warm); overflow: hidden; transition: transform .2s, box-shadow .2s; }
+  .shop-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.09); }
+  .shop-card-img { height: 220px; display: flex; align-items: center; justify-content: center; position: relative; }
+  .flavor-salt-bg { background: linear-gradient(135deg, #FFF8E0 0%, #FDEDC0 100%); }
+  .flavor-pepper-bg { background: linear-gradient(135deg, #F0E8E0 0%, #DDD0C0 100%); }
+  .flavor-olive-bg { background: linear-gradient(135deg, #E8F0E0 0%, #D0DEC0 100%); }
+  .shop-card-body { padding: 24px 24px 28px; }
+  .shop-card-body h3 { font-size: 20px; margin-bottom: 6px; }
+  .shop-flavor-tag { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 14px; }
+  .shop-ingredients { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+  .shop-macros { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+  .shop-price { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--text); margin-bottom: 18px; }
+  .shop-price span { font-size: 15px; color: var(--muted); font-family: 'DM Sans', sans-serif; font-weight: 300; }
+  .add-to-cart { width: 100%; background: var(--forest); color: white; border: none; border-radius: 40px; padding: 13px; font-size: 15px; font-weight: 500; cursor: pointer; transition: background .2s; font-family: 'DM Sans', sans-serif; }
+  .add-to-cart:hover { background: var(--forest-light); }
+  .add-to-cart:active { transform: scale(0.98); }
+  .shop-protein-badge { position: absolute; top: 16px; right: 16px; background: var(--forest); color: white; border-radius: 40px; padding: 5px 14px; font-size: 12px; font-weight: 500; }
+ 
+  /* CART DRAWER */
+  .cart-drawer { position: fixed; top: 0; right: -420px; width: 400px; height: 100vh; background: var(--white); z-index: 999; box-shadow: -8px 0 40px rgba(0,0,0,0.12); transition: right .3s ease; padding: 0; display: flex; flex-direction: column; }
+  .cart-drawer.open { right: 0; }
+  .cart-header { display: flex; align-items: center; justify-content: space-between; padding: 24px 28px; border-bottom: 1px solid var(--warm); }
+  .cart-header h3 { font-size: 22px; }
+  .cart-close { background: none; border: none; font-size: 24px; cursor: pointer; color: var(--muted); }
+  .cart-items { flex: 1; overflow-y: auto; padding: 20px 28px; }
+  .cart-item { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--warm); }
+  .cart-item-icon { font-size: 28px; width: 48px; text-align: center; }
+  .cart-item-info { flex: 1; }
+  .cart-item-name { font-weight: 500; font-size: 15px; }
+  .cart-item-price { font-size: 14px; color: var(--muted); }
+  .cart-item-remove { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 18px; }
+  .cart-footer { padding: 20px 28px; border-top: 1px solid var(--warm); }
+  .cart-total { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+  .cart-total-label { font-size: 16px; color: var(--muted); }
+  .cart-total-price { font-family: 'Playfair Display', serif; font-size: 26px; }
+  .cart-empty { text-align: center; padding: 60px 0; color: var(--muted); }
+  .cart-empty-icon { font-size: 48px; margin-bottom: 16px; }
+  .paypal-btn { width: 100%; background: #FFC439; color: #003087; border: none; border-radius: 40px; padding: 14px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background .2s; }
+  .paypal-btn:hover { background: #FFB020; }
+  .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 998; display: none; }
+  .overlay.active { display: block; }
+ 
+  /* MODAL */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.55); display: none; align-items: center; justify-content: center; z-index: 997; }
   .modal-overlay.active { display: flex; }
   .modal { background: var(--white); border-radius: 24px; padding: 40px; max-width: 440px; width: 90%; position: relative; }
   .modal h3 { font-size: 28px; margin-bottom: 8px; }
   .modal p { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
-  .modal input {
-    width: 100%; padding: 12px 16px; border-radius: 10px; border: 1.5px solid var(--warm);
-    background: var(--cream); font-size: 15px; margin-bottom: 12px;
-    font-family: 'DM Sans', sans-serif; outline: none; transition: border-color .2s;
-  }
-  .modal input:focus { border-color: var(--yolk); }
+  .modal input, .modal textarea { width: 100%; padding: 12px 16px; border-radius: 10px; border: 1.5px solid var(--warm); background: var(--cream); font-size: 15px; margin-bottom: 12px; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color .2s; }
+  .modal input:focus, .modal textarea:focus { border-color: var(--yolk); }
+  .modal textarea { min-height: 90px; resize: vertical; }
   .modal-close { position: absolute; top: 16px; right: 20px; font-size: 22px; cursor: pointer; color: var(--muted); background: none; border: none; }
   .modal-success { display: none; text-align: center; padding: 20px 0; }
   .modal-success .check { font-size: 48px; }
   .modal-success h4 { font-size: 22px; margin: 12px 0 8px; }
-  .modal-success p { color: var(--muted); }
+ 
+  footer { background: var(--text); color: rgba(255,255,255,0.5); text-align: center; padding: 40px; font-size: 14px; }
+  footer strong { color: var(--yolk); }
 </style>
 </head>
 <body>
@@ -189,29 +205,30 @@
   <div class="nav-logo">EI-WEISS</div>
   <div class="nav-links">
     <a href="#chips">Chips</a>
+    <a href="#shop">Shop</a>
     <a href="#story">Unser Hof</a>
+    <a href="#cafe">Sonntagscafé</a>
+    <a href="#aktuelles">Aktuelles</a>
     <a href="#paten">Patenschaft</a>
   </div>
+  <button class="nav-cart" onclick="openCart()">🛒 Warenkorb <span class="cart-count" id="cart-count" style="display:none">0</span></button>
 </nav>
  
 <!-- HERO -->
-<section class="hero">
-  <svg class="hero-bg-circles" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<section class="hero" id="hero">
+  <svg class="hero-bg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
     <circle cx="900" cy="150" r="320" fill="rgba(232,160,32,0.06)"/>
     <circle cx="100" cy="700" r="250" fill="rgba(232,160,32,0.04)"/>
-    <circle cx="600" cy="500" r="180" fill="rgba(255,255,255,0.02)"/>
   </svg>
   <div class="hero-content">
     <div class="hero-eyebrow">Bio · Protein · Lifestyle</div>
     <h1>Das <span>Ei</span> neu<br>gedacht.</h1>
     <p class="hero-sub">Gedörrte Protein-Eierchips aus glücklichen Bio-Hühnern — direkt vom Hof in Oberottmarshausen.</p>
     <div class="hero-btns">
-      <button class="btn-primary" onclick="document.getElementById('chips').scrollIntoView({behavior:'smooth'})">Chips entdecken</button>
+      <button class="btn-primary" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Jetzt kaufen</button>
       <button class="btn-outline" onclick="document.getElementById('paten').scrollIntoView({behavior:'smooth'})">Patenschaft</button>
     </div>
- 
     <div class="chickens-row">
-      <!-- Gretl -->
       <div class="chicken-card">
         <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
           <ellipse cx="60" cy="72" rx="32" ry="26" fill="#F5E6B0" stroke="#C8A84B" stroke-width="1.5"/>
@@ -221,76 +238,52 @@
           <path d="M54 25 Q56 18 58 24 Q60 16 62 23 Q65 18 66 25" fill="#E84040" stroke="#C03030" stroke-width="1"/>
           <ellipse cx="58" cy="48" rx="4" ry="5" fill="#E84040"/>
           <path d="M68 39 L76 41 L68 43 Z" fill="#E8A020"/>
-          <circle cx="64" cy="38" r="3.5" fill="#3A2010"/>
-          <circle cx="65" cy="37" r="1" fill="white"/>
+          <circle cx="64" cy="38" r="3.5" fill="#3A2010"/><circle cx="65" cy="37" r="1" fill="white"/>
           <line x1="50" y1="96" x2="46" y2="108" stroke="#C8A84B" stroke-width="2" stroke-linecap="round"/>
           <line x1="46" y1="108" x2="40" y2="110" stroke="#C8A84B" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="46" y1="108" x2="44" y2="114" stroke="#C8A84B" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="70" y1="96" x2="74" y2="108" stroke="#C8A84B" stroke-width="2" stroke-linecap="round"/>
           <line x1="74" y1="108" x2="80" y2="110" stroke="#C8A84B" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="74" y1="108" x2="76" y2="114" stroke="#C8A84B" stroke-width="1.5" stroke-linecap="round"/>
           <path d="M90 65 Q105 50 98 72 Q88 80 90 65 Z" fill="#EDD888" stroke="#C8A84B" stroke-width="1"/>
-          <path d="M88 70 Q106 62 95 80 Q84 84 88 70 Z" fill="#F5E6B0" stroke="#C8A84B" stroke-width="1"/>
         </svg>
         <div class="chicken-name">Gretl</div>
         <div class="chicken-status">Patin: Familie Tumper</div>
       </div>
- 
-      <!-- Hildegard -->
       <div class="chicken-card">
         <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
           <ellipse cx="60" cy="72" rx="30" ry="28" fill="#D4C8B8" stroke="#A09080" stroke-width="1.5"/>
           <circle cx="50" cy="68" r="2" fill="#B0A494" opacity="0.7"/>
           <circle cx="65" cy="72" r="2.5" fill="#B0A494" opacity="0.7"/>
           <circle cx="55" cy="80" r="2" fill="#B0A494" opacity="0.7"/>
-          <circle cx="70" cy="65" r="1.5" fill="#B0A494" opacity="0.7"/>
           <ellipse cx="76" cy="75" rx="13" ry="8" fill="#C0B4A4" transform="rotate(10,76,75)" opacity="0.9"/>
           <rect x="52" y="44" width="16" height="20" rx="7" fill="#D4C8B8" stroke="#A09080" stroke-width="1.5"/>
           <circle cx="60" cy="37" r="15" fill="#D4C8B8" stroke="#A09080" stroke-width="1.5"/>
           <path d="M55 23 Q57 17 60 22 Q63 15 65 22" fill="#E06050" stroke="#C04040" stroke-width="1"/>
           <ellipse cx="62" cy="46" rx="3.5" ry="4" fill="#E06050"/>
           <path d="M68 36 L76 38 L68 40 Z" fill="#D4A030"/>
-          <circle cx="64" cy="34" r="4" fill="#2A1808"/>
-          <circle cx="65.5" cy="33" r="1.2" fill="white"/>
+          <circle cx="64" cy="34" r="4" fill="#2A1808"/><circle cx="65.5" cy="33" r="1.2" fill="white"/>
           <line x1="52" y1="98" x2="48" y2="110" stroke="#A09080" stroke-width="2" stroke-linecap="round"/>
-          <line x1="48" y1="110" x2="42" y2="112" stroke="#A09080" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="48" y1="110" x2="46" y2="116" stroke="#A09080" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="68" y1="98" x2="72" y2="110" stroke="#A09080" stroke-width="2" stroke-linecap="round"/>
-          <line x1="72" y1="110" x2="78" y2="112" stroke="#A09080" stroke-width="1.5" stroke-linecap="round"/>
           <path d="M28 64 Q12 48 22 70 Q32 80 28 64 Z" fill="#C0B4A4" stroke="#A09080" stroke-width="1"/>
-          <path d="M30 70 Q13 60 25 78 Q36 84 30 70 Z" fill="#D4C8B8" stroke="#A09080" stroke-width="1"/>
         </svg>
         <div class="chicken-name">Hildegard</div>
         <div class="chicken-status">Patin: Familie Bernds</div>
       </div>
- 
-      <!-- Frei -->
       <div class="chicken-card">
         <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
           <circle cx="60" cy="60" r="54" fill="rgba(232,160,32,0.12)"/>
           <ellipse cx="60" cy="72" rx="31" ry="27" fill="#C84820" stroke="#A03010" stroke-width="1.5"/>
-          <ellipse cx="52" cy="68" rx="7" ry="5" fill="#A83010" opacity="0.5" transform="rotate(-20,52,68)"/>
-          <ellipse cx="64" cy="74" rx="7" ry="5" fill="#A83010" opacity="0.5" transform="rotate(10,64,74)"/>
-          <ellipse cx="58" cy="82" rx="7" ry="4" fill="#A83010" opacity="0.5"/>
           <ellipse cx="44" cy="73" rx="14" ry="8" fill="#B84018" transform="rotate(-10,44,73)" opacity="0.85"/>
           <rect x="52" y="45" width="16" height="19" rx="7" fill="#C84820" stroke="#A03010" stroke-width="1.5"/>
           <circle cx="60" cy="38" r="16" fill="#C84820" stroke="#A03010" stroke-width="1.5"/>
           <path d="M52 23 Q54 14 57 22 Q59 13 61 21 Q64 14 66 23" fill="#E84040" stroke="#C02020" stroke-width="1.2"/>
           <ellipse cx="56" cy="47" rx="4" ry="5.5" fill="#E84040"/>
-          <ellipse cx="61" cy="48" rx="3.5" ry="4.5" fill="#CC3030"/>
           <path d="M68 37 L77 39 L68 41 Z" fill="#E8A020"/>
-          <circle cx="64" cy="36" r="4.5" fill="#1A1000"/>
-          <circle cx="65.5" cy="34.5" r="1.5" fill="white"/>
+          <circle cx="64" cy="36" r="4.5" fill="#1A1000"/><circle cx="65.5" cy="34.5" r="1.5" fill="white"/>
           <line x1="52" y1="97" x2="47" y2="110" stroke="#A03010" stroke-width="2" stroke-linecap="round"/>
-          <line x1="47" y1="110" x2="40" y2="112" stroke="#A03010" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="47" y1="110" x2="45" y2="116" stroke="#A03010" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="68" y1="97" x2="73" y2="110" stroke="#A03010" stroke-width="2" stroke-linecap="round"/>
-          <line x1="73" y1="110" x2="79" y2="112" stroke="#A03010" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="73" y1="110" x2="75" y2="116" stroke="#A03010" stroke-width="1.5" stroke-linecap="round"/>
           <path d="M90 62 Q108 44 100 68 Q90 80 90 62 Z" fill="#B84018" stroke="#A03010" stroke-width="1"/>
-          <path d="M88 68 Q108 56 96 80 Q84 86 88 68 Z" fill="#C84820" stroke="#A03010" stroke-width="1"/>
           <rect x="28" y="4" width="64" height="20" rx="10" fill="#E8A020"/>
-          <text x="60" y="18" text-anchor="middle" font-family="Georgia, serif" font-size="10" font-weight="700" fill="#1A1208">noch frei!</text>
+          <text x="60" y="18" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="700" fill="#1A1208">noch frei!</text>
         </svg>
         <div class="chicken-name">?</div>
         <div class="chicken-status free">Patenschaft noch frei</div>
@@ -299,91 +292,172 @@
   </div>
 </section>
  
-<!-- CHIPS -->
+<!-- CHIPS OVERVIEW -->
 <section id="chips" class="chips-section">
   <div class="section-inner">
     <div class="section-label">Unser Produkt</div>
     <h2 class="section-title">Protein-Eierchips.<br>Drei Varianten.</h2>
     <p class="section-body">Gedörrt, nicht frittiert. Aus Freilandeiern unserer Hühner. Nur natürliche Zutaten — null Kompromisse.</p>
     <div class="chips-grid">
-      <div class="chip-pack flavor-salt">
+      <div class="chip-pack flavor-salt" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
         <div class="chip-pack-accent"></div>
         <div class="chip-icon">🧂</div>
         <h3>Original Salz</h3>
-        <p style="font-size:13px; color:#8B6340; margin-top:4px; font-style:italic;">Der Klassiker</p>
+        <p style="font-size:13px;color:#8B6340;margin-top:4px;font-style:italic;">Der Klassiker</p>
         <p class="chip-ingredients"><strong>Zutaten:</strong> Freilandei (100 %), Meersalz<br>Keine Zusatzstoffe. Kein Zucker. Kein Unsinn.</p>
-        <div class="chip-macro-row">
-          <span class="macro-pill highlight">12g Protein</span>
-          <span class="macro-pill">80 kcal</span>
-          <span class="macro-pill">30g / Pack</span>
-        </div>
+        <div class="chip-macro-row"><span class="macro-pill highlight">12g Protein</span><span class="macro-pill">80 kcal</span><span class="macro-pill">30g / Pack</span></div>
+        <button class="shop-link">Im Shop kaufen →</button>
       </div>
-      <div class="chip-pack flavor-pepper">
+      <div class="chip-pack flavor-pepper" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
         <div class="chip-pack-accent"></div>
         <div class="chip-icon">🫙</div>
         <h3>Salz &amp; Pfeffer</h3>
-        <p style="font-size:13px; color:#8B6340; margin-top:4px; font-style:italic;">Würzig &amp; ausgewogen</p>
-        <p class="chip-ingredients"><strong>Zutaten:</strong> Freilandei (98 %), Meersalz, schwarzer Pfeffer aus Malabar<br>Frisch gemahlen, herzhaft.</p>
-        <div class="chip-macro-row">
-          <span class="macro-pill highlight">12g Protein</span>
-          <span class="macro-pill">82 kcal</span>
-          <span class="macro-pill">30g / Pack</span>
-        </div>
+        <p style="font-size:13px;color:#8B6340;margin-top:4px;font-style:italic;">Würzig &amp; ausgewogen</p>
+        <p class="chip-ingredients"><strong>Zutaten:</strong> Freilandei (98 %), Meersalz, schwarzer Pfeffer aus Malabar</p>
+        <div class="chip-macro-row"><span class="macro-pill highlight">12g Protein</span><span class="macro-pill">82 kcal</span><span class="macro-pill">30g / Pack</span></div>
+        <button class="shop-link">Im Shop kaufen →</button>
       </div>
-      <div class="chip-pack flavor-olive">
+      <div class="chip-pack flavor-olive" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
         <div class="chip-pack-accent"></div>
         <div class="chip-icon">🌿</div>
         <h3>Olivenöl &amp; Kräuter</h3>
-        <p style="font-size:13px; color:#8B6340; margin-top:4px; font-style:italic;">Mediterran &amp; aromatisch</p>
+        <p style="font-size:13px;color:#8B6340;margin-top:4px;font-style:italic;">Mediterran &amp; aromatisch</p>
         <p class="chip-ingredients"><strong>Zutaten:</strong> Freilandei (95 %), kalt gepresstes Olivenöl, Rosmarin, Thymian, Knoblauch, Meersalz</p>
-        <div class="chip-macro-row">
-          <span class="macro-pill highlight">11g Protein</span>
-          <span class="macro-pill">88 kcal</span>
-          <span class="macro-pill">30g / Pack</span>
-        </div>
+        <div class="chip-macro-row"><span class="macro-pill highlight">11g Protein</span><span class="macro-pill">88 kcal</span><span class="macro-pill">30g / Pack</span></div>
+        <button class="shop-link">Im Shop kaufen →</button>
       </div>
     </div>
   </div>
 </section>
  
 <!-- VERGLEICH -->
-<section id="compare" class="comparison-section">
+<section class="comparison-section">
   <div class="section-inner">
     <div class="section-label">Warum Eierchips?</div>
     <h2 class="section-title" style="color:white;">Eierchips vs. normale Chips</h2>
     <p class="section-body">Selbe Größe. Selbes Knuspergefühl. Aber was ein Unterschied.</p>
     <div class="compare-bars">
-      <div class="compare-row">
-        <div class="compare-label">Ei-Weiss Chips</div>
-        <div class="bar-wrap"><div class="bar-fill bar-ei" style="width:22%">80 kcal</div></div>
-        <div class="bar-metric">pro 30g</div>
-      </div>
-      <div class="compare-row">
-        <div class="compare-label">Normale Chips</div>
-        <div class="bar-wrap"><div class="bar-fill bar-normal" style="width:90%">490 kcal</div></div>
-        <div class="bar-metric">pro 100g</div>
-      </div>
+      <div class="compare-row"><div class="compare-label">Ei-Weiss Chips</div><div class="bar-wrap"><div class="bar-fill bar-ei" style="width:22%">80 kcal</div></div><div class="bar-metric">pro 30g</div></div>
+      <div class="compare-row"><div class="compare-label">Normale Chips</div><div class="bar-wrap"><div class="bar-fill bar-normal" style="width:90%">490 kcal</div></div><div class="bar-metric">pro 100g</div></div>
       <div style="height:20px"></div>
-      <div class="compare-row">
-        <div class="compare-label">Protein</div>
-        <div class="bar-wrap"><div class="bar-fill bar-ei" style="width:75%">12g</div></div>
-        <div class="bar-metric">Ei-Weiss</div>
-      </div>
-      <div class="compare-row">
-        <div class="compare-label">Protein</div>
-        <div class="bar-wrap"><div class="bar-fill bar-normal" style="width:10%">2g</div></div>
-        <div class="bar-metric">Normale Chips</div>
-      </div>
+      <div class="compare-row"><div class="compare-label">Protein</div><div class="bar-wrap"><div class="bar-fill bar-ei" style="width:75%">12g</div></div><div class="bar-metric">Ei-Weiss</div></div>
+      <div class="compare-row"><div class="compare-label">Protein</div><div class="bar-wrap"><div class="bar-fill bar-normal" style="width:10%">2g</div></div><div class="bar-metric">Normale</div></div>
       <div style="height:20px"></div>
-      <div class="compare-row">
-        <div class="compare-label">Zutaten</div>
-        <div class="bar-wrap"><div class="bar-fill bar-ei" style="width:12%">2–5</div></div>
-        <div class="bar-metric">Ei-Weiss</div>
+      <div class="compare-row"><div class="compare-label">Zutaten</div><div class="bar-wrap"><div class="bar-fill bar-ei" style="width:12%">2–5</div></div><div class="bar-metric">Ei-Weiss</div></div>
+      <div class="compare-row"><div class="compare-label">Zutaten</div><div class="bar-wrap"><div class="bar-fill bar-normal" style="width:60%">12–22</div></div><div class="bar-metric">Normale</div></div>
+    </div>
+  </div>
+</section>
+ 
+<!-- SHOP -->
+<section id="shop" class="shop-section">
+  <div class="section-inner">
+    <div class="section-label">Online-Shop</div>
+    <h2 class="section-title">Direkt bestellen.<br>Echt genießen.</h2>
+    <p class="section-body">Reines Bio-Protein aus glücklichen Hühnereiern — gedörrt, knusprig, ohne Kompromisse. Jede Packung 30g, 3,89 €.</p>
+ 
+    <div class="shop-grid">
+      <!-- Packung 1 -->
+      <div class="shop-card">
+        <div class="shop-card-img flavor-salt-bg">
+          <span class="shop-protein-badge">12g Protein</span>
+          <svg viewBox="0 0 160 200" width="130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Packung Salz -->
+            <rect x="20" y="10" width="120" height="175" rx="18" fill="#E8A020"/>
+            <rect x="20" y="10" width="120" height="60" rx="18" fill="#C07010"/>
+            <rect x="20" y="50" width="120" height="20" fill="#C07010"/>
+            <rect x="28" y="16" width="104" height="48" rx="10" fill="rgba(255,255,255,0.15)"/>
+            <text x="80" y="36" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="white" letter-spacing="3">EI-WEISS</text>
+            <text x="80" y="53" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="rgba(255,255,255,0.8)" letter-spacing="1">BIO PROTEIN CHIPS</text>
+            <ellipse cx="80" cy="115" rx="38" ry="44" fill="rgba(255,255,255,0.12)"/>
+            <text x="80" y="104" text-anchor="middle" font-family="Arial" font-size="36">🧂</text>
+            <text x="80" y="138" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="700" fill="#3A1800">Original</text>
+            <text x="80" y="153" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#3A1800">Salz</text>
+            <rect x="28" y="166" width="104" height="14" rx="4" fill="rgba(0,0,0,0.12)"/>
+            <text x="80" y="177" text-anchor="middle" font-family="Arial" font-size="9" fill="white">30g · 80 kcal · 12g Protein</text>
+          </svg>
+        </div>
+        <div class="shop-card-body">
+          <h3>Original Salz</h3>
+          <p class="shop-flavor-tag">Der Klassiker — pur &amp; einfach</p>
+          <p class="shop-ingredients"><strong>Zutaten:</strong> Bio-Freilandei (100 %), Meersalz. Keine Zusatzstoffe, kein Zucker, keine künstlichen Aromen.</p>
+          <div class="shop-macros"><span class="macro-pill highlight">12g Protein</span><span class="macro-pill">80 kcal</span><span class="macro-pill">30g</span><span class="macro-pill">glutenfrei</span></div>
+          <div class="shop-price">3,89 € <span>/ Packung</span></div>
+          <button class="add-to-cart" onclick="addToCart('Original Salz','🧂')">In den Warenkorb</button>
+        </div>
       </div>
-      <div class="compare-row">
-        <div class="compare-label">Zutaten</div>
-        <div class="bar-wrap"><div class="bar-fill bar-normal" style="width:60%">12–22</div></div>
-        <div class="bar-metric">Normale Chips</div>
+ 
+      <!-- Packung 2 -->
+      <div class="shop-card">
+        <div class="shop-card-img flavor-pepper-bg">
+          <span class="shop-protein-badge">12g Protein</span>
+          <svg viewBox="0 0 160 200" width="130" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="10" width="120" height="175" rx="18" fill="#5A3E2B"/>
+            <rect x="20" y="10" width="120" height="60" rx="18" fill="#3D2518"/>
+            <rect x="20" y="50" width="120" height="20" fill="#3D2518"/>
+            <rect x="28" y="16" width="104" height="48" rx="10" fill="rgba(255,255,255,0.1)"/>
+            <text x="80" y="36" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="white" letter-spacing="3">EI-WEISS</text>
+            <text x="80" y="53" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="rgba(255,255,255,0.8)" letter-spacing="1">BIO PROTEIN CHIPS</text>
+            <ellipse cx="80" cy="115" rx="38" ry="44" fill="rgba(255,255,255,0.08)"/>
+            <text x="80" y="104" text-anchor="middle" font-family="Arial" font-size="36">🫙</text>
+            <text x="80" y="138" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="700" fill="#F5E6D0">Salz &amp;</text>
+            <text x="80" y="153" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#F5E6D0">Pfeffer</text>
+            <rect x="28" y="166" width="104" height="14" rx="4" fill="rgba(0,0,0,0.2)"/>
+            <text x="80" y="177" text-anchor="middle" font-family="Arial" font-size="9" fill="white">30g · 82 kcal · 12g Protein</text>
+          </svg>
+        </div>
+        <div class="shop-card-body">
+          <h3>Salz &amp; Pfeffer</h3>
+          <p class="shop-flavor-tag">Würzig &amp; ausgewogen</p>
+          <p class="shop-ingredients"><strong>Zutaten:</strong> Bio-Freilandei (98 %), Meersalz, schwarzer Pfeffer aus Malabar. Frisch gemahlen, herzhaft &amp; intensiv.</p>
+          <div class="shop-macros"><span class="macro-pill highlight">12g Protein</span><span class="macro-pill">82 kcal</span><span class="macro-pill">30g</span><span class="macro-pill">glutenfrei</span></div>
+          <div class="shop-price">3,89 € <span>/ Packung</span></div>
+          <button class="add-to-cart" onclick="addToCart('Salz & Pfeffer','🫙')">In den Warenkorb</button>
+        </div>
+      </div>
+ 
+      <!-- Packung 3 -->
+      <div class="shop-card">
+        <div class="shop-card-img flavor-olive-bg">
+          <span class="shop-protein-badge">11g Protein</span>
+          <svg viewBox="0 0 160 200" width="130" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="10" width="120" height="175" rx="18" fill="#2D4A2D"/>
+            <rect x="20" y="10" width="120" height="60" rx="18" fill="#1A3018"/>
+            <rect x="20" y="50" width="120" height="20" fill="#1A3018"/>
+            <rect x="28" y="16" width="104" height="48" rx="10" fill="rgba(255,255,255,0.1)"/>
+            <text x="80" y="36" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="white" letter-spacing="3">EI-WEISS</text>
+            <text x="80" y="53" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="rgba(255,255,255,0.8)" letter-spacing="1">BIO PROTEIN CHIPS</text>
+            <ellipse cx="80" cy="115" rx="38" ry="44" fill="rgba(255,255,255,0.08)"/>
+            <text x="80" y="104" text-anchor="middle" font-family="Arial" font-size="36">🌿</text>
+            <text x="80" y="138" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#C8E0A0">Olivenöl &amp;</text>
+            <text x="80" y="153" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#C8E0A0">Kräuter</text>
+            <rect x="28" y="166" width="104" height="14" rx="4" fill="rgba(0,0,0,0.2)"/>
+            <text x="80" y="177" text-anchor="middle" font-family="Arial" font-size="9" fill="white">30g · 88 kcal · 11g Protein</text>
+          </svg>
+        </div>
+        <div class="shop-card-body">
+          <h3>Olivenöl &amp; Kräuter</h3>
+          <p class="shop-flavor-tag">Mediterran &amp; aromatisch</p>
+          <p class="shop-ingredients"><strong>Zutaten:</strong> Bio-Freilandei (95 %), kalt gepresstes Olivenöl, Rosmarin, Thymian, Knoblauch, Meersalz. Pur mediterran.</p>
+          <div class="shop-macros"><span class="macro-pill highlight">11g Protein</span><span class="macro-pill">88 kcal</span><span class="macro-pill">30g</span><span class="macro-pill">glutenfrei</span></div>
+          <div class="shop-price">3,89 € <span>/ Packung</span></div>
+          <button class="add-to-cart" onclick="addToCart('Olivenöl & Kräuter','🌿')">In den Warenkorb</button>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Protein-Text -->
+    <div style="background:var(--forest);border-radius:20px;padding:48px;margin-top:60px;text-align:center;">
+      <div style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(232,160,32,0.7);margin-bottom:14px;">Warum Bio-Protein?</div>
+      <h3 style="font-size:30px;color:white;margin-bottom:20px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.2;">Das reinste Protein<br>kommt vom Huhn.</h3>
+      <p style="color:rgba(255,255,255,0.65);font-size:16px;max-width:680px;margin:0 auto;line-height:1.85;font-weight:300;">
+        Das Ei ist eines der vollständigsten Nahrungsmittel der Natur — mit einer biologischen Wertigkeit von 100. Unsere Bio-Freilandeier stammen ausschließlich von geretteten Hühnern aus Oberottmarshausen, die ein artgerechtes Leben mit Garten und Auslauf führen. Kein Stress, keine Massentierhaltung — das schmeckt man. Schonend gedörrt bei Niedrigtemperatur bleiben alle Aminosäuren vollständig erhalten. Das Ergebnis: ein Snack mit echtem Mehrwert — 12g Protein pro 30g-Packung, nur 80 Kalorien, null Zusatzstoffe.
+      </p>
+      <div style="display:flex;gap:32px;justify-content:center;margin-top:36px;flex-wrap:wrap;">
+        <div style="text-align:center;"><div style="font-size:32px;font-family:'Playfair Display',serif;color:var(--yolk);">100</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Biologische Wertigkeit</div></div>
+        <div style="text-align:center;"><div style="font-size:32px;font-family:'Playfair Display',serif;color:var(--yolk);">12g</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Protein pro Pack</div></div>
+        <div style="text-align:center;"><div style="font-size:32px;font-family:'Playfair Display',serif;color:var(--yolk);">2</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Zutaten (Original)</div></div>
+        <div style="text-align:center;"><div style="font-size:32px;font-family:'Playfair Display',serif;color:var(--yolk);">0</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Zusatzstoffe</div></div>
       </div>
     </div>
   </div>
@@ -392,24 +466,20 @@
 <!-- STORY -->
 <section class="story-section" id="story">
   <div class="section-inner">
-    <div class="story-grid">
+    <div class="story-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
       <div>
         <div class="section-label">Unsere Geschichte</div>
         <h2 class="section-title">Vom Stall<br>zur Packung.</h2>
         <div style="height:20px"></div>
-        <p style="font-size:17px; color:var(--muted); font-weight:300; line-height:1.85; margin-bottom:18px;">Wir retten Hühner aus der Massentierhaltung und geben älteren Legehennen, die sonst geschlachtet würden, ein liebevolles Zuhause in Oberottmarshausen — mit Garten, Auslauf und echter Fürsorge.</p>
-        <p style="font-size:17px; color:var(--muted); font-weight:300; line-height:1.85; margin-bottom:18px;">Ihre Eier verarbeiten wir schonend zu Protein-Chips. Gedörrt bei Niedrigtemperatur, gewürzt mit natürlichen Zutaten — kein Frittieren, keine Chemie.</p>
-        <p style="font-size:17px; color:var(--muted); font-weight:300; line-height:1.85;">Jede Packung erzählt eine Geschichte. Die von Gretl, Hildegard und ihrer zukünftigen Freundin.</p>
+        <p style="font-size:17px;color:var(--muted);font-weight:300;line-height:1.85;margin-bottom:18px;">Wir retten Hühner aus der Massentierhaltung und geben älteren Legehennen, die sonst geschlachtet würden, ein liebevolles Zuhause in Oberottmarshausen — mit Garten, Auslauf und echter Fürsorge.</p>
+        <p style="font-size:17px;color:var(--muted);font-weight:300;line-height:1.85;margin-bottom:18px;">Ihre Eier verarbeiten wir schonend zu Protein-Chips. Gedörrt bei Niedrigtemperatur, gewürzt mit natürlichen Zutaten — kein Frittieren, keine Chemie.</p>
+        <p style="font-size:17px;color:var(--muted);font-weight:300;line-height:1.85;">Jede Packung erzählt eine Geschichte. Die von Gretl, Hildegard und ihrer zukünftigen Freundin.</p>
       </div>
-      <div style="display:flex; justify-content:center;">
+      <div style="display:flex;justify-content:center;">
         <svg viewBox="0 0 280 260" width="280" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="0" width="280" height="260" rx="20" fill="#E8F4E0"/>
           <circle cx="230" cy="40" r="28" fill="#E8A020" opacity="0.8"/>
-          <line x1="230" y1="4" x2="230" y2="14" stroke="#E8A020" stroke-width="2"/>
-          <line x1="254" y1="16" x2="247" y2="23" stroke="#E8A020" stroke-width="2"/>
-          <line x1="266" y1="40" x2="256" y2="40" stroke="#E8A020" stroke-width="2"/>
           <ellipse cx="140" cy="200" rx="130" ry="18" fill="#8BC34A" opacity="0.3"/>
-          <rect x="0" y="195" width="280" height="65" fill="#7CB342" opacity="0.25"/>
           <rect x="30" y="110" width="110" height="90" fill="#C84820"/>
           <polygon points="30,110 85,68 140,110" fill="#A03010"/>
           <rect x="62" y="150" width="46" height="50" rx="4" fill="#6D3A1A"/>
@@ -420,23 +490,81 @@
           <line x1="150" y1="180" x2="250" y2="175" stroke="#8B6340" stroke-width="2"/>
           <line x1="150" y1="195" x2="250" y2="188" stroke="#8B6340" stroke-width="2"/>
           <line x1="158" y1="170" x2="156" y2="200" stroke="#8B6340" stroke-width="2.5"/>
-          <line x1="178" y1="170" x2="176" y2="200" stroke="#8B6340" stroke-width="2.5"/>
           <line x1="198" y1="168" x2="196" y2="198" stroke="#8B6340" stroke-width="2.5"/>
-          <line x1="218" y1="167" x2="216" y2="197" stroke="#8B6340" stroke-width="2.5"/>
           <line x1="238" y1="167" x2="236" y2="196" stroke="#8B6340" stroke-width="2.5"/>
           <ellipse cx="200" cy="195" rx="10" ry="8" fill="#F5E6B0" stroke="#C8A84B" stroke-width="1"/>
           <circle cx="200" cy="185" r="6" fill="#F5E6B0" stroke="#C8A84B" stroke-width="1"/>
-          <path d="M197 180 Q199 176 201 180" fill="#E84040"/>
-          <circle cx="202" cy="183" r="1.5" fill="#1A1000"/>
           <rect x="230" y="155" width="6" height="40" fill="#6D4C1A"/>
           <circle cx="233" cy="140" r="22" fill="#4CAF50"/>
-          <circle cx="222" cy="148" r="14" fill="#43A047"/>
-          <circle cx="244" cy="148" r="14" fill="#388E3C"/>
-          <path d="M10 195 Q15 188 20 195" fill="none" stroke="#5D8A3C" stroke-width="1.5"/>
-          <path d="M45 198 Q50 192 55 198" fill="none" stroke="#5D8A3C" stroke-width="1.5"/>
           <rect x="72" y="75" width="58" height="20" rx="6" fill="rgba(232,160,32,0.9)"/>
-          <text x="101" y="89" text-anchor="middle" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#1A1208">EI-WEISS</text>
+          <text x="101" y="89" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#1A1208">EI-WEISS</text>
         </svg>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- SONNTAGSCAFÉ -->
+<section id="cafe" class="cafe-section">
+  <div class="section-inner">
+    <div class="section-label">Sonntagscafé</div>
+    <h2 class="section-title" style="color:white;">Sonntags bei uns<br>auf dem Hof.</h2>
+    <div class="cafe-grid">
+      <div class="cafe-info">
+        <p>Bei schönem Wetter öffnen wir sonntagsvormittags unseren Hofgarten. Kaffee, frische Limo, selbstgemachte Kleinigkeiten — und natürlich unsere Eierchips zum Probieren. Entspannt, informell, mit Hühnern im Hintergrund.</p>
+        <p>Unser 7-Stunden-Sauerteigbrot gibt es nur auf Vorbestellung. Frisch gebacken, mit langer Fermentation — das schmeckt man bei jedem Bissen.</p>
+        <div class="cafe-contact">
+          <a href="mailto:hallo@ei-weiss.de" onclick="return openKontakt()">📬 Sauerteigbrot vorbestellen & Kontakt</a>
+        </div>
+      </div>
+      <div class="cafe-items">
+        <div class="cafe-item">
+          <h4>☕ Kaffee &amp; Getränke</h4>
+          <p>Frisch gebrühter Kaffee, selbstgemachte Limo, Quellwasser vom Hof</p>
+        </div>
+        <div class="cafe-item">
+          <h4>🍳 Eierchips zum Probieren</h4>
+          <p>Alle drei Sorten zum Verkosten — direkt vom Erzeuger</p>
+        </div>
+        <div class="cafe-item">
+          <h4>🍞 7h-Sauerteigbrot</h4>
+          <p>Nur auf Vorbestellung — begrenzte Stückzahl. Bitte bis Freitag bestellen.</p>
+        </div>
+        <div class="cafe-item">
+          <h4>🐔 Hühner kennenlernen</h4>
+          <p>Gretl, Hildegard &amp; Co. freuen sich über Besuch im Garten</p>
+        </div>
+        <div style="margin-top:16px;padding:14px 18px;background:rgba(232,160,32,0.15);border-radius:12px;border:1px solid rgba(232,160,32,0.3);">
+          <p style="color:var(--yolk);font-size:14px;margin:0;"><strong>Wann?</strong> Sonntags bei gutem Wetter, 10–13 Uhr · Oberottmarshausen</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- AKTUELLES -->
+<section id="aktuelles" class="aktuelles-section">
+  <div class="section-inner">
+    <div class="section-label">Aktuelles</div>
+    <h2 class="section-title">Was gerade<br>passiert.</h2>
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-date">Mai 2025</div>
+        <span class="news-tag">Neu</span>
+        <h3>Olivenöl &amp; Kräuter ist da!</h3>
+        <p>Unsere dritte Sorte ist ab sofort im Shop erhältlich. Rosmarin, Thymian, Knoblauch — mediterran und aromatisch. Perfekt zum Aperitivo.</p>
+      </div>
+      <div class="news-card">
+        <div class="news-date">April 2025</div>
+        <span class="news-tag">Sonntagscafé</span>
+        <h3>Die Saison ist eröffnet!</h3>
+        <p>Ab sofort wieder sonntags bei gutem Wetter auf dem Hof. Das Sauerteigbrot gibt es wieder auf Vorbestellung — meldet euch bis Freitag!</p>
+      </div>
+      <div class="news-card">
+        <div class="news-date">März 2025</div>
+        <span class="news-tag">Tierschutz</span>
+        <h3>Hildegard ist eingezogen</h3>
+        <p>Unsere neueste Rettung aus einer Legebatterie: Hildegard, 3 Jahre alt, gesprenkelt und schon jetzt die Chefin im Garten. Familie Bernds hat gleich die Patenschaft übernommen.</p>
       </div>
     </div>
   </div>
@@ -447,7 +575,7 @@
   <div class="section-inner">
     <div class="section-label">Hühnerpatenschaft</div>
     <h2 class="section-title">Werde Pate.<br>Bekomme Eier.</h2>
-    <p class="section-body">Unterstütze ein gerettetes Huhn und erhalte monatlich frische Bio-Eier direkt aus Oberottmarshausen. Und du darfst es sogar benennen.</p>
+    <p class="section-body">Unterstütze ein gerettetes Huhn und erhalte monatlich frische Bio-Eier direkt aus Oberottmarshausen.</p>
     <div class="paten-grid">
       <div class="paten-card">
         <span class="paten-badge badge-taken">Vergeben</span>
@@ -474,7 +602,7 @@
       <div class="paten-card free">
         <span class="paten-badge badge-free">Noch frei!</span>
         <h3 class="paten-chicken-name">🥚 Dein Huhn</h3>
-        <p class="paten-family" style="color:var(--yolk-dark); font-weight:500;">Du bestimmst den Namen!</p>
+        <p class="paten-family" style="color:var(--yolk-dark);font-weight:500;">Du bestimmst den Namen!</p>
         <ul class="paten-includes">
           <li>Monatlich 12 frische Bio-Eier</li>
           <li>Du gibst dem Huhn seinen Namen</li>
@@ -482,73 +610,181 @@
           <li>Urkunde als Hühnerpate/-patin</li>
           <li>10% Rabatt auf alle Chips</li>
         </ul>
-        <button class="paten-cta" onclick="openModal()">Jetzt Pate werden</button>
+        <button class="paten-cta" onclick="openPatenModal()">Jetzt Pate werden</button>
       </div>
     </div>
- 
     <div class="perks-row">
-      <div class="perk">
-        <div class="perk-icon">🚚</div>
-        <h4>Monatliche Lieferung</h4>
-        <p>Frische Eier direkt vom Hof per Post — schonend verpackt.</p>
-      </div>
-      <div class="perk">
-        <div class="perk-icon">📸</div>
-        <h4>Foto-Updates</h4>
-        <p>Wir halten dich per Mail auf dem Laufenden — mit echten Bildern.</p>
-      </div>
-      <div class="perk">
-        <div class="perk-icon">💚</div>
-        <h4>Tierschutz</h4>
-        <p>Du rettest ein Huhn vor dem Schlachthof und gibst ihm ein gutes Leben.</p>
-      </div>
-      <div class="perk">
-        <div class="perk-icon">🎁</div>
-        <h4>Chips-Rabatt</h4>
-        <p>Als Pate bekommst du 10 % auf alle Protein-Chips dauerhaft.</p>
-      </div>
+      <div class="perk"><div class="perk-icon">🚚</div><h4>Monatliche Lieferung</h4><p>Frische Eier direkt vom Hof per Post — schonend verpackt.</p></div>
+      <div class="perk"><div class="perk-icon">📸</div><h4>Foto-Updates</h4><p>Wir halten dich per Mail auf dem Laufenden — mit echten Bildern.</p></div>
+      <div class="perk"><div class="perk-icon">💚</div><h4>Tierschutz</h4><p>Du rettest ein Huhn vor dem Schlachthof und gibst ihm ein gutes Leben.</p></div>
+      <div class="perk"><div class="perk-icon">🎁</div><h4>Chips-Rabatt</h4><p>Als Pate bekommst du 10 % auf alle Protein-Chips dauerhaft.</p></div>
     </div>
   </div>
 </section>
  
 <footer>
   <strong>EI-WEISS</strong> · Bio Protein &amp; Hühnerpatenschaft · Oberottmarshausen, Bayern<br>
-  <span style="font-size:12px; margin-top:8px; display:block;">Mit Liebe für Hühner und Protein gemacht.</span>
+  <span style="font-size:12px;margin-top:8px;display:block;">Mit Liebe für Hühner und Protein gemacht. · <a href="mailto:hallo@ei-weiss.de" style="color:var(--yolk);">hallo@ei-weiss.de</a></span>
 </footer>
  
-<!-- MODAL -->
-<div class="modal-overlay" id="modal">
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h3>Warenkorb</h3>
+    <button class="cart-close" onclick="closeCart()">×</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty" id="cart-empty">
+      <div class="cart-empty-icon">🛒</div>
+      <p>Noch nichts drin.<br>Füge deine Lieblingssorte hinzu!</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cart-footer" style="display:none">
+    <div class="cart-total">
+      <span class="cart-total-label">Gesamt</span>
+      <span class="cart-total-price" id="cart-total">0,00 €</span>
+    </div>
+    <button class="paypal-btn" onclick="checkoutPaypal()">
+      Mit <strong>Pay</strong><strong style="color:#009cde">Pal</strong> bezahlen
+    </button>
+    <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:10px;">Sicherer Checkout über PayPal · Versand innerhalb 2–3 Tagen</p>
+  </div>
+</div>
+ 
+<!-- PATEN MODAL -->
+<div class="modal-overlay" id="paten-modal">
   <div class="modal">
-    <button class="modal-close" onclick="closeModal()">×</button>
-    <div id="modal-form">
+    <button class="modal-close" onclick="closePatenModal()">×</button>
+    <div id="paten-form">
       <h3>Patenschaft anfragen</h3>
-      <p>Wähle einen Namen für dein Huhn und wir melden uns bei dir!</p>
+      <p>Wähle einen Namen für dein Huhn und wir melden uns schnell bei dir!</p>
       <input type="text" id="pate-name" placeholder="Dein Name" />
       <input type="email" id="pate-email" placeholder="Deine E-Mail" />
-      <input type="text" id="chicken-name" placeholder="Wie soll dein Huhn heißen?" />
-      <button class="btn-primary" style="width:100%; margin-top:8px;" onclick="submitModal()">Anfrage senden</button>
+      <input type="text" id="chicken-name-input" placeholder="Wie soll dein Huhn heißen?" />
+      <button class="btn-primary" style="width:100%;margin-top:8px;" onclick="submitPaten()">Anfrage senden</button>
     </div>
-    <div class="modal-success" id="modal-success">
+    <div class="modal-success" id="paten-success">
       <div class="check">🥚</div>
       <h4>Wunderbar!</h4>
-      <p>Wir melden uns in Kürze bei dir. Dein Huhn freut sich schon!</p>
+      <p>Wir melden uns in Kürze. Dein Huhn freut sich schon!</p>
+    </div>
+  </div>
+</div>
+ 
+<!-- KONTAKT MODAL -->
+<div class="modal-overlay" id="kontakt-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeKontakt()">×</button>
+    <div id="kontakt-form">
+      <h3>Kontakt &amp; Vorbestellung</h3>
+      <p>Sauerteigbrot vorbestellen oder einfach Hallo sagen — wir freuen uns!</p>
+      <input type="text" id="kontakt-name" placeholder="Dein Name" />
+      <input type="email" id="kontakt-email" placeholder="Deine E-Mail" />
+      <textarea id="kontakt-msg" placeholder="Deine Nachricht (z.B. Brotbestellung für Sonntag, 12. Mai)"></textarea>
+      <button class="btn-primary" style="width:100%;margin-top:8px;" onclick="submitKontakt()">Nachricht senden</button>
+    </div>
+    <div class="modal-success" id="kontakt-success">
+      <div class="check">✉️</div>
+      <h4>Nachricht gesendet!</h4>
+      <p>Wir melden uns schnellstmöglich bei dir.</p>
     </div>
   </div>
 </div>
  
 <script>
-function openModal() { document.getElementById('modal').classList.add('active'); }
-function closeModal() {
-  document.getElementById('modal').classList.remove('active');
-  document.getElementById('modal-form').style.display = 'block';
-  document.getElementById('modal-success').style.display = 'none';
+var cart = [];
+var PRICE = 3.89;
+ 
+function addToCart(name, icon) {
+  var existing = cart.find(function(i){ return i.name === name; });
+  if (existing) { existing.qty++; }
+  else { cart.push({name: name, icon: icon, qty: 1}); }
+  updateCart();
+  openCart();
 }
-function submitModal() {
+ 
+function removeFromCart(name) {
+  cart = cart.filter(function(i){ return i.name !== name; });
+  updateCart();
+}
+ 
+function updateCart() {
+  var total = cart.reduce(function(s,i){ return s + i.qty * PRICE; }, 0);
+  var count = cart.reduce(function(s,i){ return s + i.qty; }, 0);
+  var countEl = document.getElementById('cart-count');
+  if (count > 0) { countEl.style.display = 'flex'; countEl.textContent = count; }
+  else { countEl.style.display = 'none'; }
+  var itemsEl = document.getElementById('cart-items');
+  var emptyEl = document.getElementById('cart-empty');
+  var footerEl = document.getElementById('cart-footer');
+  if (cart.length === 0) {
+    emptyEl.style.display = 'block';
+    footerEl.style.display = 'none';
+    itemsEl.innerHTML = '';
+    itemsEl.appendChild(emptyEl);
+    return;
+  }
+  emptyEl.style.display = 'none';
+  footerEl.style.display = 'block';
+  itemsEl.innerHTML = '';
+  cart.forEach(function(item) {
+    var div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = '<div class="cart-item-icon">' + item.icon + '</div>'
+      + '<div class="cart-item-info"><div class="cart-item-name">' + item.name + (item.qty > 1 ? ' ×' + item.qty : '') + '</div>'
+      + '<div class="cart-item-price">' + (item.qty * PRICE).toFixed(2).replace('.',',') + ' €</div></div>'
+      + '<button class="cart-item-remove" onclick="removeFromCart(\'' + item.name.replace(/'/g,"\\'") + '\')">×</button>';
+    itemsEl.appendChild(div);
+  });
+  document.getElementById('cart-total').textContent = total.toFixed(2).replace('.',',') + ' €';
+}
+ 
+function openCart() {
+  document.getElementById('cart-drawer').classList.add('open');
+  document.getElementById('overlay').classList.add('active');
+}
+function closeCart() {
+  document.getElementById('cart-drawer').classList.remove('open');
+  document.getElementById('overlay').classList.remove('active');
+}
+ 
+function checkoutPaypal() {
+  var total = cart.reduce(function(s,i){ return s + i.qty * PRICE; }, 0);
+  var desc = cart.map(function(i){ return i.qty + 'x ' + i.name; }).join(', ');
+  var url = 'https://www.paypal.com/paypalme/eiweiss/' + total.toFixed(2) + 'EUR';
+  window.open(url, '_blank');
+}
+ 
+function openPatenModal() { document.getElementById('paten-modal').classList.add('active'); }
+function closePatenModal() {
+  document.getElementById('paten-modal').classList.remove('active');
+  document.getElementById('paten-form').style.display = 'block';
+  document.getElementById('paten-success').style.display = 'none';
+}
+function submitPaten() {
   if (!document.getElementById('pate-name').value || !document.getElementById('pate-email').value) return;
-  document.getElementById('modal-form').style.display = 'none';
-  document.getElementById('modal-success').style.display = 'block';
+  document.getElementById('paten-form').style.display = 'none';
+  document.getElementById('paten-success').style.display = 'block';
 }
-document.getElementById('modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+ 
+function openKontakt() {
+  document.getElementById('kontakt-modal').classList.add('active');
+  return false;
+}
+function closeKontakt() {
+  document.getElementById('kontakt-modal').classList.remove('active');
+  document.getElementById('kontakt-form').style.display = 'block';
+  document.getElementById('kontakt-success').style.display = 'none';
+}
+function submitKontakt() {
+  if (!document.getElementById('kontakt-name').value || !document.getElementById('kontakt-email').value) return;
+  document.getElementById('kontakt-form').style.display = 'none';
+  document.getElementById('kontakt-success').style.display = 'block';
+}
+ 
+document.getElementById('paten-modal').addEventListener('click', function(e){ if(e.target===this) closePatenModal(); });
+document.getElementById('kontakt-modal').addEventListener('click', function(e){ if(e.target===this) closeKontakt(); });
 </script>
 </body>
 </html>
