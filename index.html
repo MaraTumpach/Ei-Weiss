@@ -1,3 +1,4 @@
+Ei weiss · HTML
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -514,7 +515,7 @@
         <p>Bei schönem Wetter öffnen wir sonntagsvormittags unseren Hofgarten. Kaffee, frische Limo, selbstgemachte Kleinigkeiten — und natürlich unsere Eierchips zum Probieren. Entspannt, informell, mit Hühnern im Hintergrund.</p>
         <p>Unser 7-Stunden-Sauerteigbrot gibt es nur auf Vorbestellung. Frisch gebacken, mit langer Fermentation — das schmeckt man bei jedem Bissen.</p>
         <div class="cafe-contact">
-          <a href="mailto:hallo@ei-weiss.de" onclick="return openKontakt()">📬 Sauerteigbrot vorbestellen & Kontakt</a>
+          <a href="mailto:maratumpach@gmail.com" onclick="return openKontakt()">📬 Sauerteigbrot vorbestellen & Kontakt</a>
         </div>
       </div>
       <div class="cafe-items">
@@ -624,7 +625,7 @@
  
 <footer>
   <strong>EI-WEISS</strong> · Bio Protein &amp; Hühnerpatenschaft · Oberottmarshausen, Bayern<br>
-  <span style="font-size:12px;margin-top:8px;display:block;">Mit Liebe für Hühner und Protein gemacht. · <a href="mailto:hallo@ei-weiss.de" style="color:var(--yolk);">hallo@ei-weiss.de</a></span>
+  <span style="font-size:12px;margin-top:8px;display:block;">Mit Liebe für Hühner und Protein gemacht. · <a href="mailto:maratumpach@gmail.com" style="color:var(--yolk);">maratumpach@gmail.com</a></span>
 </footer>
  
 <!-- CART DRAWER -->
@@ -752,7 +753,7 @@ function closeCart() {
 function checkoutPaypal() {
   var total = cart.reduce(function(s,i){ return s + i.qty * PRICE; }, 0);
   var desc = cart.map(function(i){ return i.qty + 'x ' + i.name; }).join(', ');
-  var url = 'https://www.paypal.com/paypalme/eiweiss/' + total.toFixed(2) + 'EUR';
+  var url = 'https://www.paypal.com/paypalme/maratumpach/' + total.toFixed(2) + 'EUR';
   window.open(url, '_blank');
 }
  
@@ -778,7 +779,13 @@ function closeKontakt() {
   document.getElementById('kontakt-success').style.display = 'none';
 }
 function submitKontakt() {
-  if (!document.getElementById('kontakt-name').value || !document.getElementById('kontakt-email').value) return;
+  var name = document.getElementById('kontakt-name').value;
+  var email = document.getElementById('kontakt-email').value;
+  var msg = document.getElementById('kontakt-msg').value;
+  if (!name || !email) return;
+  var subject = encodeURIComponent('Nachricht von ' + name + ' – Ei-Weiss');
+  var body = encodeURIComponent('Name: ' + name + '\nE-Mail: ' + email + '\n\nNachricht:\n' + msg);
+  window.location.href = 'mailto:maratumpach@gmail.com?subject=' + subject + '&body=' + body;
   document.getElementById('kontakt-form').style.display = 'none';
   document.getElementById('kontakt-success').style.display = 'block';
 }
