@@ -1,116 +1,509 @@
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sonntagscafé – Ei-Weiss · Hofgarten Oberottmarshausen</title>
-<meta name="description" content="Sonntags bei gutem Wetter im Hofgarten: Kaffee, selbstgemachte Limo, Eierchips zum Probieren und 7h-Sauerteigbrot auf Vorbestellung.">
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"/>
+<meta name="theme-color" content="#2D4A2D"/>
+<title>Sonntagscafé – Ei-Weiss Hofcafé Oberottmarshausen</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --cream: #F9F3E8; --warm: #EDE4D0; --yolk: #E8A020; --yolk-dark: #C07010;
-    --forest: #2D4A2D; --forest-light: #3D6B3D; --text: #1A1208; --muted: #6B5A3E; --white: #FFFDF8;
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--forest); color: var(--text); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
-  h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
-
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: var(--forest); display: flex; align-items: center; justify-content: space-between;
-    padding: 0 40px; height: 64px; border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .nav-logo { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--yolk); letter-spacing: 3px; text-decoration: none; }
-  .nav-back { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 13px; font-weight: 300; letter-spacing: 1px; text-transform: uppercase; transition: color .2s; }
-  .nav-back:hover { color: var(--yolk); }
-
-  .hero { min-height: 70vh; background: var(--forest); display: flex; align-items: center; justify-content: center; padding: 140px 40px 80px; text-align: center; }
-  .hero-eyebrow { display: inline-block; background: rgba(232,160,32,0.2); border: 1px solid rgba(232,160,32,0.4); color: var(--yolk); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; padding: 6px 20px; border-radius: 40px; margin-bottom: 28px; }
-  .hero h1 { font-size: clamp(48px, 7vw, 88px); color: var(--white); line-height: 1.0; margin-bottom: 16px; }
-  .hero h1 span { color: var(--yolk); font-style: italic; }
-  .hero-sub { font-size: 18px; color: rgba(255,255,255,0.65); max-width: 520px; margin: 16px auto 0; font-weight: 300; }
-
-  section { padding: 80px 40px; }
-  .section-inner { max-width: 1100px; margin: 0 auto; }
-  .section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: rgba(232,160,32,0.7); margin-bottom: 12px; }
-  .section-title { font-size: clamp(32px, 5vw, 52px); line-height: 1.1; margin-bottom: 20px; color: var(--white); }
-
-  .cafe-section { background: var(--forest); }
-  .cafe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 40px; }
-  @media (max-width: 700px) { .cafe-grid { grid-template-columns: 1fr; gap: 40px; } }
-  .cafe-info p { color: rgba(255,255,255,0.75); font-size: 17px; font-weight: 300; line-height: 1.85; margin-bottom: 20px; }
-  .cafe-items { display: grid; gap: 14px; }
-  .cafe-item { background: rgba(255,255,255,0.07); border-radius: 14px; padding: 18px 22px; border: 1px solid rgba(255,255,255,0.1); }
-  .cafe-item h4 { color: var(--yolk); font-size: 16px; margin-bottom: 4px; }
-  .cafe-item p { color: rgba(255,255,255,0.6); font-size: 14px; margin: 0; }
-  .cafe-when { margin-top: 16px; padding: 14px 18px; background: rgba(232,160,32,0.15); border-radius: 12px; border: 1px solid rgba(232,160,32,0.3); }
-  .cafe-when p { color: var(--yolk); font-size: 14px; margin: 0; }
-  .cafe-contact { margin-top: 32px; }
-  .cafe-contact a { display: inline-flex; align-items: center; gap: 10px; background: var(--yolk); color: var(--text); padding: 13px 28px; border-radius: 40px; font-weight: 500; font-size: 15px; text-decoration: none; transition: background .2s; }
-  .cafe-contact a:hover { background: #F5B830; }
-
-  footer { background: var(--text); color: rgba(255,255,255,0.5); text-align: center; padding: 40px; font-size: 14px; }
-  footer strong { color: var(--yolk); }
-  footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
-  footer a:hover { color: var(--yolk); }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#F9F3E8; --warm:#EDE4D0; --yolk:#E8A020; --yolk-dark:#C07010;
+  --forest:#2D4A2D; --forest-light:#3D6B3D; --text:#1A1208; --muted:#6B5A3E; --white:#FFFDF8;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);font-size:16px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;}
+ 
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:space-between;justify-content:space-between;padding:0 40px;height:64px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;color:var(--yolk);letter-spacing:3px;text-decoration:none;}
+.nav-links{display:-webkit-flex;display:flex;gap:24px;}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:300;letter-spacing:1px;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--yolk);}
+.hamburger{display:none;-webkit-flex-direction:column;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:22px;height:1.5px;background:rgba(255,255,255,0.8);}
+ 
+/* HERO */
+.hero{background:var(--forest);min-height:85vh;display:-webkit-flex;display:flex;-webkit-align-items:flex-end;align-items:flex-end;padding:7rem 5rem 5rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:420px;height:420px;border-radius:50%;background:var(--yolk);opacity:0.06;}
+.hero::after{content:'';position:absolute;bottom:-60px;left:15%;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.03);}
+.hero-steam{position:absolute;top:15%;right:8%;opacity:0.12;font-size:8rem;pointer-events:none;}
+.hero-content{position:relative;z-index:2;max-width:700px;}
+.hero-eyebrow{display:inline-block;background:rgba(232,160,32,0.18);border:1px solid rgba(232,160,32,0.35);color:var(--yolk);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:6px 20px;border-radius:40px;margin-bottom:1.8rem;}
+.hero h1{font-size:clamp(3rem,7vw,7rem);color:var(--white);line-height:1.0;margin-bottom:1.2rem;}
+.hero h1 span{color:var(--yolk);font-style:italic;}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,0.6);max-width:500px;font-weight:300;line-height:1.85;margin-bottom:2.5rem;}
+.hero-info-pills{display:-webkit-flex;display:flex;gap:12px;-webkit-flex-wrap:wrap;flex-wrap:wrap;}
+.info-pill{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.75);font-size:13px;font-weight:300;padding:8px 18px;border-radius:40px;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;gap:8px;}
+.wave-down{width:100%;overflow:hidden;line-height:0;background:var(--forest);}
+.wave-down svg{display:block;width:100%;}
+ 
+/* SHARED */
+.section-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--yolk-dark);margin-bottom:12px;display:block;}
+.section-title{font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;color:var(--text);}
+.section-body{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.9;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease;}
+.reveal.visible{opacity:1;transform:none;}
+ 
+/* WHAT IS IT */
+.what-section{background:var(--white);padding:7rem 4rem;}
+.what-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:7rem;-webkit-align-items:center;align-items:center;}
+.what-text p{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:1.2rem;}
+.what-visual{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.what-card{background:var(--cream);border-radius:16px;padding:2rem 1.5rem;border:1.5px solid var(--warm);text-align:center;transition:transform .2s,box-shadow .2s;}
+.what-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,0.07);}
+.what-card-icon{font-size:2.5rem;margin-bottom:0.8rem;display:block;}
+.what-card h4{font-size:1.1rem;margin-bottom:0.3rem;color:var(--text);}
+.what-card p{font-size:0.82rem;color:var(--muted);font-weight:300;}
+ 
+/* MENU */
+.menu-section{background:var(--cream);padding:7rem 4rem;}
+.menu-inner{max-width:1100px;margin:0 auto;}
+.menu-header{text-align:center;margin-bottom:4rem;}
+.menu-header p{font-size:1rem;color:var(--muted);font-weight:300;max-width:500px;margin:1rem auto 0;line-height:1.85;}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;background:var(--warm);}
+.menu-card{background:var(--white);padding:3rem 2.5rem;position:relative;transition:background .2s;}
+.menu-card:hover{background:#FFFDF5;}
+.menu-card-num{position:absolute;top:2rem;right:2.5rem;font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:700;color:var(--yolk);opacity:0.12;line-height:1;}
+.menu-icon{font-size:2.5rem;margin-bottom:1.2rem;display:block;}
+.menu-card h3{font-size:1.5rem;margin-bottom:0.5rem;color:var(--text);}
+.menu-card .menu-price{font-size:0.8rem;font-weight:500;color:var(--yolk-dark);letter-spacing:0.5px;margin-bottom:0.8rem;}
+.menu-card p{font-size:0.88rem;color:var(--muted);line-height:1.8;font-weight:300;}
+.menu-tag{display:inline-block;background:var(--warm);color:var(--muted);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:40px;margin-bottom:0.8rem;}
+.menu-tag.special{background:rgba(232,160,32,0.2);color:var(--yolk-dark);}
+ 
+/* BROT */
+.brot-section{background:var(--forest);padding:7rem 4rem;position:relative;overflow:hidden;}
+.brot-section::before{content:'';position:absolute;top:-80px;right:-80px;width:350px;height:350px;border-radius:50%;background:var(--yolk);opacity:0.05;}
+.brot-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:7rem;-webkit-align-items:center;align-items:center;position:relative;z-index:1;}
+.brot-text .section-label{color:rgba(232,160,32,0.7);}
+.brot-text h2{font-size:clamp(2rem,4vw,3.5rem);color:var(--white);line-height:1.1;margin-bottom:1.2rem;}
+.brot-text h2 em{color:var(--yolk);font-style:italic;}
+.brot-text p{font-size:1rem;color:rgba(255,255,255,0.65);font-weight:300;line-height:1.9;margin-bottom:1rem;}
+.brot-process{display:grid;gap:12px;}
+.brot-step{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem 1.5rem;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;gap:1rem;}
+.brot-step-time{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--yolk);min-width:52px;line-height:1;}
+.brot-step-info h4{font-size:0.88rem;font-weight:500;color:rgba(255,255,255,0.85);margin-bottom:2px;}
+.brot-step-info p{font-size:0.78rem;color:rgba(255,255,255,0.5);font-weight:300;}
+.brot-highlight{background:rgba(232,160,32,0.12);border:1px solid rgba(232,160,32,0.25);border-radius:14px;padding:2rem;margin-top:1.5rem;}
+.brot-highlight p{font-size:0.9rem;color:rgba(255,255,255,0.7);margin:0;font-weight:300;}
+.brot-highlight strong{color:var(--yolk);}
+ 
+/* ORDER FORM */
+.order-section{background:var(--white);padding:7rem 4rem;}
+.order-inner{max-width:720px;margin:0 auto;}
+.order-header{text-align:center;margin-bottom:3rem;}
+.order-header p{font-size:1rem;color:var(--muted);font-weight:300;max-width:500px;margin:0.8rem auto 0;line-height:1.85;}
+.order-form{display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;gap:1rem;}
+.order-form input,.order-form select,.order-form textarea{width:100%;padding:1rem 1.2rem;border-radius:12px;border:1.5px solid var(--warm);background:var(--cream);font-size:0.95rem;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;transition:border-color .2s;-webkit-appearance:none;}
+.order-form input:focus,.order-form select:focus,.order-form textarea:focus{border-color:var(--yolk);}
+.order-form input::placeholder,.order-form textarea::placeholder{color:rgba(107,90,62,0.4);}
+.order-form select{color:rgba(107,90,62,0.5);}
+.order-form textarea{height:90px;resize:none;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.btn-yolk{display:inline-block;background:var(--yolk);color:var(--text);font-weight:500;font-size:15px;padding:14px 36px;border-radius:40px;text-decoration:none;transition:background .2s,transform .15s;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;text-align:center;}
+.btn-yolk:hover{background:#F5B830;transform:translateY(-2px);}
+.order-success{display:none;text-align:center;padding:3rem;background:var(--cream);border-radius:20px;border:1.5px solid var(--warm);}
+.order-success .icon{font-size:4rem;margin-bottom:1rem;display:block;}
+.order-success h3{font-size:1.8rem;margin-bottom:0.5rem;}
+.order-success p{color:var(--muted);font-weight:300;}
+ 
+/* WHEN & WHERE */
+.info-section{background:var(--cream);padding:6rem 4rem;}
+.info-inner{max-width:1100px;margin:0 auto;}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px;background:var(--warm);margin-top:3rem;}
+.info-card{background:var(--white);padding:3rem 2.5rem;}
+.info-card-icon{font-size:2.2rem;margin-bottom:1.2rem;display:block;}
+.info-card h3{font-size:1.4rem;margin-bottom:0.8rem;color:var(--text);}
+.info-card p{font-size:0.9rem;color:var(--muted);font-weight:300;line-height:1.85;}
+.info-card a{color:var(--yolk-dark);text-decoration:none;border-bottom:1px solid rgba(192,112,16,0.3);}
+.info-card a:hover{color:var(--yolk);}
+.weather-badge{display:inline-block;background:rgba(232,160,32,0.15);border:1px solid rgba(232,160,32,0.3);color:var(--yolk-dark);font-size:12px;font-weight:500;padding:5px 14px;border-radius:40px;margin-top:1rem;}
+ 
+/* CHICKENS TEASER */
+.chickens-section{background:var(--forest);padding:6rem 4rem;text-align:center;}
+.chickens-section h2{font-size:clamp(1.8rem,3vw,2.8rem);color:var(--white);margin-bottom:0.8rem;}
+.chickens-section p{font-size:1rem;color:rgba(255,255,255,0.6);font-weight:300;max-width:480px;margin:0 auto 2.5rem;}
+.chickens-row{display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;gap:40px;-webkit-flex-wrap:wrap;flex-wrap:wrap;}
+.chicken-mini{text-align:center;}
+.chicken-mini svg{width:80px;height:80px;}
+.chicken-mini p{font-family:'Playfair Display',serif;font-size:14px;color:var(--yolk);margin-top:8px;}
+ 
+/* FOOTER */
+footer{background:var(--text);color:rgba(255,255,255,0.5);text-align:center;padding:40px;font-size:14px;}
+footer strong{color:var(--yolk);}
+ 
+/* RESPONSIVE */
+@media (max-width:1024px){
+  nav{padding:0 24px;}
+  .hero{padding:6rem 3rem 4rem;}
+  .what-section,.menu-section,.brot-section,.order-section,.info-section{padding:5rem 2rem;}
+}
+@media (max-width:768px){
+  nav{padding:0 16px;height:56px;}
+  .nav-links{display:none;-webkit-flex-direction:column;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--forest);padding:1.2rem 1.5rem;gap:1rem;box-shadow:0 8px 30px rgba(0,0,0,0.2);z-index:99;}
+  .nav-links.open{display:-webkit-flex;display:flex;}
+  .nav-links a{font-size:14px;padding:0.3rem 0;}
+  .hamburger{display:-webkit-flex;display:flex;}
+  .hero{padding:5rem 1.5rem 3.5rem;min-height:auto;}
+  .hero h1{font-size:clamp(2.5rem,10vw,4rem);}
+  .what-inner{grid-template-columns:1fr;gap:3rem;}
+  .what-visual{grid-template-columns:1fr 1fr;}
+  .brot-inner{grid-template-columns:1fr;gap:3rem;}
+  .form-row{grid-template-columns:1fr;}
+  .order-form input,.order-form select,.order-form textarea{font-size:16px;}
+  .menu-grid{grid-template-columns:1fr;}
+  .chickens-section{padding:4rem 1.5rem;}
+}
+@media (max-width:480px){
+  .hero h1{font-size:clamp(2.2rem,11vw,3rem);}
+  .hero-info-pills{gap:8px;}
+  .info-pill{font-size:12px;padding:6px 14px;}
+  .what-visual{grid-template-columns:1fr;}
+  .info-grid{grid-template-columns:1fr;}
+}
+@media (hover:none){
+  .what-card:hover{transform:none;box-shadow:none;}
+  .btn-yolk:hover{transform:none;}
+}
+@media print{nav,footer{display:none;}.reveal{opacity:1;transform:none;}}
 </style>
 </head>
 <body>
-
-<nav>
-  <a class="nav-logo" href="/">EI-WEISS</a>
-  <a class="nav-back" href="/">← Zurück zur Startseite</a>
+ 
+<nav id="mainNav">
+  <a href="ei-weiss.html" class="nav-logo">EI-WEISS</a>
+  <div class="nav-links" id="navLinks">
+    <a href="ei-weiss.html#chips">Chips</a>
+    <a href="ei-weiss.html#shop">Shop</a>
+    <a href="ei-weiss.html#story">Unser Hof</a>
+    <a href="sonntagscafe.html" class="active">Sonntagscafé</a>
+    <a href="ei-weiss.html#aktuelles">Aktuelles</a>
+    <a href="ei-weiss.html#paten">Patenschaft</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-
+ 
+<!-- HERO -->
 <section class="hero">
-  <div>
-    <div class="hero-eyebrow">Sonntagscafé · Hofgarten</div>
-    <h1>Sonntags bei uns<br><span>auf dem Hof.</span></h1>
-    <p class="hero-sub">Kaffee, frische Limo, selbstgemachte Kleinigkeiten — und natürlich unsere Eierchips zum Probieren. Entspannt, informell, mit Hühnern im Hintergrund.</p>
+  <div class="hero-steam">☕</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Sonntags · 10–13 Uhr · Hofgarten</div>
+    <h1>Das <span>Sonntags-</span><br>café.</h1>
+    <p class="hero-sub">Kaffee, selbstgemachte Limo, knusprige Eierchips und unser legendäres 48h-Sauerteigbrot — bei gutem Wetter direkt bei uns auf dem Hof in Oberottmarshausen.</p>
+    <div class="hero-info-pills">
+      <span class="info-pill">📅 Sonntags bei Wetter</span>
+      <span class="info-pill">⏰ 10–13 Uhr</span>
+      <span class="info-pill">📍 Oberottmarshausen</span>
+      <span class="info-pill">🐔 Hühner inklusive</span>
+    </div>
   </div>
 </section>
-
-<section class="cafe-section">
-  <div class="section-inner">
-    <div class="section-label">Was dich erwartet</div>
-    <h2 class="section-title">Klein, fein,<br>direkt vom Hof.</h2>
-    <div class="cafe-grid">
-      <div class="cafe-info">
-        <p>Bei schönem Wetter öffnen wir sonntagsvormittags unseren Hofgarten in Oberottmarshausen. Komm vorbei, lerne die Hühner kennen und genieße ein paar entspannte Stunden bei uns.</p>
-        <p>Unser 7-Stunden-Sauerteigbrot gibt es nur auf Vorbestellung. Frisch gebacken, mit langer Fermentation — das schmeckt man bei jedem Bissen. Bitte bis Freitag bestellen.</p>
-        <div class="cafe-contact">
-          <a href="mailto:maratumpach@gmail.com?subject=Sauerteigbrot%20Vorbestellung">📬 Sauerteigbrot vorbestellen &amp; Kontakt</a>
-        </div>
+<div class="wave-down">
+  <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0 30 Q180 0 360 30 Q540 60 720 30 Q900 0 1080 30 Q1260 60 1440 30 L1440 60 L0 60 Z" fill="#FFFDF8"/>
+  </svg>
+</div>
+ 
+<!-- WHAT IS IT -->
+<section class="what-section">
+  <div class="what-inner">
+    <div class="what-text reveal">
+      <span class="section-label">Was ist das?</span>
+      <h2 class="section-title" style="margin-bottom:1.5rem;">Einfach schön.<br>Keine Reservierung.</h2>
+      <p>Bei schönem Wetter öffnen wir sonntagsvormittags unseren Hofgarten. Kein Restaurant, kein Trubel — einfach gemütliches Zusammensein bei Kaffee, frischer Limo und dem Besten, was unser Hof zu bieten hat.</p>
+      <p>Mitgebracht werden darf alles. Kinder und Hunde herzlich willkommen. Die Hühner schauen sowieso vorbei.</p>
+      <p style="font-size:0.88rem;color:var(--yolk-dark);font-style:italic;margin-top:1.5rem;">☀️ Wir machen nur bei gutem Wetter auf — folge uns auf Instagram für kurzfristige Ankündigungen.</p>
+    </div>
+    <div class="what-visual reveal">
+      <div class="what-card">
+        <span class="what-card-icon">☕</span>
+        <h4>Kaffee & Limo</h4>
+        <p>Frisch gebrühter Filterkaffee und selbstgemachte Limo</p>
       </div>
-      <div class="cafe-items">
-        <div class="cafe-item">
-          <h4>☕ Kaffee &amp; Getränke</h4>
-          <p>Frisch gebrühter Kaffee, selbstgemachte Limo, Quellwasser vom Hof</p>
-        </div>
-        <div class="cafe-item">
-          <h4>🍳 Eierchips zum Probieren</h4>
-          <p>Alle drei Sorten zum Verkosten — direkt vom Erzeuger</p>
-        </div>
-        <div class="cafe-item">
-          <h4>🍞 7h-Sauerteigbrot</h4>
-          <p>Nur auf Vorbestellung — begrenzte Stückzahl. Bitte bis Freitag bestellen.</p>
-        </div>
-        <div class="cafe-item">
-          <h4>🐔 Hühner kennenlernen</h4>
-          <p>Gretl, Hildegard &amp; Co. freuen sich über Besuch im Garten</p>
-        </div>
-        <div class="cafe-when">
-          <p><strong>Wann?</strong> Sonntags bei gutem Wetter, 10–13 Uhr · Oberottmarshausen</p>
-        </div>
+      <div class="what-card">
+        <span class="what-card-icon">🥚</span>
+        <h4>Eierchips</h4>
+        <p>Alle drei Sorten zum Probieren — direkt vom Erzeuger</p>
+      </div>
+      <div class="what-card">
+        <span class="what-card-icon">🍞</span>
+        <h4>48h-Brot</h4>
+        <p>Nur auf Vorbestellung — begrenzte Stückzahl</p>
+      </div>
+      <div class="what-card">
+        <span class="what-card-icon">🐔</span>
+        <h4>Hühner treffen</h4>
+        <p>Gretl, Hildegard & Co. sind immer im Garten</p>
       </div>
     </div>
   </div>
 </section>
-
+ 
+<!-- MENÜ -->
+<section class="menu-section">
+  <div class="menu-inner">
+    <div class="menu-header reveal">
+      <span class="section-label">Was es gibt</span>
+      <h2 class="section-title">Unsere Karte.</h2>
+      <p>Klein, fein, selbstgemacht. Keine langen Karten — nur das, was wirklich gut ist.</p>
+    </div>
+    <div class="menu-grid reveal">
+ 
+      <div class="menu-card">
+        <span class="menu-card-num">01</span>
+        <span class="menu-icon">☕</span>
+        <span class="menu-tag">Getränke</span>
+        <h3>Filterkaffee</h3>
+        <p class="menu-price">Preis auf Anfrage</p>
+        <p>Frisch gebrühter Kaffee aus fairen Bohnen — schwarz oder mit frischer Hofmilch.</p>
+      </div>
+ 
+      <div class="menu-card">
+        <span class="menu-card-num">02</span>
+        <span class="menu-icon">🍋</span>
+        <span class="menu-tag">Getränke</span>
+        <h3>Selbstgemachte Limo</h3>
+        <p class="menu-price">Preis auf Anfrage</p>
+        <p>Jeden Sonntag frisch angesetzt — Zitrone, Ingwer, Holunder oder saisonal was der Garten hergibt.</p>
+      </div>
+ 
+      <div class="menu-card">
+        <span class="menu-card-num">03</span>
+        <span class="menu-icon">🥚</span>
+        <span class="menu-tag">Snack</span>
+        <h3>Eierchips Probierpaket</h3>
+        <p class="menu-price">Alle 3 Sorten zum Verkosten</p>
+        <p>Original Salz · Salz & Pfeffer · Olivenöl & Kräuter — direkt von unseren geretteten Hühnern, gedörrt und frisch.</p>
+      </div>
+ 
+      <div class="menu-card" style="border-left:3px solid var(--yolk);">
+        <span class="menu-card-num">04</span>
+        <span class="menu-icon">🍞</span>
+        <span class="menu-tag special">★ Vorbestellung</span>
+        <h3>48h-Sauerteigbrot</h3>
+        <p class="menu-price">Nur auf Vorbestellung · bis Freitag</p>
+        <p>Zwei Tage Fermentation, handgeformt aus alten Weizensorten. Saftig, mit knuspriger Kruste und tiefem Aroma. Begrenzte Stückzahl jede Woche.</p>
+      </div>
+ 
+      <div class="menu-card">
+        <span class="menu-card-num">05</span>
+        <span class="menu-icon">🥛</span>
+        <span class="menu-tag">Saison</span>
+        <h3>Saisonales Schmankerl</h3>
+        <p class="menu-price">Je nach Woche verschieden</p>
+        <p>Manchmal ein Aufstrich, manchmal selbstgemachter Quark, manchmal Marmelade — was gerade da ist und gut schmeckt.</p>
+      </div>
+ 
+      <div class="menu-card">
+        <span class="menu-card-num">06</span>
+        <span class="menu-icon">🌞</span>
+        <span class="menu-tag">Kostenlos</span>
+        <h3>Hühner & Hofatmosphäre</h3>
+        <p class="menu-price">Gratis &amp; inklusive</p>
+        <p>Gretl und Hildegard schauen immer vorbei. Der Garten ist groß, der Schatten gut und die Zeit vergeht schnell.</p>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<!-- 48h BROT -->
+<section class="brot-section" id="brot">
+  <div class="brot-inner">
+    <div class="brot-text reveal">
+      <span class="section-label">Unser Brot</span>
+      <h2>48 Stunden.<br>Ein <em>Brot.</em></h2>
+      <p>Unser Sauerteigbrot braucht Zeit. Viel Zeit. Zwei volle Tage, in denen Wildhefen und Milchsäurebakterien arbeiten, Aromen entwickeln und das Brot zu etwas machen, das wirklich nach Brot schmeckt.</p>
+      <p>Kein Hefe-Schnellverfahren, keine Backmischung. Nur Mehl aus alten Weizensorten, Wasser, Salz und ein aktiver Sauerteig-Starter, der seit Jahren gepflegt wird.</p>
+      <div class="brot-highlight">
+        <p><strong>Bestellschluss: Freitag, 18 Uhr.</strong> Abholung am Sonntag beim Café. Begrenzte Stückzahl — wer früh fragt, bekommt sicher eins.</p>
+      </div>
+    </div>
+    <div class="brot-process reveal">
+      <div class="brot-step">
+        <div class="brot-step-time">0h</div>
+        <div class="brot-step-info"><h4>Autolyse</h4><p>Mehl und Wasser werden vermengt und quellen</p></div>
+      </div>
+      <div class="brot-step">
+        <div class="brot-step-time">2h</div>
+        <div class="brot-step-info"><h4>Sauerteig einarbeiten</h4><p>Aktiver Starter wird untergehoben, Salz dazu</p></div>
+      </div>
+      <div class="brot-step">
+        <div class="brot-step-time">6h</div>
+        <div class="brot-step-info"><h4>Stockgare (Zimmer)</h4><p>Mehrfaches Falten, Teig entwickelt Struktur</p></div>
+      </div>
+      <div class="brot-step">
+        <div class="brot-step-time">14h</div>
+        <div class="brot-step-info"><h4>Formen & Kühlgare</h4><p>Handgeformt, dann über Nacht in den Kühlschrank</p></div>
+      </div>
+      <div class="brot-step">
+        <div class="brot-step-time">46h</div>
+        <div class="brot-step-info"><h4>Einschneiden & Backen</h4><p>Im heißen Ofen mit Dampf — für die perfekte Kruste</p></div>
+      </div>
+      <div class="brot-step" style="background:rgba(232,160,32,0.12);border-color:rgba(232,160,32,0.25);">
+        <div class="brot-step-time" style="color:var(--yolk);">48h</div>
+        <div class="brot-step-info"><h4 style="color:rgba(255,255,255,0.9);">Fertig. Abkühlen lassen.</h4><p>Erst nach 2h anschneiden — dann ist es perfekt.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- BESTELLFORMULAR -->
+<section class="order-section">
+  <div class="order-inner">
+    <div class="order-header reveal">
+      <span class="section-label" style="display:block;text-align:center;">Vorbestellung</span>
+      <h2 class="section-title" style="text-align:center;">48h-Brot bestellen.</h2>
+      <p>Trag dich ein — wir bestätigen per Mail. Bestellschluss ist immer Freitag 18 Uhr für das Brot am Sonntag.</p>
+    </div>
+    <form class="order-form reveal" action="https://formspree.io/f/xnjldvwe" method="POST" onsubmit="handleSubmit(event,this)">
+      <input type="hidden" name="_subject" value="48h-Sauerteigbrot Bestellung – Ei-Weiss Sonntagscafé">
+      <input type="hidden" name="_replyto" value="maratumpach@gmail.com">
+      <input type="hidden" name="typ" value="Sauerteigbrot Vorbestellung">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Dein Name" required>
+        <input type="email" name="email" placeholder="E-Mail-Adresse" required>
+      </div>
+      <div class="form-row">
+        <select name="anzahl" required>
+          <option value="">Anzahl Brote</option>
+          <option value="1">1 Brot</option>
+          <option value="2">2 Brote</option>
+          <option value="3">3 Brote</option>
+        </select>
+        <select name="sonntag" required>
+          <option value="">Für welchen Sonntag?</option>
+          <option>Nächsten Sonntag</option>
+          <option>Übernächsten Sonntag</option>
+          <option>Ich bin flexibel</option>
+        </select>
+      </div>
+      <textarea name="nachricht" placeholder="Kurze Nachricht (optional) — z.B. besondere Wünsche"></textarea>
+      <button type="submit" class="btn-yolk" style="width:100%;">Jetzt vorbestellen →</button>
+    </form>
+    <div class="order-success" id="orderSuccess">
+      <span class="icon">🍞</span>
+      <h3>Bestellung eingegangen!</h3>
+      <p>Wir bestätigen per E-Mail. Bis Sonntag!</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- WHEN & WHERE -->
+<section class="info-section">
+  <div class="info-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:1rem;">
+      <span class="section-label" style="text-align:center;display:block;">Praktisches</span>
+      <h2 class="section-title">Wann & Wo.</h2>
+    </div>
+    <div class="info-grid reveal">
+      <div class="info-card">
+        <span class="info-card-icon">📅</span>
+        <h3>Wann?</h3>
+        <p>Sonntags bei gutem Wetter von <strong>10 bis 13 Uhr.</strong> Keine Reservierung nötig — einfach vorbeikommen.</p>
+        <span class="weather-badge">☀️ Nur bei schönem Wetter</span>
+      </div>
+      <div class="info-card">
+        <span class="info-card-icon">📍</span>
+        <h3>Wo?</h3>
+        <p><strong>Oberottmarshausen</strong> bei Augsburg, Bayern.<br>Genaue Adresse auf Anfrage — einfach schreiben!</p>
+        <p style="margin-top:1rem;"><a href="mailto:maratumpach@gmail.com">maratumpach@gmail.com</a></p>
+      </div>
+      <div class="info-card">
+        <span class="info-card-icon">🍞</span>
+        <h3>Brot vorbestellen</h3>
+        <p>Bestellschluss ist immer <strong>Freitag 18 Uhr</strong> für das Brot am folgenden Sonntag. Begrenzte Stückzahl.</p>
+        <p style="margin-top:1rem;"><a href="#brot" onclick="document.getElementById('brot').scrollIntoView({behavior:'smooth'});return false;">Zum Bestellformular ↓</a></p>
+      </div>
+      <div class="info-card">
+        <span class="info-card-icon">📷</span>
+        <h3>Kurzfristige Updates</h3>
+        <p>Ob es aufmacht, erfährst du immer zuerst auf Instagram. Bei Regen entfällt das Café leider.</p>
+        <p style="margin-top:1rem;"><a href="https://www.instagram.com/mara.move" target="_blank" rel="noopener">@mara.move auf Instagram</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CHICKENS TEASER -->
+<section class="chickens-section">
+  <h2>Und wer ist noch dabei?</h2>
+  <p>Gretl, Hildegard und ihre zukünftige Freundin freuen sich über jeden Besucher.</p>
+  <div class="chickens-row">
+    <div class="chicken-mini">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="60" cy="72" rx="32" ry="26" fill="#F5E6B0" stroke="#C8A84B" stroke-width="1.5"/>
+        <circle cx="60" cy="40" r="16" fill="#F5E6B0" stroke="#C8A84B" stroke-width="1.5"/>
+        <path d="M54 25 Q56 18 58 24 Q60 16 62 23 Q65 18 66 25" fill="#E84040" stroke="#C03030" stroke-width="1"/>
+        <path d="M68 39 L76 41 L68 43 Z" fill="#E8A020"/>
+        <circle cx="64" cy="38" r="3.5" fill="#3A2010"/><circle cx="65" cy="37" r="1" fill="white"/>
+        <line x1="50" y1="96" x2="46" y2="108" stroke="#C8A84B" stroke-width="2"/>
+        <line x1="70" y1="96" x2="74" y2="108" stroke="#C8A84B" stroke-width="2"/>
+        <path d="M90 65 Q105 50 98 72 Q88 80 90 65 Z" fill="#EDD888" stroke="#C8A84B" stroke-width="1"/>
+      </svg>
+      <p>Gretl</p>
+    </div>
+    <div class="chicken-mini">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="60" cy="72" rx="30" ry="28" fill="#D4C8B8" stroke="#A09080" stroke-width="1.5"/>
+        <circle cx="60" cy="37" r="15" fill="#D4C8B8" stroke="#A09080" stroke-width="1.5"/>
+        <path d="M55 23 Q57 17 60 22 Q63 15 65 22" fill="#E06050" stroke="#C04040" stroke-width="1"/>
+        <path d="M68 36 L76 38 L68 40 Z" fill="#D4A030"/>
+        <circle cx="64" cy="34" r="4" fill="#2A1808"/><circle cx="65.5" cy="33" r="1.2" fill="white"/>
+        <line x1="52" y1="98" x2="48" y2="110" stroke="#A09080" stroke-width="2"/>
+        <line x1="68" y1="98" x2="72" y2="110" stroke="#A09080" stroke-width="2"/>
+      </svg>
+      <p>Hildegard</p>
+    </div>
+    <div class="chicken-mini">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="50" fill="rgba(232,160,32,0.1)" stroke="rgba(232,160,32,0.3)" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <text x="60" y="55" text-anchor="middle" font-size="28">🥚</text>
+        <text x="60" y="80" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="rgba(232,160,32,0.8)">noch frei!</text>
+      </svg>
+      <p style="color:rgba(232,160,32,0.7);">Dein Huhn?</p>
+    </div>
+  </div>
+  <div style="margin-top:2.5rem;">
+    <a href="ei-weiss.html#paten" style="display:inline-block;background:var(--yolk);color:var(--text);font-weight:500;font-size:14px;padding:12px 28px;border-radius:40px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='#F5B830'" onmouseout="this.style.background='var(--yolk)'">Zur Hühnerpatenschaft →</a>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
 <footer>
-  <p><strong>Ei-Weiss</strong> · Hofgarten Oberottmarshausen · <a href="mailto:maratumpach@gmail.com">maratumpach@gmail.com</a></p>
-  <p style="margin-top:8px;">© 2025 Ei-Weiss · <a href="/">Zurück zur Startseite</a></p>
+  <strong>EI-WEISS</strong> · Sonntagscafé · Oberottmarshausen, Bayern<br>
+  <span style="font-size:12px;margin-top:8px;display:block;">
+    <a href="ei-weiss.html" style="color:var(--yolk);text-decoration:none;">← Zurück zur Hauptseite</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:maratumpach@gmail.com" style="color:var(--yolk);">maratumpach@gmail.com</a>
+  </span>
 </footer>
-
+ 
+<script>
+function handleSubmit(e, form) {
+  e.preventDefault();
+  fetch(form.action, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}})
+    .then(function(){ form.style.display='none'; document.getElementById('orderSuccess').style.display='block'; })
+    .catch(function(){ form.submit(); });
+}
+var nav = document.getElementById('mainNav');
+window.addEventListener('scroll', function(){
+  if(window.scrollY > 40) nav.style.boxShadow='0 2px 20px rgba(0,0,0,0.2)';
+  else nav.style.boxShadow='none';
+});
+document.getElementById('hamburger').addEventListener('click', function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e, i){ if(e.isIntersecting){ setTimeout(function(){ e.target.classList.add('visible'); }, i*80); obs.unobserve(e.target); } });
+}, {threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+</script>
 </body>
 </html>
