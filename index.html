@@ -43,9 +43,34 @@
   .chickens-row { display: flex; justify-content: center; gap: 48px; margin-top: 60px; flex-wrap: wrap; }
   .chicken-card { text-align: center; width: 180px; }
   .chicken-card svg { width: 120px; height: 120px; }
+  .chicken-card img.chicken-photo { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 3px solid var(--yolk); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
   .chicken-name { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--yolk); margin-top: 10px; }
   .chicken-status { font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 0.5px; margin-top: 2px; }
   .chicken-status.free { color: #7BCB7B; }
+ 
+  /* PHOTO GALLERY */
+  .photo-gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 60px; }
+  .photo-gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 16px; border: 1.5px solid var(--warm); transition: transform .3s, box-shadow .3s; cursor: pointer; }
+  .photo-gallery img:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 16px 40px rgba(0,0,0,0.15); }
+  .photo-gallery a:nth-child(1) img, .photo-gallery a:nth-child(3) img { height: 280px; margin-top: -30px; }
+  @media (max-width: 900px) { .photo-gallery { grid-template-columns: repeat(2, 1fr); } .photo-gallery a:nth-child(1) img, .photo-gallery a:nth-child(3) img { margin-top: 0; } }
+  @media (max-width: 520px) { .photo-gallery { grid-template-columns: 1fr; } }
+ 
+  /* ABOUT / ÜBER MICH */
+  .about-section { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 64px; align-items: center; margin-top: 50px; }
+  @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; gap: 36px; } }
+  .about-photo-wrap { position: relative; }
+  .about-photo-wrap img { width: 100%; max-width: 380px; border-radius: 24px; object-fit: cover; box-shadow: 0 20px 50px rgba(45,74,45,0.18); aspect-ratio: 4/5; }
+  .about-photo-tag { position: absolute; bottom: -18px; left: 24px; background: var(--yolk); color: var(--text); padding: 10px 22px; border-radius: 40px; font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+  .about-text p { font-size: 17px; color: var(--muted); font-weight: 300; line-height: 1.9; margin-bottom: 18px; }
+  .about-text strong { color: var(--forest); font-weight: 500; }
+  .about-signature { font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; color: var(--yolk-dark); margin-top: 24px; }
+ 
+  .paten-photo { width: 100%; height: 170px; object-fit: cover; border-radius: 14px; margin-bottom: 18px; }
+  .story-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .story-photos img { width: 100%; height: 100%; object-fit: cover; border-radius: 18px; box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+  .story-photos img:first-child { grid-row: span 2; height: 100%; }
  
   section { padding: 100px 40px; }
   .section-inner { max-width: 1100px; margin: 0 auto; }
@@ -207,6 +232,7 @@
     <a href="#chips">Chips</a>
     <a href="#shop">Shop</a>
     <a href="#story">Unser Hof</a>
+    <a href="#about">Über mich</a>
     <a href="sonntagscafe.html">Sonntagscafé</a>
     <a href="#aktuelles">Aktuelles</a>
     <a href="#paten">Patenschaft</a>
@@ -230,61 +256,17 @@
     </div>
     <div class="chickens-row">
       <div class="chicken-card">
-        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="60" cy="72" rx="32" ry="26" fill="#F5E6B0" stroke="#C8A84B" stroke-width="1.5"/>
-          <ellipse cx="44" cy="75" rx="14" ry="9" fill="#EDD888" transform="rotate(-15,44,75)" opacity="0.8"/>
-          <rect x="52" y="46" width="16" height="18" rx="6" fill="#F5E6B0" stroke="#C8A84B" stroke-width="1.5"/>
-          <circle cx="60" cy="40" r="16" fill="#F5E6B0" stroke="#C8A84B" stroke-width="1.5"/>
-          <path d="M54 25 Q56 18 58 24 Q60 16 62 23 Q65 18 66 25" fill="#E84040" stroke="#C03030" stroke-width="1"/>
-          <ellipse cx="58" cy="48" rx="4" ry="5" fill="#E84040"/>
-          <path d="M68 39 L76 41 L68 43 Z" fill="#E8A020"/>
-          <circle cx="64" cy="38" r="3.5" fill="#3A2010"/><circle cx="65" cy="37" r="1" fill="white"/>
-          <line x1="50" y1="96" x2="46" y2="108" stroke="#C8A84B" stroke-width="2" stroke-linecap="round"/>
-          <line x1="46" y1="108" x2="40" y2="110" stroke="#C8A84B" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="70" y1="96" x2="74" y2="108" stroke="#C8A84B" stroke-width="2" stroke-linecap="round"/>
-          <line x1="74" y1="108" x2="80" y2="110" stroke="#C8A84B" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M90 65 Q105 50 98 72 Q88 80 90 65 Z" fill="#EDD888" stroke="#C8A84B" stroke-width="1"/>
-        </svg>
+        <img class="chicken-photo" src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51%20(1).jpeg" alt="Gretl das Huhn">
         <div class="chicken-name">Gretl</div>
         <div class="chicken-status">Patin: Familie Tumper</div>
       </div>
       <div class="chicken-card">
-        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="60" cy="72" rx="30" ry="28" fill="#D4C8B8" stroke="#A09080" stroke-width="1.5"/>
-          <circle cx="50" cy="68" r="2" fill="#B0A494" opacity="0.7"/>
-          <circle cx="65" cy="72" r="2.5" fill="#B0A494" opacity="0.7"/>
-          <circle cx="55" cy="80" r="2" fill="#B0A494" opacity="0.7"/>
-          <ellipse cx="76" cy="75" rx="13" ry="8" fill="#C0B4A4" transform="rotate(10,76,75)" opacity="0.9"/>
-          <rect x="52" y="44" width="16" height="20" rx="7" fill="#D4C8B8" stroke="#A09080" stroke-width="1.5"/>
-          <circle cx="60" cy="37" r="15" fill="#D4C8B8" stroke="#A09080" stroke-width="1.5"/>
-          <path d="M55 23 Q57 17 60 22 Q63 15 65 22" fill="#E06050" stroke="#C04040" stroke-width="1"/>
-          <ellipse cx="62" cy="46" rx="3.5" ry="4" fill="#E06050"/>
-          <path d="M68 36 L76 38 L68 40 Z" fill="#D4A030"/>
-          <circle cx="64" cy="34" r="4" fill="#2A1808"/><circle cx="65.5" cy="33" r="1.2" fill="white"/>
-          <line x1="52" y1="98" x2="48" y2="110" stroke="#A09080" stroke-width="2" stroke-linecap="round"/>
-          <line x1="68" y1="98" x2="72" y2="110" stroke="#A09080" stroke-width="2" stroke-linecap="round"/>
-          <path d="M28 64 Q12 48 22 70 Q32 80 28 64 Z" fill="#C0B4A4" stroke="#A09080" stroke-width="1"/>
-        </svg>
+        <img class="chicken-photo" src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51.jpeg" alt="Hildegard das Huhn">
         <div class="chicken-name">Hildegard</div>
         <div class="chicken-status">Patin: Familie Bernds</div>
       </div>
       <div class="chicken-card">
-        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="60" cy="60" r="54" fill="rgba(232,160,32,0.12)"/>
-          <ellipse cx="60" cy="72" rx="31" ry="27" fill="#C84820" stroke="#A03010" stroke-width="1.5"/>
-          <ellipse cx="44" cy="73" rx="14" ry="8" fill="#B84018" transform="rotate(-10,44,73)" opacity="0.85"/>
-          <rect x="52" y="45" width="16" height="19" rx="7" fill="#C84820" stroke="#A03010" stroke-width="1.5"/>
-          <circle cx="60" cy="38" r="16" fill="#C84820" stroke="#A03010" stroke-width="1.5"/>
-          <path d="M52 23 Q54 14 57 22 Q59 13 61 21 Q64 14 66 23" fill="#E84040" stroke="#C02020" stroke-width="1.2"/>
-          <ellipse cx="56" cy="47" rx="4" ry="5.5" fill="#E84040"/>
-          <path d="M68 37 L77 39 L68 41 Z" fill="#E8A020"/>
-          <circle cx="64" cy="36" r="4.5" fill="#1A1000"/><circle cx="65.5" cy="34.5" r="1.5" fill="white"/>
-          <line x1="52" y1="97" x2="47" y2="110" stroke="#A03010" stroke-width="2" stroke-linecap="round"/>
-          <line x1="68" y1="97" x2="73" y2="110" stroke="#A03010" stroke-width="2" stroke-linecap="round"/>
-          <path d="M90 62 Q108 44 100 68 Q90 80 90 62 Z" fill="#B84018" stroke="#A03010" stroke-width="1"/>
-          <rect x="28" y="4" width="64" height="20" rx="10" fill="#E8A020"/>
-          <text x="60" y="18" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="700" fill="#1A1208">noch frei!</text>
-        </svg>
+        <img class="chicken-photo" src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2016.08.01.jpeg" alt="Noch freies Huhn">
         <div class="chicken-name">?</div>
         <div class="chicken-status free">Patenschaft noch frei</div>
       </div>
@@ -460,6 +442,19 @@
         <div style="text-align:center;"><div style="font-size:32px;font-family:'Playfair Display',serif;color:var(--yolk);">0</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Zusatzstoffe</div></div>
       </div>
     </div>
+ 
+    <!-- Foto-Galerie: echte Hühner -->
+    <div style="margin-top:70px;">
+      <div class="section-label" style="text-align:center;">So leben unsere Hühner</div>
+      <h3 style="font-size:28px;text-align:center;margin-bottom:0;">Echter Auslauf. Echtes Glück.</h3>
+      <div class="photo-gallery">
+        <a href="#paten"><img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51%20(2).jpeg" alt="Hühner im Freilauf auf dem Hof"></a>
+        <a href="#paten"><img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.52.jpeg" alt="Hühner beim Erkunden des Gartens"></a>
+        <a href="#paten"><img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2016.08.01.jpeg" alt="Henne mit Küken im Stall"></a>
+        <a href="#paten"><img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51%20(1).jpeg" alt="Weißes Huhn im Garten"></a>
+        <a href="#paten"><img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51.jpeg" alt="Schwarzes Huhn im Auslauf"></a>
+      </div>
+    </div>
   </div>
 </section>
  
@@ -475,30 +470,30 @@
         <p style="font-size:17px;color:var(--muted);font-weight:300;line-height:1.85;margin-bottom:18px;">Ihre Eier verarbeiten wir schonend zu Protein-Chips. Gedörrt bei Niedrigtemperatur, gewürzt mit natürlichen Zutaten — kein Frittieren, keine Chemie.</p>
         <p style="font-size:17px;color:var(--muted);font-weight:300;line-height:1.85;">Jede Packung erzählt eine Geschichte. Die von Gretl, Hildegard und ihrer zukünftigen Freundin.</p>
       </div>
-      <div style="display:flex;justify-content:center;">
-        <svg viewBox="0 0 280 260" width="280" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="280" height="260" rx="20" fill="#E8F4E0"/>
-          <circle cx="230" cy="40" r="28" fill="#E8A020" opacity="0.8"/>
-          <ellipse cx="140" cy="200" rx="130" ry="18" fill="#8BC34A" opacity="0.3"/>
-          <rect x="30" y="110" width="110" height="90" fill="#C84820"/>
-          <polygon points="30,110 85,68 140,110" fill="#A03010"/>
-          <rect x="62" y="150" width="46" height="50" rx="4" fill="#6D3A1A"/>
-          <line x1="85" y1="150" x2="85" y2="200" stroke="#4A2410" stroke-width="1.5"/>
-          <circle cx="82" cy="175" r="3" fill="#E8A020"/>
-          <rect x="38" y="120" width="22" height="20" rx="3" fill="#B8D4F0"/>
-          <rect x="110" y="120" width="22" height="20" rx="3" fill="#B8D4F0"/>
-          <line x1="150" y1="180" x2="250" y2="175" stroke="#8B6340" stroke-width="2"/>
-          <line x1="150" y1="195" x2="250" y2="188" stroke="#8B6340" stroke-width="2"/>
-          <line x1="158" y1="170" x2="156" y2="200" stroke="#8B6340" stroke-width="2.5"/>
-          <line x1="198" y1="168" x2="196" y2="198" stroke="#8B6340" stroke-width="2.5"/>
-          <line x1="238" y1="167" x2="236" y2="196" stroke="#8B6340" stroke-width="2.5"/>
-          <ellipse cx="200" cy="195" rx="10" ry="8" fill="#F5E6B0" stroke="#C8A84B" stroke-width="1"/>
-          <circle cx="200" cy="185" r="6" fill="#F5E6B0" stroke="#C8A84B" stroke-width="1"/>
-          <rect x="230" y="155" width="6" height="40" fill="#6D4C1A"/>
-          <circle cx="233" cy="140" r="22" fill="#4CAF50"/>
-          <rect x="72" y="75" width="58" height="20" rx="6" fill="rgba(232,160,32,0.9)"/>
-          <text x="101" y="89" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#1A1208">EI-WEISS</text>
-        </svg>
+      <div class="story-photos" style="height:440px;">
+        <img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2016.08.01.jpeg" alt="Henne mit Küken auf dem Hof">
+        <img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51%20(2).jpeg" alt="Hühner im Freilauf">
+        <img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51.jpeg" alt="Huhn im Garten">
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ÜBER MICH -->
+<section id="about" class="about-section">
+  <div class="section-inner">
+    <div class="section-label">Über mich</div>
+    <h2 class="section-title">Die Person<br>hinter Ei-Weiss.</h2>
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.52%20(1).jpeg" alt="Mara mit einem ihrer Hühner">
+        <div class="about-photo-tag">Das bin ich, Mara 🐔</div>
+      </div>
+      <div class="about-text">
+        <p>Ich bin <strong>Mara</strong> und lebe schon mein ganzes Leben in Oberottmarshausen – ein Ort, der mich tief mit der Natur und den Tieren verbunden hat. Tiere sind seit jeher ein zentraler Teil meines Lebens.</p>
+        <p>Ich ernähre mich bewusst ayurvedisch und achte dabei besonders auf Tierwohl. Tierische Produkte konsumiere ich nur sehr achtsam – ausschließlich Eier von unseren eigenen Hühnern sowie Milch von Kühen, die ich persönlich kenne und deren Haltung ich verantworten kann.</p>
+        <p>Unsere Hühner liegen mir besonders am Herzen. Ich verbringe täglich Zeit mit ihnen, kümmere mich liebevoll um sie und schätze ihre Einzigartigkeit. Aus dieser tiefen Verbindung heraus habe ich mit großer Sorgfalt und Hingabe meine eigenen, besonderen Produkte rund um Eier entwickelt – ehrlich, hochwertig und im Einklang mit Natur und Tier.</p>
+        <div class="about-signature">— Mara</div>
       </div>
     </div>
   </div>
@@ -579,6 +574,7 @@
     <p class="section-body">Unterstütze ein gerettetes Huhn und erhalte monatlich frische Bio-Eier direkt aus Oberottmarshausen.</p>
     <div class="paten-grid">
       <div class="paten-card">
+        <img class="paten-photo" src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51%20(1).jpeg" alt="Gretl das Huhn">
         <span class="paten-badge badge-taken">Vergeben</span>
         <h3 class="paten-chicken-name">🐔 Gretl</h3>
         <p class="paten-family">Patin: Familie Tumper</p>
@@ -590,6 +586,7 @@
         </ul>
       </div>
       <div class="paten-card">
+        <img class="paten-photo" src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51.jpeg" alt="Hildegard das Huhn">
         <span class="paten-badge badge-taken">Vergeben</span>
         <h3 class="paten-chicken-name">🐓 Hildegard</h3>
         <p class="paten-family">Patin: Familie Bernds</p>
@@ -601,6 +598,7 @@
         </ul>
       </div>
       <div class="paten-card free">
+        <img class="paten-photo" src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2016.08.01.jpeg" alt="Noch freies Patenhuhn mit Küken">
         <span class="paten-badge badge-free">Noch frei!</span>
         <h3 class="paten-chicken-name">🥚 Dein Huhn</h3>
         <p class="paten-family" style="color:var(--yolk-dark);font-weight:500;">Du bestimmst den Namen!</p>
