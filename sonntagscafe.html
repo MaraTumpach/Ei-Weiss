@@ -35,9 +35,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);dis
 .hero-eyebrow{display:inline-block;background:rgba(232,160,32,0.18);border:1px solid rgba(232,160,32,0.35);color:var(--yolk);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:6px 20px;border-radius:40px;margin-bottom:1.8rem;}
 .hero h1{font-size:clamp(3rem,7vw,7rem);color:var(--white);line-height:1.0;margin-bottom:1.2rem;}
 .hero h1 span{color:var(--yolk);font-style:italic;}
-.hero-sub{font-size:1.1rem;color:rgba(255,255,255,0.6);max-width:500px;font-weight:300;line-height:1.85;margin-bottom:2.5rem;}
-.hero-info-pills{display:-webkit-flex;display:flex;gap:12px;-webkit-flex-wrap:wrap;flex-wrap:wrap;}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,0.6);max-width:520px;font-weight:300;line-height:1.85;margin-bottom:2rem;}
+.hero-info-pills{display:-webkit-flex;display:flex;gap:12px;-webkit-flex-wrap:wrap;flex-wrap:wrap;margin-bottom:1.6rem;}
 .info-pill{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.75);font-size:13px;font-weight:300;padding:8px 18px;border-radius:40px;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;gap:8px;}
+.btn-yolk{display:inline-block;background:var(--yolk);color:var(--text);font-weight:500;font-size:15px;padding:14px 32px;border-radius:40px;text-decoration:none;transition:background .2s,transform .15s;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;text-align:center;}
+.btn-yolk:hover{background:#F5B830;transform:translateY(-2px);}
+.btn-outline-light{display:inline-block;border:1.5px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.85);font-weight:400;font-size:15px;padding:13px 30px;border-radius:40px;text-decoration:none;transition:border-color .2s,color .2s;cursor:pointer;background:none;font-family:'DM Sans',sans-serif;}
+.btn-outline-light:hover{border-color:var(--yolk);color:var(--yolk);}
+.hero-btns{display:-webkit-flex;display:flex;gap:14px;flex-wrap:wrap;}
 .wave-down{width:100%;overflow:hidden;line-height:0;background:var(--forest);}
 .wave-down svg{display:block;width:100%;}
  
@@ -48,8 +53,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);dis
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease;}
 .reveal.visible{opacity:1;transform:none;}
  
+/* PHOTO STRIP */
+.photo-strip-section{background:var(--white);padding:3.5rem 4rem 0;}
+.photo-strip{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.photo-strip img{width:100%;height:190px;object-fit:cover;border-radius:16px;border:1.5px solid var(--warm);transition:transform .3s,box-shadow .3s;}
+.photo-strip img:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(0,0,0,0.13);}
+@media (max-width:768px){.photo-strip{grid-template-columns:repeat(2,1fr);}}
+ 
 /* WHAT IS IT */
-.what-section{background:var(--white);padding:7rem 4rem;}
+.what-section{background:var(--white);padding:5rem 4rem 7rem;}
 .what-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:7rem;-webkit-align-items:center;align-items:center;}
 .what-text p{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:1.2rem;}
 .what-visual{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
@@ -59,21 +71,69 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);dis
 .what-card h4{font-size:1.1rem;margin-bottom:0.3rem;color:var(--text);}
 .what-card p{font-size:0.82rem;color:var(--muted);font-weight:300;}
  
+/* MATCHA SPOTLIGHT */
+.matcha-section{background:var(--forest);padding:6rem 4rem;position:relative;overflow:hidden;}
+.matcha-section::before{content:'';position:absolute;top:-100px;left:-100px;width:380px;height:380px;border-radius:50%;background:#8BC34A;opacity:0.07;}
+.matcha-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1.1fr;gap:5rem;align-items:center;position:relative;z-index:1;}
+@media (max-width:800px){.matcha-inner{grid-template-columns:1fr;gap:2.5rem;}}
+.matcha-visual{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:24px;padding:3rem 2rem;text-align:center;}
+.matcha-bowl{font-size:6rem;line-height:1;margin-bottom:1rem;}
+.matcha-visual h3{color:var(--yolk);font-size:1.6rem;margin-bottom:0.4rem;}
+.matcha-visual p{color:rgba(255,255,255,0.6);font-size:0.9rem;font-weight:300;}
+.matcha-text .section-label{color:rgba(232,160,32,0.7);}
+.matcha-text h2{font-size:clamp(2rem,4vw,3rem);color:var(--white);line-height:1.15;margin-bottom:1.2rem;}
+.matcha-text h2 em{color:var(--yolk);font-style:italic;}
+.matcha-text p{color:rgba(255,255,255,0.65);font-size:1rem;font-weight:300;line-height:1.9;margin-bottom:1.2rem;}
+.milk-options{display:grid;gap:12px;margin-top:1.5rem;}
+.milk-option{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px 18px;display:-webkit-flex;display:flex;align-items:center;gap:14px;}
+.milk-option .milk-icon{font-size:1.5rem;}
+.milk-option h4{font-size:0.92rem;color:rgba(255,255,255,0.9);font-weight:500;margin-bottom:2px;}
+.milk-option p{font-size:0.8rem;color:rgba(255,255,255,0.55);margin:0;}
+.matcha-prices{display:-webkit-flex;display:flex;gap:14px;margin-top:1.6rem;flex-wrap:wrap;}
+.matcha-price-pill{background:rgba(232,160,32,0.15);border:1px solid rgba(232,160,32,0.3);color:var(--yolk);padding:9px 20px;border-radius:40px;font-size:0.88rem;font-weight:500;}
+ 
 /* MENU */
 .menu-section{background:var(--cream);padding:7rem 4rem;}
 .menu-inner{max-width:1100px;margin:0 auto;}
-.menu-header{text-align:center;margin-bottom:4rem;}
-.menu-header p{font-size:1rem;color:var(--muted);font-weight:300;max-width:500px;margin:1rem auto 0;line-height:1.85;}
-.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;background:var(--warm);}
-.menu-card{background:var(--white);padding:3rem 2.5rem;position:relative;transition:background .2s;}
+.menu-header{text-align:center;margin-bottom:3rem;}
+.menu-header p{font-size:1rem;color:var(--muted);font-weight:300;max-width:520px;margin:1rem auto 0;line-height:1.85;}
+.menu-cta-wrap{text-align:center;margin-bottom:3.5rem;}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:var(--warm);}
+.menu-card{background:var(--white);padding:2.6rem 2.2rem;position:relative;transition:background .2s;}
 .menu-card:hover{background:#FFFDF5;}
-.menu-card-num{position:absolute;top:2rem;right:2.5rem;font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:700;color:var(--yolk);opacity:0.12;line-height:1;}
-.menu-icon{font-size:2.5rem;margin-bottom:1.2rem;display:block;}
-.menu-card h3{font-size:1.5rem;margin-bottom:0.5rem;color:var(--text);}
-.menu-card .menu-price{font-size:0.8rem;font-weight:500;color:var(--yolk-dark);letter-spacing:0.5px;margin-bottom:0.8rem;}
-.menu-card p{font-size:0.88rem;color:var(--muted);line-height:1.8;font-weight:300;}
+.menu-card-num{position:absolute;top:1.8rem;right:2.2rem;font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:700;color:var(--yolk);opacity:0.12;line-height:1;}
+.menu-icon{font-size:2.3rem;margin-bottom:1.1rem;display:block;}
+.menu-card h3{font-size:1.35rem;margin-bottom:0.5rem;color:var(--text);}
+.menu-card .menu-price{font-size:0.8rem;font-weight:600;color:var(--yolk-dark);letter-spacing:0.3px;margin-bottom:0.8rem;}
+.menu-card p{font-size:0.86rem;color:var(--muted);line-height:1.8;font-weight:300;}
 .menu-tag{display:inline-block;background:var(--warm);color:var(--muted);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:40px;margin-bottom:0.8rem;}
 .menu-tag.special{background:rgba(232,160,32,0.2);color:var(--yolk-dark);}
+.bio-banner{max-width:1100px;margin:3rem auto 0;background:var(--forest);border-radius:18px;padding:2rem 2.5rem;display:-webkit-flex;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:space-between;}
+.bio-banner-text{flex:1;min-width:240px;}
+.bio-banner-text h4{color:var(--yolk);font-size:1.1rem;margin-bottom:4px;}
+.bio-banner-text p{color:rgba(255,255,255,0.65);font-size:0.88rem;font-weight:300;margin:0;}
+.bio-badge-big{background:rgba(232,160,32,0.18);border:1px solid rgba(232,160,32,0.4);color:var(--yolk);font-weight:600;font-size:0.95rem;padding:10px 22px;border-radius:40px;white-space:nowrap;}
+ 
+/* MENU MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(20,15,5,0.6);display:none;align-items:flex-start;justify-content:center;z-index:500;padding:5vh 20px;overflow-y:auto;}
+.modal-overlay.active{display:-webkit-flex;display:flex;}
+.menu-modal{background:var(--white);border-radius:24px;max-width:640px;width:100%;padding:0;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.35);margin-bottom:5vh;}
+.menu-modal-header{background:var(--forest);border-radius:24px 24px 0 0;padding:2.4rem 2.6rem;position:relative;}
+.menu-modal-header h3{color:var(--white);font-size:1.8rem;margin-bottom:6px;}
+.menu-modal-header p{color:rgba(255,255,255,0.6);font-size:0.88rem;font-weight:300;}
+.modal-close{position:absolute;top:1.4rem;right:1.6rem;font-size:24px;cursor:pointer;color:rgba(255,255,255,0.7);background:none;border:none;line-height:1;}
+.modal-close:hover{color:var(--yolk);}
+.menu-modal-body{padding:2.2rem 2.6rem 2.6rem;}
+.menu-category-title{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--forest);margin:1.8rem 0 0.9rem;padding-bottom:8px;border-bottom:2px solid var(--warm);}
+.menu-category-title:first-child{margin-top:0;}
+.price-row{display:-webkit-flex;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:8px 0;}
+.price-row .item-name{font-weight:500;font-size:0.96rem;color:var(--text);}
+.price-row .item-price{color:var(--yolk-dark);font-weight:700;font-size:0.94rem;white-space:nowrap;}
+.price-note{font-size:0.8rem;color:var(--muted);font-weight:300;margin:-4px 0 6px;line-height:1.6;}
+.menu-hint-box{background:var(--cream);border:1.5px solid var(--warm);border-radius:14px;padding:16px 20px;margin-top:1.6rem;}
+.menu-hint-box p{font-size:0.85rem;color:var(--muted);font-weight:300;margin:4px 0;line-height:1.7;}
+.menu-hint-box strong{color:var(--yolk-dark);}
+.menu-hint-box .bio-line{color:var(--forest);font-weight:600;}
  
 /* BROT */
 .brot-section{background:var(--forest);padding:7rem 4rem;position:relative;overflow:hidden;}
@@ -104,8 +164,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);dis
 .order-form select{color:rgba(107,90,62,0.5);}
 .order-form textarea{height:90px;resize:none;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.btn-yolk{display:inline-block;background:var(--yolk);color:var(--text);font-weight:500;font-size:15px;padding:14px 36px;border-radius:40px;text-decoration:none;transition:background .2s,transform .15s;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;text-align:center;}
-.btn-yolk:hover{background:#F5B830;transform:translateY(-2px);}
 .order-success{display:none;text-align:center;padding:3rem;background:var(--cream);border-radius:20px;border:1.5px solid var(--warm);}
 .order-success .icon{font-size:4rem;margin-bottom:1rem;display:block;}
 .order-success h3{font-size:1.8rem;margin-bottom:0.5rem;}
@@ -123,14 +181,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);dis
 .info-card a:hover{color:var(--yolk);}
 .weather-badge{display:inline-block;background:rgba(232,160,32,0.15);border:1px solid rgba(232,160,32,0.3);color:var(--yolk-dark);font-size:12px;font-weight:500;padding:5px 14px;border-radius:40px;margin-top:1rem;}
  
+/* MAPS / ANFAHRT */
+.map-section{background:var(--forest);padding:6rem 4rem;}
+.map-inner{max-width:1100px;margin:0 auto;}
+.map-section .section-label{color:rgba(232,160,32,0.7);}
+.map-section .section-title{color:var(--white);}
+.map-section .section-body{color:rgba(255,255,255,0.6);}
+.map-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:3rem;}
+@media (max-width:800px){.map-grid{grid-template-columns:1fr;}}
+.map-embed{border-radius:20px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.15);box-shadow:0 20px 50px rgba(0,0,0,0.3);}
+.map-embed iframe{width:100%;height:380px;border:0;display:block;}
+.map-address-box{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:18px;padding:2rem;}
+.map-address-box h3{color:var(--yolk);font-size:1.35rem;margin-bottom:12px;}
+.map-address-box address{font-style:normal;color:rgba(255,255,255,0.75);font-size:1rem;line-height:1.8;margin-bottom:1.5rem;}
+ 
 /* CHICKENS TEASER */
-.chickens-section{background:var(--forest);padding:6rem 4rem;text-align:center;}
-.chickens-section h2{font-size:clamp(1.8rem,3vw,2.8rem);color:var(--white);margin-bottom:0.8rem;}
-.chickens-section p{font-size:1rem;color:rgba(255,255,255,0.6);font-weight:300;max-width:480px;margin:0 auto 2.5rem;}
+.chickens-section{background:var(--white);padding:6rem 4rem;text-align:center;}
+.chickens-section h2{font-size:clamp(1.8rem,3vw,2.8rem);color:var(--text);margin-bottom:0.8rem;}
+.chickens-section p{font-size:1rem;color:var(--muted);font-weight:300;max-width:480px;margin:0 auto 2.5rem;}
 .chickens-row{display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;gap:40px;-webkit-flex-wrap:wrap;flex-wrap:wrap;}
 .chicken-mini{text-align:center;}
-.chicken-mini svg{width:80px;height:80px;}
-.chicken-mini p{font-family:'Playfair Display',serif;font-size:14px;color:var(--yolk);margin-top:8px;}
+.chicken-mini img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--yolk);box-shadow:0 8px 20px rgba(0,0,0,0.12);}
+.chicken-mini p{font-family:'Playfair Display',serif;font-size:14px;color:var(--yolk-dark);margin-top:10px;}
  
 /* FOOTER */
 footer{background:var(--text);color:rgba(255,255,255,0.5);text-align:center;padding:40px;font-size:14px;}
@@ -140,7 +212,8 @@ footer strong{color:var(--yolk);}
 @media (max-width:1024px){
   nav{padding:0 24px;}
   .hero{padding:6rem 3rem 4rem;}
-  .what-section,.menu-section,.brot-section,.order-section,.info-section{padding:5rem 2rem;}
+  .what-section,.menu-section,.brot-section,.order-section,.info-section,.matcha-section,.map-section{padding:5rem 2rem;}
+  .photo-strip-section{padding:3rem 2rem 0;}
 }
 @media (max-width:768px){
   nav{padding:0 16px;height:56px;}
@@ -157,6 +230,8 @@ footer strong{color:var(--yolk);}
   .order-form input,.order-form select,.order-form textarea{font-size:16px;}
   .menu-grid{grid-template-columns:1fr;}
   .chickens-section{padding:4rem 1.5rem;}
+  .photo-strip{grid-template-columns:1fr 1fr;}
+  .menu-modal-header,.menu-modal-body{padding-left:1.6rem;padding-right:1.6rem;}
 }
 @media (max-width:480px){
   .hero h1{font-size:clamp(2.2rem,11vw,3rem);}
@@ -164,6 +239,8 @@ footer strong{color:var(--yolk);}
   .info-pill{font-size:12px;padding:6px 14px;}
   .what-visual{grid-template-columns:1fr;}
   .info-grid{grid-template-columns:1fr;}
+  .photo-strip{grid-template-columns:1fr;}
+  .bio-banner{flex-direction:column;align-items:flex-start;}
 }
 @media (hover:none){
   .what-card:hover{transform:none;box-shadow:none;}
@@ -175,14 +252,14 @@ footer strong{color:var(--yolk);}
 <body>
  
 <nav id="mainNav">
-  <a href="ei-weiss.html" class="nav-logo">EI-WEISS</a>
+  <a href="index.html" class="nav-logo">EI-WEISS</a>
   <div class="nav-links" id="navLinks">
-    <a href="ei-weiss.html#chips">Chips</a>
-    <a href="ei-weiss.html#shop">Shop</a>
-    <a href="ei-weiss.html#story">Unser Hof</a>
+    <a href="index.html#chips">Chips</a>
+    <a href="index.html#shop">Shop</a>
+    <a href="index.html#story">Unser Hof</a>
     <a href="sonntagscafe.html" class="active">Sonntagscafé</a>
-    <a href="ei-weiss.html#aktuelles">Aktuelles</a>
-    <a href="ei-weiss.html#paten">Patenschaft</a>
+    <a href="index.html#aktuelles">Aktuelles</a>
+    <a href="index.html#paten">Patenschaft</a>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
     <span></span><span></span><span></span>
@@ -195,12 +272,17 @@ footer strong{color:var(--yolk);}
   <div class="hero-content">
     <div class="hero-eyebrow">Sonntags · 10–13 Uhr · Hofgarten</div>
     <h1>Das <span>Sonntags-</span><br>café.</h1>
-    <p class="hero-sub">Kaffee, selbstgemachte Limo, knusprige Eierchips und unser legendäres 48h-Sauerteigbrot — bei gutem Wetter direkt bei uns auf dem Hof in Oberottmarshausen.</p>
+    <p class="hero-sub">Kaffee, cremiger Matcha, frische Kräutertees, knusprige Eierchips und unser legendäres 48h-Sauerteigbrot — bei gutem Wetter direkt bei uns auf dem Hof in Oberottmarshausen. Alles 100&nbsp;% Bio.</p>
     <div class="hero-info-pills">
       <span class="info-pill">📅 Sonntags bei Wetter</span>
       <span class="info-pill">⏰ 10–13 Uhr</span>
       <span class="info-pill">📍 Oberottmarshausen</span>
+      <span class="info-pill">🌱 100% Bio</span>
       <span class="info-pill">🐔 Hühner inklusive</span>
+    </div>
+    <div class="hero-btns">
+      <button class="btn-yolk" onclick="openMenuModal()">📋 Speise- & Getränkekarte ansehen</button>
+      <a href="#brot" class="btn-outline-light" onclick="document.getElementById('brot').scrollIntoView({behavior:'smooth'});return false;">🍞 Brot vorbestellen</a>
     </div>
   </div>
 </section>
@@ -210,21 +292,31 @@ footer strong{color:var(--yolk);}
   </svg>
 </div>
  
+<!-- PHOTO STRIP -->
+<section class="photo-strip-section">
+  <div class="photo-strip reveal">
+    <img src="assets/bild3.jpg" alt="Hühner im Hofgarten">
+    <img src="assets/bild1.jpg" alt="Henne mit Küken">
+    <img src="assets/bild6.jpg" alt="Hühner im Garten von oben">
+    <img src="assets/bild4.jpg" alt="Huhn im Auslauf">
+  </div>
+</section>
+ 
 <!-- WHAT IS IT -->
 <section class="what-section">
   <div class="what-inner">
     <div class="what-text reveal">
       <span class="section-label">Was ist das?</span>
       <h2 class="section-title" style="margin-bottom:1.5rem;">Einfach schön.<br>Keine Reservierung.</h2>
-      <p>Bei schönem Wetter öffnen wir sonntagsvormittags unseren Hofgarten. Kein Restaurant, kein Trubel — einfach gemütliches Zusammensein bei Kaffee, frischer Limo und dem Besten, was unser Hof zu bieten hat.</p>
+      <p>Bei schönem Wetter öffnen wir sonntagsvormittags unseren Hofgarten. Kein Restaurant, kein Trubel — einfach gemütliches Zusammensein bei Kaffee, cremigem Matcha, frischen Kräutertees und dem Besten, was unser Hof zu bieten hat.</p>
       <p>Mitgebracht werden darf alles. Kinder und Hunde herzlich willkommen. Die Hühner schauen sowieso vorbei.</p>
       <p style="font-size:0.88rem;color:var(--yolk-dark);font-style:italic;margin-top:1.5rem;">☀️ Wir machen nur bei gutem Wetter auf — folge uns auf Instagram für kurzfristige Ankündigungen.</p>
     </div>
     <div class="what-visual reveal">
       <div class="what-card">
-        <span class="what-card-icon">☕</span>
-        <h4>Kaffee & Limo</h4>
-        <p>Frisch gebrühter Filterkaffee und selbstgemachte Limo</p>
+        <span class="what-card-icon">🍵</span>
+        <h4>Matcha & Kaffee</h4>
+        <p>Cremiger Matcha Latte, Filterkaffee & Espresso</p>
       </div>
       <div class="what-card">
         <span class="what-card-icon">🥚</span>
@@ -245,13 +337,50 @@ footer strong{color:var(--yolk);}
   </div>
 </section>
  
+<!-- MATCHA SPOTLIGHT -->
+<section class="matcha-section" id="matcha">
+  <div class="matcha-inner">
+    <div class="matcha-visual reveal">
+      <div class="matcha-bowl">🍵</div>
+      <h3>Cremiger Matcha Latte</h3>
+      <p>Handgeschäumt, sanft & aromatisch</p>
+      <div class="matcha-prices">
+        <span class="matcha-price-pill">Heiß · 6€</span>
+        <span class="matcha-price-pill">Iced Matcha · 7€</span>
+      </div>
+    </div>
+    <div class="matcha-text reveal">
+      <span class="section-label">Unser Matcha</span>
+      <h2>Ein Löffel <em>Zeremonie.</em></h2>
+      <p>Unser Matcha wird cremig aufgeschäumt und ganz nach deinem Geschmack zubereitet — heiß als Latte oder erfrischend als Iced Matcha. Bei der Milch hast du die Wahl:</p>
+      <div class="milk-options">
+        <div class="milk-option">
+          <span class="milk-icon">🐄</span>
+          <div><h4>Frische Bio-Kuhmilch</h4><p>Vom Bauern aus Bobingen</p></div>
+        </div>
+        <div class="milk-option">
+          <span class="milk-icon">🐐</span>
+          <div><h4>Bio-Ziegenmilch</h4><p>Vom Bauern aus Prittriching</p></div>
+        </div>
+        <div class="milk-option">
+          <span class="milk-icon">🌱</span>
+          <div><h4>Vegan / Pflanzlich</h4><p>Auf Wunsch mit pflanzlicher Milch</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
 <!-- MENÜ -->
 <section class="menu-section">
   <div class="menu-inner">
     <div class="menu-header reveal">
       <span class="section-label">Was es gibt</span>
       <h2 class="section-title">Unsere Karte.</h2>
-      <p>Klein, fein, selbstgemacht. Keine langen Karten — nur das, was wirklich gut ist.</p>
+      <p>Klein, fein, selbstgemacht. Süß wird bei uns ausschließlich mit hochwertigen Bio-Datteln — und alles, wirklich alles, ist zu 100&nbsp;% Bio.</p>
+    </div>
+    <div class="menu-cta-wrap reveal">
+      <button class="btn-yolk" onclick="openMenuModal()">📋 Vollständige Speise- & Getränkekarte öffnen</button>
     </div>
     <div class="menu-grid reveal">
  
@@ -259,22 +388,31 @@ footer strong{color:var(--yolk);}
         <span class="menu-card-num">01</span>
         <span class="menu-icon">☕</span>
         <span class="menu-tag">Getränke</span>
-        <h3>Filterkaffee</h3>
-        <p class="menu-price">Preis auf Anfrage</p>
-        <p>Frisch gebrühter Kaffee aus fairen Bohnen — schwarz oder mit frischer Hofmilch.</p>
+        <h3>Kaffee & Espresso</h3>
+        <p class="menu-price">Kaffee 3€ · Espresso 2€</p>
+        <p>Frisch gebrühter Kaffee aus fairen Bohnen — schwarz oder mit frischer Hofmilch. Eiskaffee mit hausgemachter Schlagsahne.</p>
       </div>
  
-      <div class="menu-card">
+      <div class="menu-card" style="border-left:3px solid var(--yolk);">
         <span class="menu-card-num">02</span>
-        <span class="menu-icon">🍋</span>
-        <span class="menu-tag">Getränke</span>
-        <h3>Selbstgemachte Limo</h3>
-        <p class="menu-price">Preis auf Anfrage</p>
-        <p>Jeden Sonntag frisch angesetzt — Zitrone, Ingwer, Holunder oder saisonal was der Garten hergibt.</p>
+        <span class="menu-icon">🍵</span>
+        <span class="menu-tag special">★ Unser Liebling</span>
+        <h3>Cremiger Matcha Latte</h3>
+        <p class="menu-price">Heiß 6€ · Iced 7€</p>
+        <p>Mit frischer Bio-Kuhmilch (Bobingen), Bio-Ziegenmilch (Prittriching) oder vegan/pflanzlich.</p>
       </div>
  
       <div class="menu-card">
         <span class="menu-card-num">03</span>
+        <span class="menu-icon">🌿</span>
+        <span class="menu-tag">Getränke</span>
+        <h3>Selfmade Tees</h3>
+        <p class="menu-price">3€</p>
+        <p>Mit frischen Kräutern direkt aus unserem eigenen Garten aufgebrüht.</p>
+      </div>
+ 
+      <div class="menu-card">
+        <span class="menu-card-num">04</span>
         <span class="menu-icon">🥚</span>
         <span class="menu-tag">Snack</span>
         <h3>Eierchips Probierpaket</h3>
@@ -283,25 +421,34 @@ footer strong{color:var(--yolk);}
       </div>
  
       <div class="menu-card" style="border-left:3px solid var(--yolk);">
-        <span class="menu-card-num">04</span>
+        <span class="menu-card-num">05</span>
         <span class="menu-icon">🍞</span>
         <span class="menu-tag special">★ Vorbestellung</span>
         <h3>48h-Sauerteigbrot</h3>
         <p class="menu-price">Nur auf Vorbestellung · bis Freitag</p>
-        <p>Zwei Tage Fermentation, handgeformt aus alten Weizensorten. Saftig, mit knuspriger Kruste und tiefem Aroma. Begrenzte Stückzahl jede Woche.</p>
-      </div>
- 
-      <div class="menu-card">
-        <span class="menu-card-num">05</span>
-        <span class="menu-icon">🥛</span>
-        <span class="menu-tag">Saison</span>
-        <h3>Saisonales Schmankerl</h3>
-        <p class="menu-price">Je nach Woche verschieden</p>
-        <p>Manchmal ein Aufstrich, manchmal selbstgemachter Quark, manchmal Marmelade — was gerade da ist und gut schmeckt.</p>
+        <p>Zwei Tage Fermentation, handgeformt aus alten Weizensorten. Saftig, mit knuspriger Kruste und tiefem Aroma.</p>
       </div>
  
       <div class="menu-card">
         <span class="menu-card-num">06</span>
+        <span class="menu-icon">🍰</span>
+        <span class="menu-tag">Tagesangebot</span>
+        <h3>Kuchen & Hof-Snacks</h3>
+        <p class="menu-price">3–10€</p>
+        <p>Hausgemacht und wechselnd — gesüßt ausschließlich mit hochwertigen Bio-Datteln.</p>
+      </div>
+ 
+      <div class="menu-card">
+        <span class="menu-card-num">07</span>
+        <span class="menu-icon">🍽️</span>
+        <span class="menu-tag">Tagesgericht</span>
+        <h3>1x Tagesgericht</h3>
+        <p class="menu-price">10–20€ · Kinderportion 5€</p>
+        <p>Frisch & wechselnd, aus dem was der Garten und die Saison hergeben. Für die Kleinen immer eine kleine Portion für 5€.</p>
+      </div>
+ 
+      <div class="menu-card">
+        <span class="menu-card-num">08</span>
         <span class="menu-icon">🌞</span>
         <span class="menu-tag">Kostenlos</span>
         <h3>Hühner & Hofatmosphäre</h3>
@@ -310,8 +457,59 @@ footer strong{color:var(--yolk);}
       </div>
  
     </div>
+ 
+    <div class="bio-banner reveal">
+      <div class="bio-banner-text">
+        <h4>🌱 Unser Qualitäts-Versprechen</h4>
+        <p>ALLES bei uns ist 100 % BIO — vom Kaffee bis zum Kuchen. Gesüßt wird ausschließlich natürlich mit hochwertigen Bio-Datteln.</p>
+      </div>
+      <span class="bio-badge-big">100% BIO</span>
+    </div>
   </div>
 </section>
+ 
+<!-- MENU MODAL -->
+<div class="modal-overlay" id="menuModal">
+  <div class="menu-modal">
+    <div class="menu-modal-header">
+      <button class="modal-close" onclick="closeMenuModal()">×</button>
+      <h3>🐔 Hof-Getränke & Speisenkarte</h3>
+      <p>Ei-Weiss Sonntagscafé · Oberottmarshausen</p>
+    </div>
+    <div class="menu-modal-body">
+ 
+      <div class="menu-category-title">☕ Getränke</div>
+      <div class="price-row"><span class="item-name">Kaffee</span><span class="item-price">3€</span></div>
+      <div class="price-row"><span class="item-name">Espresso</span><span class="item-price">2€</span></div>
+      <div class="price-row"><span class="item-name">Eiskaffee</span><span class="item-price">4€</span></div>
+      <p class="price-note">mit hausgemachter Schlagsahne + 0,50€</p>
+      <div class="price-row"><span class="item-name">Cremiger Matcha Latte (heiß)</span><span class="item-price">6€</span></div>
+      <div class="price-row"><span class="item-name">Iced Matcha</span><span class="item-price">7€</span></div>
+      <p class="price-note">Milchoptionen: frische Bio-Kuhmilch (Bobingen), Bio-Ziegenmilch (Prittriching) oder vegan/pflanzlich</p>
+      <div class="price-row"><span class="item-name">Selfmade Tees</span><span class="item-price">3€</span></div>
+      <p class="price-note">mit frischen Kräutern aus dem Garten</p>
+      <div class="price-row"><span class="item-name">Wasser</span><span class="item-price">1€</span></div>
+      <div class="price-row"><span class="item-name">Getränk des Tages</span><span class="item-price">1–10€</span></div>
+      <p class="price-note">saisonal & wechselnd</p>
+ 
+      <div class="menu-category-title">✨ Extra Toppings <span style="font-weight:400;font-size:0.75rem;color:var(--muted);">(gegen Aufpreis)</span></div>
+      <div class="price-row"><span class="item-name">Hausgemachte Sahne</span><span class="item-price">0,50€</span></div>
+      <div class="price-row"><span class="item-name">Bio-Dattelsirup</span><span class="item-price">0,50€</span></div>
+      <div class="price-row"><span class="item-name">Nüsse & Crunch</span><span class="item-price">1€</span></div>
+ 
+      <div class="menu-category-title">🍽️ Essen</div>
+      <div class="price-row"><span class="item-name">1x Tagesgericht</span><span class="item-price">10–20€</span></div>
+      <p class="price-note">frisch & wechselnd · für Kinder immer kleine Portion für 5€</p>
+      <div class="price-row"><span class="item-name">Hausgemachte Kuchen & Hof-Snacks des Tages</span><span class="item-price">3–10€</span></div>
+ 
+      <div class="menu-hint-box">
+        <p><strong>Süße-Hinweis:</strong> Wir süßen ausschließlich natürlich mit hochwertigen Bio-Datteln!</p>
+        <p class="bio-line"><strong>Qualitäts-Hinweis:</strong> ALLES bei uns ist 100 % BIO!</p>
+      </div>
+ 
+    </div>
+  </div>
+</div>
  
 <!-- 48h BROT -->
 <section class="brot-section" id="brot">
@@ -412,7 +610,7 @@ footer strong{color:var(--yolk);}
       <div class="info-card">
         <span class="info-card-icon">📍</span>
         <h3>Wo?</h3>
-        <p><strong>Oberottmarshausen</strong> bei Augsburg, Bayern.<br>Genaue Adresse auf Anfrage — einfach schreiben!</p>
+        <p><strong>Rainstraße 14</strong><br>86698 Oberottmarshausen, Bayern</p>
         <p style="margin-top:1rem;"><a href="mailto:maratumpach@gmail.com">maratumpach@gmail.com</a></p>
       </div>
       <div class="info-card">
@@ -431,47 +629,54 @@ footer strong{color:var(--yolk);}
   </div>
 </section>
  
+<!-- ANFAHRT / GOOGLE MAPS -->
+<section class="map-section" id="anfahrt">
+  <div class="map-inner">
+    <span class="section-label">Besuch uns</span>
+    <h2 class="section-title">So findest<br>du uns.</h2>
+    <p class="section-body">Direkt auf dem Hof in Oberottmarshausen — Matcha, Kaffee, Eierchips und Hühner zum Anfassen.</p>
+    <div class="map-grid">
+      <div class="map-embed reveal">
+        <iframe
+          src="https://www.google.com/maps?q=Rainstra%C3%9Fe+14,+86698+Oberottmarshausen&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="map-address-box reveal">
+        <h3>🐔 Ei-Weiss Hof</h3>
+        <address>
+          Rainstraße 14<br>
+          86698 Oberottmarshausen<br>
+          Bayern, Deutschland
+        </address>
+        <a class="btn-yolk" href="https://www.google.com/maps/dir/?api=1&destination=Rainstra%C3%9Fe+14,+86698+Oberottmarshausen" target="_blank" rel="noopener">📍 Wegbeschreibung öffnen</a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
 <!-- CHICKENS TEASER -->
 <section class="chickens-section">
   <h2>Und wer ist noch dabei?</h2>
   <p>Gretl, Hildegard und ihre zukünftige Freundin freuen sich über jeden Besucher.</p>
   <div class="chickens-row">
     <div class="chicken-mini">
-      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="60" cy="72" rx="32" ry="26" fill="#F5E6B0" stroke="#C8A84B" stroke-width="1.5"/>
-        <circle cx="60" cy="40" r="16" fill="#F5E6B0" stroke="#C8A84B" stroke-width="1.5"/>
-        <path d="M54 25 Q56 18 58 24 Q60 16 62 23 Q65 18 66 25" fill="#E84040" stroke="#C03030" stroke-width="1"/>
-        <path d="M68 39 L76 41 L68 43 Z" fill="#E8A020"/>
-        <circle cx="64" cy="38" r="3.5" fill="#3A2010"/><circle cx="65" cy="37" r="1" fill="white"/>
-        <line x1="50" y1="96" x2="46" y2="108" stroke="#C8A84B" stroke-width="2"/>
-        <line x1="70" y1="96" x2="74" y2="108" stroke="#C8A84B" stroke-width="2"/>
-        <path d="M90 65 Q105 50 98 72 Q88 80 90 65 Z" fill="#EDD888" stroke="#C8A84B" stroke-width="1"/>
-      </svg>
+      <img src="assets/bild2.jpg" alt="Gretl das Huhn">
       <p>Gretl</p>
     </div>
     <div class="chicken-mini">
-      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="60" cy="72" rx="30" ry="28" fill="#D4C8B8" stroke="#A09080" stroke-width="1.5"/>
-        <circle cx="60" cy="37" r="15" fill="#D4C8B8" stroke="#A09080" stroke-width="1.5"/>
-        <path d="M55 23 Q57 17 60 22 Q63 15 65 22" fill="#E06050" stroke="#C04040" stroke-width="1"/>
-        <path d="M68 36 L76 38 L68 40 Z" fill="#D4A030"/>
-        <circle cx="64" cy="34" r="4" fill="#2A1808"/><circle cx="65.5" cy="33" r="1.2" fill="white"/>
-        <line x1="52" y1="98" x2="48" y2="110" stroke="#A09080" stroke-width="2"/>
-        <line x1="68" y1="98" x2="72" y2="110" stroke="#A09080" stroke-width="2"/>
-      </svg>
+      <img src="assets/bild4.jpg" alt="Hildegard das Huhn">
       <p>Hildegard</p>
     </div>
     <div class="chicken-mini">
-      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="60" cy="60" r="50" fill="rgba(232,160,32,0.1)" stroke="rgba(232,160,32,0.3)" stroke-width="1.5" stroke-dasharray="6 4"/>
-        <text x="60" y="55" text-anchor="middle" font-size="28">🥚</text>
-        <text x="60" y="80" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="rgba(232,160,32,0.8)">noch frei!</text>
-      </svg>
-      <p style="color:rgba(232,160,32,0.7);">Dein Huhn?</p>
+      <img src="assets/bild1.jpg" alt="Noch freies Patenhuhn">
+      <p style="color:var(--yolk-dark);">Dein Huhn?</p>
     </div>
   </div>
   <div style="margin-top:2.5rem;">
-    <a href="ei-weiss.html#paten" style="display:inline-block;background:var(--yolk);color:var(--text);font-weight:500;font-size:14px;padding:12px 28px;border-radius:40px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='#F5B830'" onmouseout="this.style.background='var(--yolk)'">Zur Hühnerpatenschaft →</a>
+    <a href="index.html#paten" class="btn-yolk">Zur Hühnerpatenschaft →</a>
   </div>
 </section>
  
@@ -479,7 +684,7 @@ footer strong{color:var(--yolk);}
 <footer>
   <strong>EI-WEISS</strong> · Sonntagscafé · Oberottmarshausen, Bayern<br>
   <span style="font-size:12px;margin-top:8px;display:block;">
-    <a href="ei-weiss.html" style="color:var(--yolk);text-decoration:none;">← Zurück zur Hauptseite</a>
+    <a href="index.html" style="color:var(--yolk);text-decoration:none;">← Zurück zur Hauptseite</a>
     &nbsp;·&nbsp;
     <a href="mailto:maratumpach@gmail.com" style="color:var(--yolk);">maratumpach@gmail.com</a>
   </span>
@@ -504,6 +709,21 @@ var obs = new IntersectionObserver(function(entries){
   entries.forEach(function(e, i){ if(e.isIntersecting){ setTimeout(function(){ e.target.classList.add('visible'); }, i*80); obs.unobserve(e.target); } });
 }, {threshold:0.08});
 document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+ 
+function openMenuModal(){
+  document.getElementById('menuModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeMenuModal(){
+  document.getElementById('menuModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.getElementById('menuModal').addEventListener('click', function(e){
+  if(e.target === this) closeMenuModal();
+});
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeMenuModal();
+});
 </script>
 </body>
 </html>
