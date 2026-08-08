@@ -67,6 +67,21 @@
   .about-text strong { color: var(--forest); font-weight: 500; }
   .about-signature { font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; color: var(--yolk-dark); margin-top: 24px; }
  
+  /* MAPS / ANFAHRT */
+  .map-section { background: var(--forest); }
+  .map-section .section-label { color: rgba(232,160,32,0.7); }
+  .map-section .section-title { color: var(--white); }
+  .map-section .section-body { color: rgba(255,255,255,0.6); }
+  .map-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 50px; }
+  @media (max-width: 800px) { .map-grid { grid-template-columns: 1fr; } }
+  .map-embed { border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.15); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+  .map-embed iframe { width: 100%; height: 380px; border: 0; display: block; }
+  .map-address-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; padding: 32px; }
+  .map-address-box h3 { color: var(--yolk); font-size: 22px; margin-bottom: 12px; }
+  .map-address-box address { font-style: normal; color: rgba(255,255,255,0.75); font-size: 17px; line-height: 1.8; margin-bottom: 24px; }
+  .map-directions-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--yolk); color: var(--text); padding: 13px 28px; border-radius: 40px; font-weight: 500; font-size: 15px; text-decoration: none; transition: background .2s, transform .15s; }
+  .map-directions-btn:hover { background: #F5B830; transform: translateY(-2px); }
+ 
   .paten-photo { width: 100%; height: 170px; object-fit: cover; border-radius: 14px; margin-bottom: 18px; }
   .story-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .story-photos img { width: 100%; height: 100%; object-fit: cover; border-radius: 18px; box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
@@ -236,6 +251,7 @@
     <a href="sonntagscafe.html">Sonntagscafé</a>
     <a href="#aktuelles">Aktuelles</a>
     <a href="#paten">Patenschaft</a>
+    <a href="#anfahrt">Anfahrt</a>
   </div>
   <button class="nav-cart" onclick="openCart()">🛒 Warenkorb <span class="cart-count" id="cart-count" style="display:none">0</span></button>
 </nav>
@@ -256,17 +272,17 @@
     </div>
     <div class="chickens-row">
       <div class="chicken-card">
-        <img class="chicken-photo" src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51%20(1).jpeg" alt="Gretl das Huhn">
+        <img class="chicken-photo" src="assets/bild2.jpg" alt="Gretl das Huhn">
         <div class="chicken-name">Gretl</div>
         <div class="chicken-status">Patin: Familie Tumper</div>
       </div>
       <div class="chicken-card">
-        <img class="chicken-photo" src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51.jpeg" alt="Hildegard das Huhn">
+        <img class="chicken-photo" src="assets/bild4.jpg" alt="Hildegard das Huhn">
         <div class="chicken-name">Hildegard</div>
         <div class="chicken-status">Patin: Familie Bernds</div>
       </div>
       <div class="chicken-card">
-        <img class="chicken-photo" src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2016.08.01.jpeg" alt="Noch freies Huhn">
+        <img class="chicken-photo" src="assets/bild1.jpg" alt="Noch freies Huhn">
         <div class="chicken-name">?</div>
         <div class="chicken-status free">Patenschaft noch frei</div>
       </div>
@@ -448,11 +464,11 @@
       <div class="section-label" style="text-align:center;">So leben unsere Hühner</div>
       <h3 style="font-size:28px;text-align:center;margin-bottom:0;">Echter Auslauf. Echtes Glück.</h3>
       <div class="photo-gallery">
-        <a href="#paten"><img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51%20(2).jpeg" alt="Hühner im Freilauf auf dem Hof"></a>
-        <a href="#paten"><img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.52.jpeg" alt="Hühner beim Erkunden des Gartens"></a>
-        <a href="#paten"><img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2016.08.01.jpeg" alt="Henne mit Küken im Stall"></a>
-        <a href="#paten"><img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51%20(1).jpeg" alt="Weißes Huhn im Garten"></a>
-        <a href="#paten"><img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51.jpeg" alt="Schwarzes Huhn im Auslauf"></a>
+        <a href="#paten"><img src="assets/bild3.jpg" alt="Hühner im Freilauf auf dem Hof"></a>
+        <a href="#paten"><img src="assets/bild6.jpg" alt="Hühner beim Erkunden des Gartens"></a>
+        <a href="#paten"><img src="assets/bild1.jpg" alt="Henne mit Küken im Stall"></a>
+        <a href="#paten"><img src="assets/bild2.jpg" alt="Weißes Huhn im Garten"></a>
+        <a href="#paten"><img src="assets/bild4.jpg" alt="Schwarzes Huhn im Auslauf"></a>
       </div>
     </div>
   </div>
@@ -471,9 +487,9 @@
         <p style="font-size:17px;color:var(--muted);font-weight:300;line-height:1.85;">Jede Packung erzählt eine Geschichte. Die von Gretl, Hildegard und ihrer zukünftigen Freundin.</p>
       </div>
       <div class="story-photos" style="height:440px;">
-        <img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2016.08.01.jpeg" alt="Henne mit Küken auf dem Hof">
-        <img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51%20(2).jpeg" alt="Hühner im Freilauf">
-        <img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51.jpeg" alt="Huhn im Garten">
+        <img src="assets/bild1.jpg" alt="Henne mit Küken auf dem Hof">
+        <img src="assets/bild3.jpg" alt="Hühner im Freilauf">
+        <img src="assets/bild4.jpg" alt="Huhn im Garten">
       </div>
     </div>
   </div>
@@ -486,7 +502,7 @@
     <h2 class="section-title">Die Person<br>hinter Ei-Weiss.</h2>
     <div class="about-grid">
       <div class="about-photo-wrap">
-        <img src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.52%20(1).jpeg" alt="Mara mit einem ihrer Hühner">
+        <img src="assets/bild5.jpg" alt="Mara mit einem ihrer Hühner">
         <div class="about-photo-tag">Das bin ich, Mara 🐔</div>
       </div>
       <div class="about-text">
@@ -574,7 +590,7 @@
     <p class="section-body">Unterstütze ein gerettetes Huhn und erhalte monatlich frische Bio-Eier direkt aus Oberottmarshausen.</p>
     <div class="paten-grid">
       <div class="paten-card">
-        <img class="paten-photo" src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51%20(1).jpeg" alt="Gretl das Huhn">
+        <img class="paten-photo" src="assets/bild2.jpg" alt="Gretl das Huhn">
         <span class="paten-badge badge-taken">Vergeben</span>
         <h3 class="paten-chicken-name">🐔 Gretl</h3>
         <p class="paten-family">Patin: Familie Tumper</p>
@@ -586,7 +602,7 @@
         </ul>
       </div>
       <div class="paten-card">
-        <img class="paten-photo" src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2019.17.51.jpeg" alt="Hildegard das Huhn">
+        <img class="paten-photo" src="assets/bild4.jpg" alt="Hildegard das Huhn">
         <span class="paten-badge badge-taken">Vergeben</span>
         <h3 class="paten-chicken-name">🐓 Hildegard</h3>
         <p class="paten-family">Patin: Familie Bernds</p>
@@ -598,7 +614,7 @@
         </ul>
       </div>
       <div class="paten-card free">
-        <img class="paten-photo" src="https://raw.githubusercontent.com/MaraTumpach/Ei-Weiss/main/WhatsApp%20Image%202026-08-07%20at%2016.08.01.jpeg" alt="Noch freies Patenhuhn mit Küken">
+        <img class="paten-photo" src="assets/bild1.jpg" alt="Noch freies Patenhuhn mit Küken">
         <span class="paten-badge badge-free">Noch frei!</span>
         <h3 class="paten-chicken-name">🥚 Dein Huhn</h3>
         <p class="paten-family" style="color:var(--yolk-dark);font-weight:500;">Du bestimmst den Namen!</p>
@@ -617,6 +633,34 @@
       <div class="perk"><div class="perk-icon">📸</div><h4>Foto-Updates</h4><p>Wir halten dich per Mail auf dem Laufenden — mit echten Bildern.</p></div>
       <div class="perk"><div class="perk-icon">💚</div><h4>Tierschutz</h4><p>Du rettest ein Huhn vor dem Schlachthof und gibst ihm ein gutes Leben.</p></div>
       <div class="perk"><div class="perk-icon">🎁</div><h4>Chips-Rabatt</h4><p>Als Pate bekommst du 10 % auf alle Protein-Chips dauerhaft.</p></div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ANFAHRT / GOOGLE MAPS -->
+<section id="anfahrt" class="map-section">
+  <div class="section-inner">
+    <div class="section-label">Besuch uns</div>
+    <h2 class="section-title">So findest<br>du uns.</h2>
+    <p class="section-body">Direkt auf dem Hof in Oberottmarshausen — Hühner, Chips und Sonntagscafé zum Anfassen.</p>
+    <div class="map-grid">
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps?q=Rainstra%C3%9Fe+14,+86698+Oberottmarshausen&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="map-address-box">
+        <h3>🐔 Ei-Weiss Hof</h3>
+        <address>
+          Rainstraße 14<br>
+          86698 Oberottmarshausen<br>
+          Bayern, Deutschland
+        </address>
+        <a class="map-directions-btn" href="https://www.google.com/maps/dir/?api=1&destination=Rainstra%C3%9Fe+14,+86698+Oberottmarshausen" target="_blank" rel="noopener">📍 Wegbeschreibung öffnen</a>
+      </div>
     </div>
   </div>
 </section>
