@@ -93,10 +93,38 @@
   .section-title { font-size: clamp(32px, 5vw, 52px); line-height: 1.1; margin-bottom: 20px; color: var(--text); }
   .section-body { font-size: 17px; color: var(--muted); max-width: 560px; font-weight: 300; }
  
-  /* CHIPS */
-  .chips-section { background: var(--white); }
-  .chips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 60px; }
-  .chip-pack { background: var(--cream); border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; border: 1.5px solid var(--warm); transition: transform .2s, box-shadow .2s; cursor: pointer; }
+  /* HOFLADEN */
+  .hofladen-section { background: var(--white); position: relative; }
+  .hofladen-open-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--forest); color: var(--yolk); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; padding: 8px 20px; border-radius: 40px; margin-bottom: 22px; font-weight: 500; }
+  .hofladen-open-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #7BCB7B; box-shadow: 0 0 0 3px rgba(123,203,123,0.25); }
+  .hofladen-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; margin-top: 50px; align-items: start; }
+  @media (max-width: 900px) { .hofladen-layout { grid-template-columns: 1fr; } }
+  .hofladen-eggs { background: var(--forest); border-radius: 24px; padding: 40px 34px; }
+  .hofladen-eggs h3 { color: var(--white); font-size: 22px; margin-bottom: 22px; }
+  .egg-price-row { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.14); }
+  .egg-price-row:last-of-type { border-bottom: none; }
+  .egg-price-label { color: rgba(255,255,255,0.85); font-size: 16px; }
+  .egg-price-label small { display: block; color: rgba(255,255,255,0.45); font-size: 12px; margin-top: 2px; font-weight: 300; }
+  .egg-price-value { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--yolk); white-space: nowrap; margin-left: 16px; }
+  .hofladen-eggs-note { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.7; font-weight: 300; }
+  .hofladen-features { display: grid; gap: 16px; }
+  .hofladen-feature { background: var(--cream); border: 1.5px solid var(--warm); border-radius: 18px; padding: 24px 26px; display: flex; gap: 18px; align-items: flex-start; }
+  .hofladen-feature-icon { font-size: 26px; flex-shrink: 0; margin-top: 2px; }
+  .hofladen-feature h4 { font-size: 17px; margin-bottom: 5px; }
+  .hofladen-feature p { font-size: 14.5px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+  .hofladen-promise { margin-top: 40px; text-align: center; background: linear-gradient(135deg, #FFF8E8 0%, #FFF3D0 100%); border: 1.5px solid var(--yolk); border-radius: 20px; padding: 28px; }
+  .hofladen-promise p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; color: var(--yolk-dark); line-height: 1.5; }
+  .hofladen-also { margin-top: 46px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .hofladen-also a { font-size: 14px; color: var(--forest); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--forest); padding-bottom: 2px; }
+  .hofladen-also a:hover { opacity: .6; }
+ 
+  /* CHIPS (secondary, de-emphasized) */
+  .chips-section { background: var(--cream); padding-top: 70px; padding-bottom: 70px; }
+  .chips-section .section-label { color: var(--muted); }
+  .chips-section .chips-heading { font-size: clamp(24px, 3vw, 32px); line-height: 1.15; margin-bottom: 14px; color: var(--text); }
+  .chips-section .section-body { font-size: 15.5px; }
+  .chips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+  .chip-pack { background: var(--white); border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; border: 1.5px solid var(--warm); transition: transform .2s, box-shadow .2s; cursor: pointer; }
   .chip-pack:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.10); }
   .chip-pack-accent { position: absolute; top: 0; left: 0; right: 0; height: 6px; border-radius: 20px 20px 0 0; }
   .flavor-salt .chip-pack-accent { background: var(--yolk); }
@@ -244,8 +272,8 @@
 <nav>
   <div class="nav-logo">EI-WEISS</div>
   <div class="nav-links">
-    <a href="#chips">Chips</a>
-    <a href="#shop">Shop</a>
+    <a href="#hofladen">Hofladen</a>
+    <a href="#shop">Chips-Shop</a>
     <a href="#story">Unser Hof</a>
     <a href="#about">Über mich</a>
     <a href="sonntagscafe.html">Sonntagscafé</a>
@@ -263,11 +291,11 @@
     <circle cx="100" cy="700" r="250" fill="rgba(232,160,32,0.04)"/>
   </svg>
   <div class="hero-content">
-    <div class="hero-eyebrow">Bio · Protein · Lifestyle</div>
+    <div class="hero-eyebrow">Bio · Hofladen · Lifestyle</div>
     <h1>Das <span>Ei</span> neu<br>gedacht.</h1>
-    <p class="hero-sub">Gedörrte Protein-Eierchips aus glücklichen Bio-Hühnern — direkt vom Hof in Oberottmarshausen.</p>
+    <p class="hero-sub">Bio-Eier, Hofladen-Schätze und Protein-Chips aus glücklichen Bio-Hühnern — direkt vom Hof in Oberottmarshausen.</p>
     <div class="hero-btns">
-      <button class="btn-primary" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Jetzt kaufen</button>
+      <button class="btn-primary" onclick="document.getElementById('hofladen').scrollIntoView({behavior:'smooth'})">Zum Hofladen</button>
       <button class="btn-outline" onclick="document.getElementById('paten').scrollIntoView({behavior:'smooth'})">Patenschaft</button>
     </div>
     <div class="chickens-row">
@@ -290,12 +318,78 @@
   </div>
 </section>
  
-<!-- CHIPS OVERVIEW -->
+<!-- HOFLADEN -->
+<section id="hofladen" class="hofladen-section">
+  <div class="section-inner">
+    <div class="hofladen-open-badge"><span class="dot"></span> 24/7 geöffnet · Selbstbedienung</div>
+    <div class="section-label">Unser Hofladen</div>
+    <h2 class="section-title">Rund um die Uhr<br>direkt ab Hof.</h2>
+    <p class="section-body">Unser Hofladen steht Tag und Nacht offen — Bio-Eier, hausgemachte Kleinigkeiten und was der Garten gerade hergibt. Einfach vorbeikommen, aussuchen, in die Kasse legen.</p>
+ 
+    <div class="hofladen-layout">
+      <div class="hofladen-eggs">
+        <h3>🥚 Bio-Hühnereier</h3>
+        <div class="egg-price-row">
+          <div class="egg-price-label">10 Bio-Hühnereier<small>Von unseren geretteten Hennen</small></div>
+          <div class="egg-price-value">3,70 €</div>
+        </div>
+        <div class="egg-price-row">
+          <div class="egg-price-label">6 Bio-Hühnereier<small>Von unseren geretteten Hennen</small></div>
+          <div class="egg-price-value">2,90 €</div>
+        </div>
+        <p class="hofladen-eggs-note">Frisch, artgerecht, aus echtem Auslauf — je nach Legeleistung mal mehr, mal weniger verfügbar.</p>
+      </div>
+ 
+      <div class="hofladen-features">
+        <div class="hofladen-feature">
+          <div class="hofladen-feature-icon">🥣</div>
+          <div>
+            <h4>Bio-Müslimischung für Haferschleim</h4>
+            <p>Mit Anleitung zum Zubereiten — auf Wunsch individuell auf dein persönliches Dosha und deinen Körper abgestimmt.</p>
+          </div>
+        </div>
+        <div class="hofladen-feature">
+          <div class="hofladen-feature-icon">🌶️</div>
+          <div>
+            <h4>Bio-Gewürze</h4>
+            <p>Saisonal wechselnde Auswahl, sorgfältig zusammengestellt.</p>
+          </div>
+        </div>
+        <div class="hofladen-feature">
+          <div class="hofladen-feature-icon">🥕</div>
+          <div>
+            <h4>Bio-Gemüse &amp; Obst</h4>
+            <p>Saisonal wechselnd, aus unserem eigenen Garten und Feld.</p>
+          </div>
+        </div>
+        <div class="hofladen-feature">
+          <div class="hofladen-feature-icon">✨</div>
+          <div>
+            <h4>Kleine Überraschungen</h4>
+            <p>Selbstgemachte Snacks, Schmuck und andere kleine Produkte — lass dich einfach überraschen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="hofladen-promise">
+      <p>Immer alles Bio. Ohne Zucker, ohne Süßstoff. Gut für Herz, Seele und die Welt.</p>
+    </div>
+ 
+    <div class="hofladen-also">
+      <span style="font-size:14px;color:var(--muted);">Außerdem bei uns:</span>
+      <a href="#chips">unsere Protein-Chips →</a>
+      <a href="#shop">direkt in den Chips-Shop →</a>
+    </div>
+  </div>
+</section>
+ 
+<!-- CHIPS OVERVIEW (secondary) -->
 <section id="chips" class="chips-section">
   <div class="section-inner">
-    <div class="section-label">Unser Produkt</div>
-    <h2 class="section-title">Protein-Eierchips.<br>Drei Varianten.</h2>
-    <p class="section-body">Gedörrt, nicht frittiert. Aus Freilandeiern unserer Hühner. Nur natürliche Zutaten — null Kompromisse.</p>
+    <div class="section-label">Außerdem aus unseren Eiern</div>
+    <h3 class="chips-heading">Protein-Eierchips.<br>Drei Varianten.</h3>
+    <p class="section-body">Gedörrt, nicht frittiert. Aus Freilandeiern unserer Hühner. Auch das gibt's bei uns — neben allem anderen im Hofladen.</p>
     <div class="chips-grid">
       <div class="chip-pack flavor-salt" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
         <div class="chip-pack-accent"></div>
@@ -671,7 +765,7 @@
 </section>
  
 <footer>
-  <strong>EI-WEISS</strong> · Bio Protein &amp; Hühnerpatenschaft · Oberottmarshausen, Bayern<br>
+  <strong>EI-WEISS</strong> · Bio Hofladen &amp; Hühnerpatenschaft · Oberottmarshausen, Bayern<br>
   <span style="font-size:12px;margin-top:8px;display:block;">Mit Liebe für Hühner und Protein gemacht. · <a href="mailto:maratumpach@gmail.com" style="color:var(--yolk);">maratumpach@gmail.com</a></span>
 </footer>
  
@@ -842,3 +936,4 @@ document.getElementById('kontakt-modal').addEventListener('click', function(e){ 
 </script>
 </body>
 </html>
+ 
