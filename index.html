@@ -117,6 +117,9 @@
   .hofladen-also { margin-top: 46px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
   .hofladen-also a { font-size: 14px; color: var(--forest); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--forest); padding-bottom: 2px; }
   .hofladen-also a:hover { opacity: .6; }
+  .hofladen-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0 10px; }
+  .hofladen-photos img { width: 100%; height: 260px; object-fit: cover; border-radius: 20px; border: 1.5px solid var(--warm); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+  @media (max-width: 600px) { .hofladen-photos { grid-template-columns: 1fr; } .hofladen-photos img { height: 220px; } }
  
   /* CHIPS (secondary, de-emphasized) */
   .chips-section { background: var(--cream); padding-top: 70px; padding-bottom: 70px; }
@@ -273,7 +276,6 @@
   <div class="nav-logo">EI-WEISS</div>
   <div class="nav-links">
     <a href="#hofladen">Hofladen</a>
-    <a href="#shop">Chips-Shop</a>
     <a href="#story">Unser Hof</a>
     <a href="#about">Über mich</a>
     <a href="sonntagscafe.html">Sonntagscafé</a>
@@ -326,6 +328,11 @@
     <h2 class="section-title">Rund um die Uhr<br>direkt ab Hof.</h2>
     <p class="section-body">Unser Hofladen steht Tag und Nacht offen — Bio-Eier, hausgemachte Kleinigkeiten und was der Garten gerade hergibt. Einfach vorbeikommen, aussuchen, in die Kasse legen.</p>
  
+    <div class="hofladen-photos">
+      <img src="assets/bild3.jpg" alt="Hühner im Freilauf auf dem Hof">
+      <img src="assets/bild6.jpg" alt="Frisches Bio-Gemüse und Kräuter aus dem eigenen Garten">
+    </div>
+ 
     <div class="hofladen-layout">
       <div class="hofladen-eggs">
         <h3>🥚 Bio-Hühnereier</h3>
@@ -363,6 +370,13 @@
           </div>
         </div>
         <div class="hofladen-feature">
+          <div class="hofladen-feature-icon">🧂</div>
+          <div>
+            <h4>Protein-Eierchips</h4>
+            <p>Gedörrte Bio-Protein-Chips aus unseren eigenen Eiern, in drei Sorten — Original Salz, Salz &amp; Pfeffer, Olivenöl &amp; Kräuter. <a href="#shop" style="color:var(--forest);font-weight:500;">Alle Sorten im Shop →</a></p>
+          </div>
+        </div>
+        <div class="hofladen-feature">
           <div class="hofladen-feature-icon">✨</div>
           <div>
             <h4>Kleine Überraschungen</h4>
@@ -374,50 +388,6 @@
  
     <div class="hofladen-promise">
       <p>Immer alles Bio. Ohne Zucker, ohne Süßstoff. Gut für Herz, Seele und die Welt.</p>
-    </div>
- 
-    <div class="hofladen-also">
-      <span style="font-size:14px;color:var(--muted);">Außerdem bei uns:</span>
-      <a href="#chips">unsere Protein-Chips →</a>
-      <a href="#shop">direkt in den Chips-Shop →</a>
-    </div>
-  </div>
-</section>
- 
-<!-- CHIPS OVERVIEW (secondary) -->
-<section id="chips" class="chips-section">
-  <div class="section-inner">
-    <div class="section-label">Außerdem aus unseren Eiern</div>
-    <h3 class="chips-heading">Protein-Eierchips.<br>Drei Varianten.</h3>
-    <p class="section-body">Gedörrt, nicht frittiert. Aus Freilandeiern unserer Hühner. Auch das gibt's bei uns — neben allem anderen im Hofladen.</p>
-    <div class="chips-grid">
-      <div class="chip-pack flavor-salt" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
-        <div class="chip-pack-accent"></div>
-        <div class="chip-icon">🧂</div>
-        <h3>Original Salz</h3>
-        <p style="font-size:13px;color:#8B6340;margin-top:4px;font-style:italic;">Der Klassiker</p>
-        <p class="chip-ingredients"><strong>Zutaten:</strong> Freilandei (100 %), Meersalz<br>Keine Zusatzstoffe. Kein Zucker. Kein Unsinn.</p>
-        <div class="chip-macro-row"><span class="macro-pill highlight">12g Protein</span><span class="macro-pill">80 kcal</span><span class="macro-pill">30g / Pack</span></div>
-        <button class="shop-link">Im Shop kaufen →</button>
-      </div>
-      <div class="chip-pack flavor-pepper" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
-        <div class="chip-pack-accent"></div>
-        <div class="chip-icon">🫙</div>
-        <h3>Salz &amp; Pfeffer</h3>
-        <p style="font-size:13px;color:#8B6340;margin-top:4px;font-style:italic;">Würzig &amp; ausgewogen</p>
-        <p class="chip-ingredients"><strong>Zutaten:</strong> Freilandei (98 %), Meersalz, schwarzer Pfeffer aus Malabar</p>
-        <div class="chip-macro-row"><span class="macro-pill highlight">12g Protein</span><span class="macro-pill">82 kcal</span><span class="macro-pill">30g / Pack</span></div>
-        <button class="shop-link">Im Shop kaufen →</button>
-      </div>
-      <div class="chip-pack flavor-olive" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
-        <div class="chip-pack-accent"></div>
-        <div class="chip-icon">🌿</div>
-        <h3>Olivenöl &amp; Kräuter</h3>
-        <p style="font-size:13px;color:#8B6340;margin-top:4px;font-style:italic;">Mediterran &amp; aromatisch</p>
-        <p class="chip-ingredients"><strong>Zutaten:</strong> Freilandei (95 %), kalt gepresstes Olivenöl, Rosmarin, Thymian, Knoblauch, Meersalz</p>
-        <div class="chip-macro-row"><span class="macro-pill highlight">11g Protein</span><span class="macro-pill">88 kcal</span><span class="macro-pill">30g / Pack</span></div>
-        <button class="shop-link">Im Shop kaufen →</button>
-      </div>
     </div>
   </div>
 </section>
