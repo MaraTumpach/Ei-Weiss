@@ -67,6 +67,20 @@
   .about-text strong { color: var(--forest); font-weight: 500; }
   .about-signature { font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; color: var(--yolk-dark); margin-top: 24px; }
  
+  /* AUFKLAPP-BOX MILCH-ERKLÄRUNG */
+  .milk-info { background: var(--cream); border: 1.5px solid var(--warm); border-radius: 14px; padding: 4px 20px; margin: 16px 0 20px; }
+  .milk-info summary { cursor: pointer; font-weight: 500; color: var(--forest); padding: 14px 0; list-style: none; font-size: 15px; }
+  .milk-info summary::-webkit-details-marker { display: none; }
+  .milk-info summary::before { content: "＋  "; color: var(--yolk-dark); font-weight: 700; }
+  .milk-info[open] summary::before { content: "－  "; }
+  .milk-info p { font-size: 14.5px; color: var(--muted); font-weight: 300; line-height: 1.75; margin: 0 0 14px; }
+  .milk-info p:last-child { margin-bottom: 18px; }
+  .milk-info strong { color: var(--forest); font-weight: 500; }
+  .cafe-section .milk-info { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); }
+  .cafe-section .milk-info summary { color: var(--yolk); }
+  .cafe-section .milk-info p { color: rgba(255,255,255,0.65); }
+  .cafe-section .milk-info strong { color: var(--yolk); }
+ 
   /* MAPS / ANFAHRT */
   .map-section { background: var(--forest); }
   .map-section .section-label { color: rgba(232,160,32,0.7); }
@@ -571,8 +585,14 @@
       </div>
       <div class="about-text">
         <p>Ich bin <strong>Mara</strong> und lebe schon mein ganzes Leben in Oberottmarshausen – ein Ort, der mich tief mit der Natur und den Tieren verbunden hat. Tiere sind seit jeher ein zentraler Teil meines Lebens.</p>
-        <p>Ich ernähre mich bewusst ayurvedisch und achte dabei besonders auf Tierwohl. Tierische Produkte konsumiere ich nur sehr achtsam – ausschließlich Eier von unseren eigenen Hühnern sowie Milch von Kühen, die ich persönlich kenne und deren Haltung ich verantworten kann.</p>
-        <p>Unsere Hühner liegen mir besonders am Herzen. Ich verbringe täglich Zeit mit ihnen, kümmere mich liebevoll um sie und schätze ihre Einzigartigkeit. Aus dieser tiefen Verbindung heraus habe ich mit großer Sorgfalt und Hingabe meine eigenen, besonderen Produkte rund um Eier entwickelt – ehrlich, hochwertig und im Einklang mit Natur und Tier.</p>
+        <p>Ich ernähre mich bewusst ayurvedisch und achte dabei besonders auf Tierwohl. Tierische Produkte konsumiere ich nur sehr achtsam – ausschließlich Eier von unseren eigenen Hühnern sowie Milch von Kühen und Ziegen, die ich persönlich kenne und deren Haltung ich verantworten kann.</p>
+        <details class="milk-info">
+          <summary>Warum für mich A2-Kuhmilch oder Ziegenmilch die einzig gute Milch ist</summary>
+          <p><strong>Warum A2-Milch bzw. Ziegenmilch:</strong> Ziegenmilch enthält von Natur aus nur das A2-Beta-Casein, während viele moderne Kuhrassen überwiegend A1-Protein produzieren. A2-Protein gilt als bekömmlicher und wird von vielen Menschen deutlich besser vertragen — deshalb achte ich bewusst darauf, woher meine Milch kommt.</p>
+          <p><strong>Warum Bio:</strong> Mehr Weidegang, keine Anbindehaltung, kein Antibiotika-Einsatz im Regelbetrieb, Futter ohne chemisch-synthetische Pestizide — für mich eine Frage des Respekts vor dem Tier.</p>
+          <p><strong>Warum Frischmilch:</strong> Unbehandelte, nicht homogenisierte Frischmilch behält mehr natürliche Enzyme und Aromastoffe. Und ich kenne die Höfe, von denen sie kommt, persönlich.</p>
+        </details>
+        <p>Unsere Hühner liegen mir besonders am Herzen. Ich verbringe täglich Zeit mit ihnen, kümmere mich liebevoll um sie und schätze ihre Einzigartigkeit. So ist das Herzensprojekt rund um unsere eigenen Eier entstanden – ehrlich, hochwertig und im Einklang mit Natur und Tier.</p>
         <div class="about-signature">— Mara</div>
       </div>
     </div>
@@ -587,7 +607,20 @@
     <div class="cafe-grid">
       <div class="cafe-info">
         <p>Bei schönem Wetter öffnen wir sonntagsvormittags unseren Hofgarten. Kaffee, frischer Tee aus eigenen Kräutern, unser hausgemachter Matcha — und natürlich unsere Eierchips zum Probieren. Entspannt, informell, mit Hühnern im Hintergrund.</p>
-        <p>Unseren <strong style="color:var(--yolk);">Matcha</strong> gibt es wahlweise mit frischer Kuh- oder Ziegenmilch von Bauern aus der Region — Kuhmilch aus Bobingen, Ziegenmilch aus Prittriching — oder auf Wunsch auch vegan. Fast alles, was bei uns auf den Tisch kommt, stammt aus unserem eigenen Garten. Und was nicht von uns selbst kommt, ist genauso mit Sorgfalt ausgesucht: <strong style="color:var(--yolk);">bei uns ist wirklich alles Bio</strong> — ausnahmslos.</p>
+        <p>
+          Unseren <strong style="color:var(--yolk);">Matcha</strong> gibt es wahlweise mit frischer
+          <a href="https://www.andechser-natur.de/de/bio-bauernhoefe/kugelmann" target="_blank" rel="noopener" style="color:var(--yolk);text-decoration:underline;">Kuhmilch aus Bobingen</a>
+          oder
+          <a href="https://www.ziegenhof-gebauer.de" target="_blank" rel="noopener" style="color:var(--yolk);text-decoration:underline;">Ziegenmilch aus Scheuring</a>
+          — oder auf Wunsch auch vegan.
+        </p>
+        <details class="milk-info">
+          <summary>Warum A2-Kuhmilch oder Ziegenmilch für uns die einzig gute Milch ist</summary>
+          <p><strong>Warum A2-Milch bzw. Ziegenmilch:</strong> Ziegenmilch enthält von Natur aus nur das A2-Beta-Casein, während viele moderne Kuhrassen überwiegend A1-Protein produzieren. A2-Protein gilt als bekömmlicher und wird von vielen Menschen deutlich besser vertragen. Deshalb achten wir bewusst darauf, dass unsere Kuhmilch von Rassen mit hohem A2-Anteil stammt.</p>
+          <p><strong>Warum Bio:</strong> Bio-Haltung bedeutet mehr Weidegang, keine Anbindehaltung, keine Antibiotika im Regelbetrieb und Futter ohne chemisch-synthetische Pestizide. Das schmeckt man nicht nur – es ist uns auch aus Respekt vor dem Tier wichtig.</p>
+          <p><strong>Warum Frischmilch:</strong> Unbehandelte, nicht homogenisierte Frischmilch behält mehr natürliche Enzyme und Aromastoffe. Wir kennen die Höfe, von denen sie kommt, persönlich – das ist uns wichtiger als lange Haltbarkeit.</p>
+        </details>
+        <p>Fast alles, was bei uns auf den Tisch kommt, stammt aus unserem eigenen Garten. Und was nicht von uns selbst kommt, ist genauso mit Sorgfalt ausgesucht: <strong style="color:var(--yolk);">bei uns ist wirklich alles Bio</strong> — ausnahmslos.</p>
         <p>Unser <strong style="color:var(--yolk);">48h-Sauerteigbrot</strong> gibt es nur auf Vorbestellung. Zwei Tage Fermentation, handgeformt — das schmeckt man bei jedem Bissen.</p>
         <div class="cafe-contact" style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
           <a href="sonntagscafe.html" style="background:var(--yolk);">☕ Alles zum Sonntagscafé →</a>
@@ -601,7 +634,7 @@
         </div>
         <div class="cafe-item">
           <h4>🍵 Matcha nach Wahl</h4>
-          <p>Mit frischer Bio-Kuhmilch (Bobingen) oder Bio-Ziegenmilch (Prittriching) — oder ganz nach Wunsch mit veganer Milch</p>
+          <p>Mit frischer Bio-Kuhmilch (Bobingen) oder Bio-Ziegenmilch (Scheuring) — oder ganz nach Wunsch mit veganer Milch</p>
         </div>
         <div class="cafe-item">
           <h4>🍳 Eierchips zum Probieren</h4>
@@ -664,10 +697,10 @@
         <h3 class="paten-chicken-name">🐔 Gretl</h3>
         <p class="paten-family">Patin: Familie Tumper</p>
         <ul class="paten-includes">
-          <li>Monatlich 12 frische Bio-Eier</li>
+          <li>Monatlich 10 frische Bio-Eier</li>
           <li>Foto-Updates von Gretl</li>
           <li>Urkunde als Hühnerpatin</li>
-          <li>10% Rabatt auf alle Chips</li>
+          <li>10% auf jedes Sauerteigbrot</li>
         </ul>
       </div>
       <div class="paten-card">
@@ -676,10 +709,10 @@
         <h3 class="paten-chicken-name">🐓 Hildegard</h3>
         <p class="paten-family">Patin: Familie Bernds</p>
         <ul class="paten-includes">
-          <li>Monatlich 12 frische Bio-Eier</li>
+          <li>Monatlich 10 frische Bio-Eier</li>
           <li>Foto-Updates von Hildegard</li>
           <li>Urkunde als Hühnerpatin</li>
-          <li>10% Rabatt auf alle Chips</li>
+          <li>10% auf jedes Sauerteigbrot</li>
         </ul>
       </div>
       <div class="paten-card free">
@@ -688,11 +721,11 @@
         <h3 class="paten-chicken-name">🥚 Dein Huhn</h3>
         <p class="paten-family" style="color:var(--yolk-dark);font-weight:500;">Du bestimmst den Namen!</p>
         <ul class="paten-includes">
-          <li>Monatlich 12 frische Bio-Eier</li>
+          <li>Monatlich 10 frische Bio-Eier</li>
           <li>Du gibst dem Huhn seinen Namen</li>
           <li>Regelmäßige Foto-Updates</li>
           <li>Urkunde als Hühnerpate/-patin</li>
-          <li>10% Rabatt auf alle Chips</li>
+          <li>10% auf jedes Sauerteigbrot</li>
         </ul>
         <button class="paten-cta" onclick="openPatenModal()">Jetzt Pate werden</button>
       </div>
@@ -701,7 +734,7 @@
       <div class="perk"><div class="perk-icon">🚚</div><h4>Monatliche Lieferung</h4><p>Frische Eier direkt vom Hof per Post — schonend verpackt.</p></div>
       <div class="perk"><div class="perk-icon">📸</div><h4>Foto-Updates</h4><p>Wir halten dich per Mail auf dem Laufenden — mit echten Bildern.</p></div>
       <div class="perk"><div class="perk-icon">💚</div><h4>Tierschutz</h4><p>Du rettest ein Huhn vor dem Schlachthof und gibst ihm ein gutes Leben.</p></div>
-      <div class="perk"><div class="perk-icon">🎁</div><h4>Chips-Rabatt</h4><p>Als Pate bekommst du 10 % auf alle Protein-Chips dauerhaft.</p></div>
+      <div class="perk"><div class="perk-icon">🎁</div><h4>Brot-Rabatt</h4><p>Als Pate bekommst du 10 % auf jedes Sauerteigbrot dauerhaft.</p></div>
     </div>
   </div>
 </section>
