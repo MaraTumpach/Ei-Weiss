@@ -191,6 +191,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);dis
 .info-card a{color:var(--yolk-dark);text-decoration:none;border-bottom:1px solid rgba(192,112,16,0.3);}
 .info-card a:hover{color:var(--yolk);}
 .weather-badge{display:inline-block;background:rgba(232,160,32,0.15);border:1px solid rgba(232,160,32,0.3);color:var(--yolk-dark);font-size:12px;font-weight:500;padding:5px 14px;border-radius:40px;margin-top:1rem;}
+.social-links-row{display:-webkit-flex;display:flex;gap:10px;flex-wrap:wrap;margin-top:1rem;}
+.social-links-row a{display:-webkit-flex;display:flex;align-items:center;gap:6px;background:rgba(232,160,32,0.1);border:1px solid rgba(232,160,32,0.25);border-radius:40px;padding:6px 14px;font-size:0.85rem;color:var(--yolk-dark);text-decoration:none;}
+.social-links-row a:hover{background:rgba(232,160,32,0.2);color:var(--yolk-dark);}
  
 /* MAPS / ANFAHRT */
 .map-section{background:var(--forest);padding:6rem 4rem;}
@@ -218,6 +221,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);dis
 /* FOOTER */
 footer{background:var(--text);color:rgba(255,255,255,0.5);text-align:center;padding:40px;font-size:14px;}
 footer strong{color:var(--yolk);}
+footer .footer-social a{color:var(--yolk);text-decoration:none;}
+footer .footer-social a:hover{text-decoration:underline;}
  
 /* RESPONSIVE */
 @media (max-width:1024px){
@@ -321,7 +326,7 @@ footer strong{color:var(--yolk);}
       <h2 class="section-title" style="margin-bottom:1.5rem;">Einfach schön.<br>Keine Reservierung.</h2>
       <p>Bei schönem Wetter öffnen wir sonntags von 11:30 bis 19:30 Uhr unseren Hofgarten. Kein Restaurant, kein Trubel — einfach gemütliches Zusammensein bei Kaffee, cremigem Matcha, frischen Kräutertees und dem Besten, was unser Hof zu bieten hat.</p>
       <p>Mitgebracht werden darf alles. Kinder und Hunde herzlich willkommen. Die Hühner schauen sowieso vorbei.</p>
-      <p style="font-size:0.88rem;color:var(--yolk-dark);font-style:italic;margin-top:1.5rem;">☀️ Wir machen nur bei gutem Wetter auf — folge uns auf Instagram für kurzfristige Ankündigungen.</p>
+      <p style="font-size:0.88rem;color:var(--yolk-dark);font-style:italic;margin-top:1.5rem;">☀️ Wir machen nur bei gutem Wetter auf — folge uns auf <a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener" style="color:var(--yolk-dark);">Instagram</a> & <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener" style="color:var(--yolk-dark);">Facebook</a> für kurzfristige Ankündigungen.</p>
     </div>
     <div class="what-visual reveal">
       <div class="what-card">
@@ -639,8 +644,11 @@ footer strong{color:var(--yolk);}
       <div class="info-card">
         <span class="info-card-icon">📷</span>
         <h3>Kurzfristige Updates</h3>
-        <p>Ob es aufmacht, erfährst du immer zuerst auf Instagram. Bei Regen entfällt das Café leider.</p>
-        <p style="margin-top:1rem;"><a href="https://www.instagram.com/mara.move" target="_blank" rel="noopener">@mara.move auf Instagram</a></p>
+        <p>Ob es aufmacht, erfährst du immer zuerst auf Instagram & Facebook. Bei Regen entfällt das Café leider.</p>
+        <div class="social-links-row">
+          <a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener">📸 Instagram</a>
+          <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener">📘 Facebook</a>
+        </div>
       </div>
     </div>
   </div>
@@ -700,10 +708,14 @@ footer strong{color:var(--yolk);}
 <!-- FOOTER -->
 <footer>
   <strong>EI-WEISS</strong> · Sonntagscafé · Oberottmarshausen, Bayern<br>
-  <span style="font-size:12px;margin-top:8px;display:block;">
+  <span style="font-size:12px;margin-top:8px;display:block;" class="footer-social">
     <a href="index.html" style="color:var(--yolk);text-decoration:none;">← Zurück zur Hauptseite</a>
     &nbsp;·&nbsp;
-    <a href="mailto:maratumpach@gmail.com" style="color:var(--yolk);">maratumpach@gmail.com</a>
+    <a href="mailto:maratumpach@gmail.com">maratumpach@gmail.com</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener">Instagram</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
   </span>
 </footer>
  
@@ -744,4 +756,3 @@ document.addEventListener('keydown', function(e){
 </script>
 </body>
 </html>
- 
