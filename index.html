@@ -282,6 +282,35 @@
  
   footer { background: var(--text); color: rgba(255,255,255,0.5); text-align: center; padding: 40px; font-size: 14px; }
   footer strong { color: var(--yolk); }
+  footer .footer-social a { color: var(--yolk); text-decoration: none; }
+  footer .footer-social a:hover { text-decoration: underline; }
+ 
+  /* NEWSLETTER POPUP */
+  .nl-overlay { position: fixed; inset: 0; background: rgba(20,30,15,0.42); z-index: 1200; display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(2px); }
+  .nl-overlay.active { display: flex; }
+  .nl-modal { background: linear-gradient(160deg, var(--white) 0%, #F3F8EC 100%); border-radius: 26px; max-width: 340px; width: 100%; overflow: visible; position: relative; box-shadow: 0 24px 60px rgba(45,74,45,0.28); border: 1.5px solid rgba(139,195,74,0.35); text-align: center; padding: 30px 26px 24px; animation: nlPop .35s ease; }
+  @keyframes nlPop { from { opacity: 0; transform: scale(0.92) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+  .nl-chicken-wrap { width: 78px; height: 78px; border-radius: 50%; margin: 0 auto 14px; overflow: hidden; border: 3px solid var(--yolk); box-shadow: 0 8px 20px rgba(0,0,0,0.15); background: var(--forest); }
+  .nl-chicken-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .nl-eyebrow { display: inline-block; background: rgba(139,195,74,0.18); border: 1px solid rgba(139,195,74,0.4); color: var(--forest); font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 40px; margin-bottom: 12px; }
+  .nl-modal-body h3 { font-size: 19px; line-height: 1.3; margin-bottom: 10px; color: var(--text); }
+  .nl-modal-body .nl-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 14px; }
+  .nl-modal-body .nl-tag { background: var(--cream); border: 1px solid var(--warm); color: var(--muted); font-size: 11px; padding: 4px 10px; border-radius: 40px; }
+  .nl-modal-body p.nl-desc { color: var(--muted); font-size: 13.5px; font-weight: 300; line-height: 1.6; margin-bottom: 18px; }
+  .nl-form { display: flex; flex-direction: column; gap: 9px; }
+  .nl-form input[type="email"], .nl-form input[type="text"] { width: 100%; padding: 11px 14px; border-radius: 12px; border: 1.5px solid var(--warm); background: var(--white); font-size: 14px; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color .2s; }
+  .nl-form input:focus { border-color: var(--forest-light); }
+  .nl-form button { background: var(--forest); color: var(--white); border: none; border-radius: 40px; padding: 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background .2s, transform .15s; font-family: 'DM Sans', sans-serif; }
+  .nl-form button:hover { background: var(--forest-light); transform: translateY(-2px); }
+  .nl-note { font-size: 11px; color: var(--muted); margin-top: 10px; }
+  .nl-dismiss { display: inline-block; margin-top: 10px; font-size: 12px; color: var(--muted); text-decoration: underline; background: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+  .nl-dismiss:hover { color: var(--text); }
+  .nl-close { position: absolute; top: -12px; right: -12px; font-size: 18px; cursor: pointer; color: var(--forest); background: var(--white); border: 1.5px solid var(--warm); width: 32px; height: 32px; border-radius: 50%; line-height: 1; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+  .nl-close:hover { background: var(--cream); }
+  .nl-success { display: none; text-align: center; padding: 6px 0; }
+  .nl-success .nl-success-icon { font-size: 40px; margin-bottom: 10px; }
+  .nl-success h4 { font-size: 19px; margin-bottom: 6px; }
+  .nl-success p { color: var(--muted); font-size: 13.5px; font-weight: 300; }
 </style>
 </head>
 <body>
@@ -648,6 +677,10 @@
           <h4>🐔 Hühner kennenlernen</h4>
           <p>Gretl, Hildegard &amp; Co. freuen sich über Besuch im Garten</p>
         </div>
+        <div class="cafe-item">
+          <h4>📱 Folg uns</h4>
+          <p><a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener" style="color:var(--yolk);">Instagram</a> &amp; <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener" style="color:var(--yolk);">Facebook</a> für kurzfristige Ankündigungen</p>
+        </div>
         <div style="margin-top:16px;padding:14px 18px;background:rgba(232,160,32,0.15);border-radius:12px;border:1px solid rgba(232,160,32,0.3);">
           <p style="color:var(--yolk);font-size:14px;margin:0;"><strong>Wann?</strong> Sonntags bei gutem Wetter, 11:30–19:30 Uhr · Oberottmarshausen · Alles bei uns ist Bio 🌱</p>
         </div>
@@ -769,7 +802,14 @@
  
 <footer>
   <strong>EI-WEISS</strong> · Bio Hofladen &amp; Hühnerpatenschaft · Oberottmarshausen, Bayern<br>
-  <span style="font-size:12px;margin-top:8px;display:block;">Mit Liebe für Hühner und Protein gemacht. · <a href="mailto:maratumpach@gmail.com" style="color:var(--yolk);">maratumpach@gmail.com</a></span>
+  <span style="font-size:12px;margin-top:8px;display:block;" class="footer-social">
+    Mit Liebe für Hühner und Protein gemacht. ·
+    <a href="mailto:maratumpach@gmail.com">maratumpach@gmail.com</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener">Instagram</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+  </span>
 </footer>
  
 <!-- CART DRAWER -->
@@ -833,6 +873,41 @@
       <div class="check">✉️</div>
       <h4>Nachricht gesendet!</h4>
       <p>Wir melden uns schnellstmöglich bei dir.</p>
+    </div>
+  </div>
+</div>
+ 
+<!-- NEWSLETTER POPUP -->
+<div class="nl-overlay" id="nl-overlay">
+  <div class="nl-modal">
+    <button class="nl-close" onclick="closeNewsletter()" aria-label="Schließen">×</button>
+    <div class="nl-chicken-wrap">
+      <img src="assets/bild2.jpg" alt="Gretl das Huhn">
+    </div>
+    <div class="nl-modal-body">
+      <span class="nl-eyebrow">🐔 Ei-Weiss Newsletter</span>
+      <h3>Sonntagscafé, Hofladen &amp; unsere Hühner — direkt ins Postfach.</h3>
+      <div class="nl-tags">
+        <span class="nl-tag">🐔 Hühner-Updates</span>
+        <span class="nl-tag">🌱 Gesundheitstipps</span>
+        <span class="nl-tag">🥚 Bio &amp; regional</span>
+      </div>
+      <p class="nl-desc">Kurz &amp; herzlich: was bei uns auf dem Hof passiert.</p>
+ 
+      <form id="nl-form" class="nl-form" action="https://formspree.io/f/xnjldvwe" method="POST" onsubmit="handleNewsletterSubmit(event,this)">
+        <input type="hidden" name="_subject" value="Newsletter Anmeldung – Ei-Weiss">
+        <input type="hidden" name="_replyto" value="maratumpach@gmail.com">
+        <input type="hidden" name="typ" value="Newsletter Anmeldung">
+        <input type="email" name="email" placeholder="Deine E-Mail-Adresse" required>
+        <button type="submit">Jetzt anmelden 💛</button>
+      </form>
+      <div class="nl-success" id="nl-success">
+        <div class="nl-success-icon">🐣</div>
+        <h4>Willkommen an Bord!</h4>
+        <p>Du bekommst bald Post von uns.</p>
+      </div>
+      <button class="nl-dismiss" onclick="closeNewsletter()" type="button">Nein danke, vielleicht später</button>
+      <p class="nl-note">Kein Spam, jederzeit abbestellbar.</p>
     </div>
   </div>
 </div>
@@ -936,6 +1011,33 @@ function submitKontakt() {
  
 document.getElementById('paten-modal').addEventListener('click', function(e){ if(e.target===this) closePatenModal(); });
 document.getElementById('kontakt-modal').addEventListener('click', function(e){ if(e.target===this) closeKontakt(); });
+ 
+/* NEWSLETTER POPUP LOGIC */
+function openNewsletter() {
+  document.getElementById('nl-overlay').classList.add('active');
+}
+function closeNewsletter() {
+  document.getElementById('nl-overlay').classList.remove('active');
+}
+function handleNewsletterSubmit(e, form) {
+  e.preventDefault();
+  fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+    .then(function(response){
+      form.style.display = 'none';
+      document.getElementById('nl-success').style.display = 'block';
+      setTimeout(closeNewsletter, 3500);
+    })
+    .catch(function(){
+      form.style.display = 'none';
+      document.getElementById('nl-success').style.display = 'block';
+      setTimeout(closeNewsletter, 3500);
+    });
+}
+document.getElementById('nl-overlay').addEventListener('click', function(e){ if(e.target===this) closeNewsletter(); });
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeNewsletter(); });
+window.addEventListener('load', function(){
+  setTimeout(openNewsletter, 900);
+});
 </script>
 </body>
 </html>
