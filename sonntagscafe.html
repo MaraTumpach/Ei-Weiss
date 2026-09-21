@@ -1,3 +1,5 @@
+
+Sonntagscafe · HTML
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -5,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"/>
 <meta name="theme-color" content="#2D4A2D"/>
-<title>Sonntagscafé – Ei-Weiss Hofcafé Oberottmarshausen</title>
+<title>Sonntagscafé – Sonntagsfreude Hofcafé Oberottmarshausen</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -19,7 +21,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;}
  
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:space-between;justify-content:space-between;padding:0 40px;height:64px;}
-.nav-logo{font-family:'Playfair Display',serif;font-size:22px;color:var(--yolk);letter-spacing:3px;text-decoration:none;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:18px;color:var(--yolk);letter-spacing:1.5px;text-decoration:none;white-space:nowrap;}
 .nav-links{display:-webkit-flex;display:flex;gap:24px;}
 .nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:300;letter-spacing:1px;text-transform:uppercase;transition:color .2s;}
 .nav-links a:hover,.nav-links a.active{color:var(--yolk);}
@@ -71,6 +73,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);dis
 .what-card h4{font-size:1.1rem;margin-bottom:0.3rem;color:var(--text);}
 .what-card p{font-size:0.82rem;color:var(--muted);font-weight:300;}
  
+/* YOGA & NEM */
+.yoga-nem-section{background:var(--white);padding:7rem 4rem;}
+.yoga-nem-inner{max-width:1100px;margin:0 auto;}
+.yoga-nem-inner>.section-body{margin-bottom:3.5rem;}
+.yoga-block{display:grid;grid-template-columns:0.9fr 1.1fr;gap:4rem;align-items:center;margin-bottom:4.5rem;}
+.yoga-block:last-child{margin-bottom:0;}
+.yoga-block.reverse{grid-template-columns:1.1fr 0.9fr;}
+.yoga-block.reverse .yoga-block-img{order:2;}
+.yoga-block.reverse .yoga-block-text{order:1;}
+.yoga-block-img img{width:100%;height:340px;object-fit:cover;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,0.12);border:1.5px solid var(--warm);}
+.yoga-block-text h3{font-size:1.6rem;margin:0.4rem 0 1rem;color:var(--text);}
+.yoga-block-text p{font-size:0.98rem;color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:1rem;}
+.yoga-block-text a{color:var(--forest);font-weight:500;text-decoration:underline;}
+@media (max-width:800px){
+  .yoga-block,.yoga-block.reverse{grid-template-columns:1fr;gap:1.6rem;}
+  .yoga-block.reverse .yoga-block-img,.yoga-block.reverse .yoga-block-text{order:0;}
+  .yoga-block-img img{height:260px;}
+}
+ 
 /* MATCHA SPOTLIGHT */
 .matcha-section{background:var(--forest);padding:6rem 4rem;position:relative;overflow:hidden;}
 .matcha-section::before{content:'';position:absolute;top:-100px;left:-100px;width:380px;height:380px;border-radius:50%;background:#8BC34A;opacity:0.07;}
@@ -102,6 +123,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);dis
 .milk-info p{font-size:0.85rem;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.75;margin:0 0 14px;}
 .milk-info p:last-child{margin-bottom:18px;}
 .milk-info strong{color:var(--yolk);font-weight:500;}
+.menu-section .milk-info,.order-section .milk-info,.info-section .milk-info{background:var(--white);border-color:var(--warm);}
+.menu-section .milk-info summary,.order-section .milk-info summary,.info-section .milk-info summary{color:var(--yolk-dark);}
+.menu-section .milk-info p,.order-section .milk-info p,.info-section .milk-info p{color:var(--muted);}
+.menu-section .milk-info strong,.order-section .milk-info strong,.info-section .milk-info strong{color:var(--forest);}
+.menu-section .milk-info a,.order-section .milk-info a,.info-section .milk-info a{color:var(--forest);font-weight:500;}
  
 /* MENU */
 .menu-section{background:var(--cream);padding:7rem 4rem;}
@@ -268,14 +294,15 @@ footer .footer-social a:hover{text-decoration:underline;}
 <body>
  
 <nav id="mainNav">
-  <a href="index.html" class="nav-logo">EI-WEISS</a>
+  <a href="index.html" class="nav-logo">SONNTAGSFREUDE</a>
   <div class="nav-links" id="navLinks">
-    <a href="index.html#chips">Chips</a>
-    <a href="index.html#shop">Shop</a>
+    <a href="index.html#hofladen">Hofladen</a>
     <a href="index.html#story">Unser Hof</a>
+    <a href="index.html#about">Über mich</a>
     <a href="sonntagscafe.html" class="active">Sonntagscafé</a>
     <a href="index.html#aktuelles">Aktuelles</a>
     <a href="index.html#paten">Patenschaft</a>
+    <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">MaraMove</a>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
     <span></span><span></span><span></span>
@@ -288,12 +315,14 @@ footer .footer-social a:hover{text-decoration:underline;}
   <div class="hero-content">
     <div class="hero-eyebrow">Sonntags · 11:30–19:30 Uhr · Hofgarten</div>
     <h1>Das <span>Sonntags-</span><br>café.</h1>
-    <p class="hero-sub">Kaffee, cremiger Matcha, frische Kräutertees, knusprige Eierchips und unser legendäres 48h-Sauerteigbrot — bei gutem Wetter direkt bei uns auf dem Hof in Oberottmarshausen. Alles 100&nbsp;% Bio.</p>
+    <p class="hero-sub">Kaffee, cremiger Matcha, frische Kräutertees, knusprige Eierchips und unser legendäres 48h-Sauerteigbrot — bei gutem Wetter direkt bei uns auf dem Hof in Oberottmarshausen. Alles 100&nbsp;% Bio. Und weil für mich Sonntagsfreude und echte Lebensfreude untrennbar zusammengehören, gibt's ab sofort auch kostenloses Yoga im Garten und eine kleine Info-Ecke rund um Nahrungsergänzung — Sonntagsfreude NEM. Mehr zu Bewegung und bewusstem Lebensstil findest du auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--yolk);text-decoration:underline;">MaraMove</a>.</p>
     <div class="hero-info-pills">
       <span class="info-pill">📅 Sonntags bei Wetter</span>
       <span class="info-pill">⏰ 11:30–19:30 Uhr</span>
       <span class="info-pill">📍 Oberottmarshausen</span>
       <span class="info-pill">🌱 100% Bio</span>
+      <span class="info-pill">🧘 Kostenlos Yoga</span>
+      <span class="info-pill">💊 Sonntagsfreude NEM</span>
       <span class="info-pill">🐔 Hühner inklusive</span>
     </div>
     <div class="hero-btns">
@@ -326,6 +355,7 @@ footer .footer-social a:hover{text-decoration:underline;}
       <h2 class="section-title" style="margin-bottom:1.5rem;">Einfach schön.<br>Keine Reservierung.</h2>
       <p>Bei schönem Wetter öffnen wir sonntags von 11:30 bis 19:30 Uhr unseren Hofgarten. Kein Restaurant, kein Trubel — einfach gemütliches Zusammensein bei Kaffee, cremigem Matcha, frischen Kräutertees und dem Besten, was unser Hof zu bieten hat.</p>
       <p>Mitgebracht werden darf alles. Kinder und Hunde herzlich willkommen. Die Hühner schauen sowieso vorbei.</p>
+      <p>Und weil für mich Lebensfreude nie nur auf dem Teller stattfindet, wird aus dem Sonntagscafé Stück für Stück ein kleiner, ganzheitlicher Sonntagsfreude-Ort: mit kostenlosem Yoga im Garten und einer entspannten Info-Ecke rund um Nahrungsergänzung. Wer tiefer einsteigen möchte, findet auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--yolk-dark);">MaraMove</a> meine zweite Seite ganz zum Thema Bewegung und bewusster Lebensstil.</p>
       <p style="font-size:0.88rem;color:var(--yolk-dark);font-style:italic;margin-top:1.5rem;">☀️ Wir machen nur bei gutem Wetter auf — folge uns auf <a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener" style="color:var(--yolk-dark);">Instagram</a> & <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener" style="color:var(--yolk-dark);">Facebook</a> für kurzfristige Ankündigungen.</p>
     </div>
     <div class="what-visual reveal">
@@ -348,6 +378,50 @@ footer .footer-social a:hover{text-decoration:underline;}
         <span class="what-card-icon">🐔</span>
         <h4>Hühner treffen</h4>
         <p>Gretl, Hildegard & Co. sind immer im Garten</p>
+      </div>
+      <div class="what-card" onclick="document.getElementById('yoga').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
+        <span class="what-card-icon">🧘</span>
+        <h4>Kostenlos Yoga</h4>
+        <p>Neu: für alle, direkt im Hofgarten</p>
+      </div>
+      <div class="what-card" onclick="document.getElementById('yoga').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
+        <span class="what-card-icon">💊</span>
+        <h4>Sonntagsfreude NEM</h4>
+        <p>Ehrliches Wissen zu Nahrungsergänzung</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- YOGA & NEM -->
+<section class="yoga-nem-section" id="yoga">
+  <div class="yoga-nem-inner">
+    <span class="section-label">Mehr als nur Kaffee</span>
+    <h2 class="section-title" style="margin-bottom:1.2rem;">Bewegung, Wissen<br>und ein bisschen Sonntagsfreude.</h2>
+    <p class="section-body">Unser Sonntagscafé war schon immer mehr als nur Kaffee und Kuchen — und jetzt wird es noch ein bisschen runder. Für mich beginnt Gesundheit nämlich nicht erst auf dem Teller, sondern genauso im Kopf und im Körper. Deshalb laden wir dich ab sofort nicht nur zu Matcha, Eierchips und frischem Sauerteigbrot ein, sondern auch zu einer kleinen Portion Bewegung und ehrlichem Wissen rund um einen gesunden Alltag. Kurz gesagt: Sonntagsfreude ist für mich ein anderes Wort für Lebensfreude — und die endet nicht am Frühstückstisch.</p>
+ 
+    <div class="yoga-block reveal">
+      <div class="yoga-block-img">
+        <img src="assets/gallery-2.jpg" alt="Kostenloses Yoga im Hofgarten">
+      </div>
+      <div class="yoga-block-text">
+        <span class="section-label" style="color:var(--yolk-dark);">Kostenlos & für alle</span>
+        <h3>🧘 Yoga im Hofgarten</h3>
+        <p>Bei gutem Wetter rollen wir sonntags gemeinsam die Matte im Garten aus — mitten zwischen Hühnern, frischer Luft und dem Duft von frisch gebrühtem Kaffee. Die Einheit ist bewusst offen gehalten: ob totaler Anfänger oder geübte Yogini, jede und jeder ist herzlich willkommen. Es geht nicht um Perfektion, sondern um ein paar ruhige Minuten für dich, bevor der Trubel der Woche wieder losgeht.</p>
+        <p>Geleitet wird die Einheit von mir persönlich — mit der gleichen Sorgfalt und Achtsamkeit, mit der ich auch unsere Hühner und unseren Garten betreue. Wer tiefer in das Thema Bewegung, Beweglichkeit und einen aktiven Lebensstil eintauchen möchte, findet auf meiner Seite <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">MaraMove</a> noch viele weitere Impulse, Übungen und meinen ganz persönlichen Trainingsalltag.</p>
+        <p style="font-size:0.85rem;color:var(--muted);font-style:italic;">Bitte eigene Matte und bequeme Kleidung mitbringen — für alles Weitere ist gesorgt. Kostenlos, ohne Anmeldung.</p>
+      </div>
+    </div>
+ 
+    <div class="yoga-block reverse reveal">
+      <div class="yoga-block-img">
+        <img src="assets/gallery-1%20(1).jpg" alt="Mara beim Sport">
+      </div>
+      <div class="yoga-block-text">
+        <span class="section-label" style="color:var(--yolk-dark);">Wissen zum Mitnehmen</span>
+        <h3>💊 Sonntagsfreude NEM-Infos</h3>
+        <p>Nahrungsergänzungsmittel sind ein Dschungel — viele Versprechen, wenig Durchblick. Deshalb gibt es bei uns sonntags eine kleine, unaufgeregte Info-Ecke rund um Nährstoffe, sinnvolle Ergänzung und worauf es bei der Qualität wirklich ankommt. Kein Verkaufsgespräch, sondern ehrliche Beratung aus erster Hand — basierend auf dem, was ich selbst tagtäglich anwende und wofür ich stehe.</p>
+        <p>Ob Fragen zu Protein, Vitaminen, Mineralstoffen oder einfach dazu, wie du deinen Alltag mit einfachen Mitteln gesünder gestalten kannst — komm gerne vorbei und sprich mich an. Alle Hintergründe, Produkte und mein volles Angebot rund um Nahrungsergänzung und einen aktiven Lebensstil findest du gebündelt auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">MaraMove</a>.</p>
       </div>
     </div>
   </div>
@@ -388,6 +462,7 @@ footer .footer-social a:hover{text-decoration:underline;}
         <p><strong>Warum A2-Milch bzw. Ziegenmilch:</strong> Ziegenmilch enthält von Natur aus nur das A2-Beta-Casein, während viele moderne Kuhrassen überwiegend A1-Protein produzieren. A2-Protein gilt als bekömmlicher und wird von vielen Menschen deutlich besser vertragen. Deshalb achten wir bewusst darauf, dass unsere Kuhmilch von Rassen mit hohem A2-Anteil stammt.</p>
         <p><strong>Warum Bio:</strong> Bio-Haltung bedeutet mehr Weidegang, keine Anbindehaltung, keine Antibiotika im Regelbetrieb und Futter ohne chemisch-synthetische Pestizide. Das schmeckt man nicht nur – es ist uns auch aus Respekt vor dem Tier wichtig.</p>
         <p><strong>Warum Frischmilch:</strong> Unbehandelte, nicht homogenisierte Frischmilch behält mehr natürliche Enzyme und Aromastoffe. Wir kennen die Höfe, von denen sie kommt, persönlich – das ist uns wichtiger als lange Haltbarkeit.</p>
+        <p>Mehr zum Thema bewusste Ernährung, Bewegung und Lifestyle gibt's auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">MaraMove</a>.</p>
       </details>
     </div>
   </div>
@@ -480,10 +555,17 @@ footer .footer-social a:hover{text-decoration:underline;}
  
     </div>
  
+    <details class="milk-info reveal" style="max-width:1100px;margin:2rem auto 0;">
+      <summary>Warum bei uns nie Zucker oder Süßstoff drin ist</summary>
+      <p><strong>Warum kein Zucker:</strong> Raffinierter Zucker lässt den Blutzuckerspiegel schnell steigen und genauso schnell wieder fallen — das Ergebnis sind Heißhunger, Müdigkeit und auf Dauer eine unnötige Belastung für den Körper. Das passt nicht zu dem, wofür Sonntagsfreude steht.</p>
+      <p><strong>Warum keine Süßstoffe:</strong> Chemisch hergestellte Süßstoffe stehen im Verdacht, den Stoffwechsel und die Darmflora negativ zu beeinflussen — und sie gaukeln dem Körper eine Süße vor, die er am Ende doch einfordert.</p>
+      <p><strong>Was wir stattdessen nutzen:</strong> Ausschließlich hochwertige Bio-Datteln und die natürliche Süße der Zutaten selbst. Mehr rund um bewusste Ernährung, Blutzucker und einen aktiven Stoffwechsel gibt's vertieft auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">MaraMove</a>.</p>
+    </details>
+ 
     <div class="bio-banner reveal">
       <div class="bio-banner-text">
         <h4>🌱 Unser Qualitäts-Versprechen</h4>
-        <p>ALLES bei uns ist 100 % BIO — vom Kaffee bis zum Kuchen. Gesüßt wird ausschließlich natürlich mit hochwertigen Bio-Datteln.</p>
+        <p>ALLES bei uns ist 100 % BIO — vom Kaffee bis zum Kuchen. Gesüßt wird ausschließlich natürlich mit hochwertigen Bio-Datteln. Warum uns das so wichtig ist? Mehr zu bewusster Ernährung und einem gesunden Lifestyle auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--yolk);text-decoration:underline;">MaraMove</a>.</p>
       </div>
       <span class="bio-badge-big">100% BIO</span>
     </div>
@@ -496,7 +578,7 @@ footer .footer-social a:hover{text-decoration:underline;}
     <div class="menu-modal-header">
       <button class="modal-close" onclick="closeMenuModal()">×</button>
       <h3>🐔 Hof-Getränke & Speisenkarte</h3>
-      <p>Ei-Weiss Sonntagscafé · Oberottmarshausen</p>
+      <p>Sonntagsfreude Sonntagscafé · Oberottmarshausen</p>
     </div>
     <div class="menu-modal-body">
  
@@ -540,7 +622,13 @@ footer .footer-social a:hover{text-decoration:underline;}
       <span class="section-label">Unser Brot</span>
       <h2>48 Stunden.<br>Ein <em>Brot.</em></h2>
       <p>Unser Sauerteigbrot braucht Zeit. Viel Zeit. Zwei volle Tage, in denen Wildhefen und Milchsäurebakterien arbeiten, Aromen entwickeln und das Brot zu etwas machen, das wirklich nach Brot schmeckt.</p>
-      <p>Kein Hefe-Schnellverfahren, keine Backmischung. Nur Mehl aus alten Weizensorten, Wasser, Salz und ein aktiver Sauerteig-Starter, der seit Jahren gepflegt wird.</p>
+      <p>Kein Hefe-Schnellverfahren, keine Backmischung. Nur Mehl aus alten Getreidesorten, Wasser, Salz und ein aktiver Sauerteig-Starter, der seit Jahren gepflegt wird.</p>
+      <details class="milk-info">
+        <summary>Warum wir auf modernes Weizenmehl verzichten</summary>
+        <p><strong>Warum keine moderne Hochleistungsweizen-Sorte:</strong> Moderne Weizensorten sind über Jahrzehnte auf möglichst hohen Ertrag und Backfähigkeit gezüchtet worden — dabei ist der Glutengehalt gestiegen und die Sortenvielfalt geschrumpft. Viele Menschen vertragen genau das schlechter, als sie denken.</p>
+        <p><strong>Was wir stattdessen verwenden:</strong> Mehl aus alten, ursprünglichen Getreidesorten wie Dinkel, Emmer und Einkorn. Sie liefern mehr Nährstoffe und Aromen und werden durch unsere lange 48-Stunden-Fermentation zusätzlich besser bekömmlich gemacht.</p>
+        <p><strong>Warum das für uns zu Sonntagsfreude passt:</strong> Ein Brot, das dir guttut, ist für mich echte Lebensfreude — genau wie ein Sonntag mit Bewegung und bewusster Ernährung. Mehr dazu auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">MaraMove</a>.</p>
+      </details>
       <div class="brot-highlight">
         <p><strong>Bestellschluss: Freitag, 18 Uhr.</strong> Abholung am Sonntag beim Café. Begrenzte Stückzahl — wer früh fragt, bekommt sicher eins.</p>
       </div>
@@ -583,7 +671,7 @@ footer .footer-social a:hover{text-decoration:underline;}
       <p>Trag dich ein — wir bestätigen per Mail. Bestellschluss ist immer Freitag 18 Uhr für das Brot am Sonntag.</p>
     </div>
     <form class="order-form reveal" action="https://formspree.io/f/xnjldvwe" method="POST" onsubmit="handleSubmit(event,this)">
-      <input type="hidden" name="_subject" value="48h-Sauerteigbrot Bestellung – Ei-Weiss Sonntagscafé">
+      <input type="hidden" name="_subject" value="48h-Sauerteigbrot Bestellung – Sonntagsfreude Sonntagscafé">
       <input type="hidden" name="_replyto" value="maratumpach@gmail.com">
       <input type="hidden" name="typ" value="Sauerteigbrot Vorbestellung">
       <div class="form-row">
@@ -650,6 +738,12 @@ footer .footer-social a:hover{text-decoration:underline;}
           <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener">📘 Facebook</a>
         </div>
       </div>
+      <div class="info-card">
+        <span class="info-card-icon">🧘</span>
+        <h3>Yoga & Sonntagsfreude NEM</h3>
+        <p>Kostenloses Yoga und die kleine NEM-Infoecke finden bei gutem Wetter zusammen mit dem Café statt — ohne Anmeldung, einfach vorbeikommen.</p>
+        <p style="margin-top:1rem;"><a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Mehr auf MaraMove →</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -670,7 +764,7 @@ footer .footer-social a:hover{text-decoration:underline;}
         </iframe>
       </div>
       <div class="map-address-box reveal">
-        <h3>🐔 Ei-Weiss Hof</h3>
+        <h3>🐔 Sonntagsfreude Hof</h3>
         <address>
           Rainstraße 14<br>
           86698 Oberottmarshausen<br>
@@ -685,7 +779,7 @@ footer .footer-social a:hover{text-decoration:underline;}
 <!-- CHICKENS TEASER -->
 <section class="chickens-section">
   <h2>Und wer ist noch dabei?</h2>
-  <p>Gretl, Hildegard und ihre zukünftige Freundin freuen sich über jeden Besucher.</p>
+  <p>Gretl, Hildegard und ihre zukünftige Freundin freuen sich über jeden Besucher — auch das ist ein Stück Sonntagsfreude.</p>
   <div class="chickens-row">
     <div class="chicken-mini">
       <img src="assets/bild2.jpg" alt="Gretl das Huhn">
@@ -707,7 +801,7 @@ footer .footer-social a:hover{text-decoration:underline;}
  
 <!-- FOOTER -->
 <footer>
-  <strong>EI-WEISS</strong> · Sonntagscafé · Oberottmarshausen, Bayern<br>
+  <strong>SONNTAGSFREUDE</strong> · Sonntagscafé · Oberottmarshausen, Bayern<br>
   <span style="font-size:12px;margin-top:8px;display:block;" class="footer-social">
     <a href="index.html" style="color:var(--yolk);text-decoration:none;">← Zurück zur Hauptseite</a>
     &nbsp;·&nbsp;
@@ -716,6 +810,8 @@ footer .footer-social a:hover{text-decoration:underline;}
     <a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener">Instagram</a>
     &nbsp;·&nbsp;
     <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+    &nbsp;·&nbsp;
+    <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">MaraMove</a>
   </span>
 </footer>
  
