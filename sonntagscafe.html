@@ -1,5 +1,3 @@
-
-Sonntagscafe · HTML
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -123,11 +121,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);dis
 .milk-info p{font-size:0.85rem;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.75;margin:0 0 14px;}
 .milk-info p:last-child{margin-bottom:18px;}
 .milk-info strong{color:var(--yolk);font-weight:500;}
-.menu-section .milk-info,.order-section .milk-info,.info-section .milk-info{background:var(--white);border-color:var(--warm);}
-.menu-section .milk-info summary,.order-section .milk-info summary,.info-section .milk-info summary{color:var(--yolk-dark);}
-.menu-section .milk-info p,.order-section .milk-info p,.info-section .milk-info p{color:var(--muted);}
-.menu-section .milk-info strong,.order-section .milk-info strong,.info-section .milk-info strong{color:var(--forest);}
-.menu-section .milk-info a,.order-section .milk-info a,.info-section .milk-info a{color:var(--forest);font-weight:500;}
+.menu-section .milk-info,.order-section .milk-info,.info-section .milk-info,.what-section .milk-info,.yoga-nem-section .milk-info{background:var(--cream);border-color:var(--warm);}
+.menu-section .milk-info summary,.order-section .milk-info summary,.info-section .milk-info summary,.what-section .milk-info summary,.yoga-nem-section .milk-info summary{color:var(--yolk-dark);}
+.menu-section .milk-info p,.order-section .milk-info p,.info-section .milk-info p,.what-section .milk-info p,.yoga-nem-section .milk-info p{color:var(--muted);}
+.menu-section .milk-info strong,.order-section .milk-info strong,.info-section .milk-info strong,.what-section .milk-info strong,.yoga-nem-section .milk-info strong{color:var(--forest);}
+.menu-section .milk-info a,.order-section .milk-info a,.info-section .milk-info a,.what-section .milk-info a,.yoga-nem-section .milk-info a{color:var(--forest);font-weight:500;}
  
 /* MENU */
 .menu-section{background:var(--cream);padding:7rem 4rem;}
@@ -302,7 +300,7 @@ footer .footer-social a:hover{text-decoration:underline;}
     <a href="sonntagscafe.html" class="active">Sonntagscafé</a>
     <a href="index.html#aktuelles">Aktuelles</a>
     <a href="index.html#paten">Patenschaft</a>
-    <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">MaraMove</a>
+    <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Lebensfreude</a>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
     <span></span><span></span><span></span>
@@ -315,14 +313,18 @@ footer .footer-social a:hover{text-decoration:underline;}
   <div class="hero-content">
     <div class="hero-eyebrow">Sonntags · 11:30–19:30 Uhr · Hofgarten</div>
     <h1>Das <span>Sonntags-</span><br>café.</h1>
-    <p class="hero-sub">Kaffee, cremiger Matcha, frische Kräutertees, knusprige Eierchips und unser legendäres 48h-Sauerteigbrot — bei gutem Wetter direkt bei uns auf dem Hof in Oberottmarshausen. Alles 100&nbsp;% Bio. Und weil für mich Sonntagsfreude und echte Lebensfreude untrennbar zusammengehören, gibt's ab sofort auch kostenloses Yoga im Garten und eine kleine Info-Ecke rund um Nahrungsergänzung — Sonntagsfreude NEM. Mehr zu Bewegung und bewusstem Lebensstil findest du auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--yolk);text-decoration:underline;">MaraMove</a>.</p>
+    <p class="hero-sub">Kaffee, cremiger Matcha, frische Kräutertees, knusprige Eierchips und unser legendäres 48h-Sauerteigbrot — bei gutem Wetter direkt bei uns auf dem Hof. Alles 100&nbsp;% Bio. Neu: kostenloses Yoga & Sonntagsfreude NEM, unsere Info-Ecke zu Nahrungsergänzungsmitteln.</p>
+    <details class="milk-info" style="max-width:520px;margin:0 0 1.6rem;">
+      <summary>Was ist "Sonntagsfreude NEM"? Mehr lesen</summary>
+      <p><strong>NEM</strong> steht für <strong>N</strong>ahrungs<strong>e</strong>rgänzungs<strong>m</strong>ittel. Unter dem Namen Sonntagsfreude NEM bieten wir sonntags eine kleine, unaufgeregte Info-Ecke dazu an — für mich gehören Sonntagsfreude und Lebensfreude untrennbar zusammen. Mehr zu Bewegung und bewusstem Lebensstil findest du auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Lebensfreude</a>.</p>
+    </details>
     <div class="hero-info-pills">
       <span class="info-pill">📅 Sonntags bei Wetter</span>
       <span class="info-pill">⏰ 11:30–19:30 Uhr</span>
       <span class="info-pill">📍 Oberottmarshausen</span>
       <span class="info-pill">🌱 100% Bio</span>
       <span class="info-pill">🧘 Kostenlos Yoga</span>
-      <span class="info-pill">💊 Sonntagsfreude NEM</span>
+      <span class="info-pill">💊 Nahrungsergänzung (NEM)</span>
       <span class="info-pill">🐔 Hühner inklusive</span>
     </div>
     <div class="hero-btns">
@@ -355,7 +357,10 @@ footer .footer-social a:hover{text-decoration:underline;}
       <h2 class="section-title" style="margin-bottom:1.5rem;">Einfach schön.<br>Keine Reservierung.</h2>
       <p>Bei schönem Wetter öffnen wir sonntags von 11:30 bis 19:30 Uhr unseren Hofgarten. Kein Restaurant, kein Trubel — einfach gemütliches Zusammensein bei Kaffee, cremigem Matcha, frischen Kräutertees und dem Besten, was unser Hof zu bieten hat.</p>
       <p>Mitgebracht werden darf alles. Kinder und Hunde herzlich willkommen. Die Hühner schauen sowieso vorbei.</p>
-      <p>Und weil für mich Lebensfreude nie nur auf dem Teller stattfindet, wird aus dem Sonntagscafé Stück für Stück ein kleiner, ganzheitlicher Sonntagsfreude-Ort: mit kostenlosem Yoga im Garten und einer entspannten Info-Ecke rund um Nahrungsergänzung. Wer tiefer einsteigen möchte, findet auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--yolk-dark);">MaraMove</a> meine zweite Seite ganz zum Thema Bewegung und bewusster Lebensstil.</p>
+      <details class="milk-info">
+        <summary>Sonntagsfreude wird ganzheitlich. Mehr lesen</summary>
+        <p>Lebensfreude findet für mich nie nur auf dem Teller statt. Deshalb gibt's jetzt auch kostenloses Yoga und eine Info-Ecke zu Nahrungsergänzung. Wer tiefer einsteigen möchte, findet auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Lebensfreude</a> meine zweite Seite dazu.</p>
+      </details>
       <p style="font-size:0.88rem;color:var(--yolk-dark);font-style:italic;margin-top:1.5rem;">☀️ Wir machen nur bei gutem Wetter auf — folge uns auf <a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener" style="color:var(--yolk-dark);">Instagram</a> & <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener" style="color:var(--yolk-dark);">Facebook</a> für kurzfristige Ankündigungen.</p>
     </div>
     <div class="what-visual reveal">
@@ -386,8 +391,8 @@ footer .footer-social a:hover{text-decoration:underline;}
       </div>
       <div class="what-card" onclick="document.getElementById('yoga').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
         <span class="what-card-icon">💊</span>
-        <h4>Sonntagsfreude NEM</h4>
-        <p>Ehrliches Wissen zu Nahrungsergänzung</p>
+        <h4>Nahrungsergänzung</h4>
+        <p>Sonntagsfreude NEM — ehrliches Wissen zum Mitnehmen</p>
       </div>
     </div>
   </div>
@@ -398,7 +403,7 @@ footer .footer-social a:hover{text-decoration:underline;}
   <div class="yoga-nem-inner">
     <span class="section-label">Mehr als nur Kaffee</span>
     <h2 class="section-title" style="margin-bottom:1.2rem;">Bewegung, Wissen<br>und ein bisschen Sonntagsfreude.</h2>
-    <p class="section-body">Unser Sonntagscafé war schon immer mehr als nur Kaffee und Kuchen — und jetzt wird es noch ein bisschen runder. Für mich beginnt Gesundheit nämlich nicht erst auf dem Teller, sondern genauso im Kopf und im Körper. Deshalb laden wir dich ab sofort nicht nur zu Matcha, Eierchips und frischem Sauerteigbrot ein, sondern auch zu einer kleinen Portion Bewegung und ehrlichem Wissen rund um einen gesunden Alltag. Kurz gesagt: Sonntagsfreude ist für mich ein anderes Wort für Lebensfreude — und die endet nicht am Frühstückstisch.</p>
+    <p class="section-body">Sonntagsfreude ist für mich ein anderes Wort für Lebensfreude — und die endet nicht am Frühstückstisch.</p>
  
     <div class="yoga-block reveal">
       <div class="yoga-block-img">
@@ -407,9 +412,12 @@ footer .footer-social a:hover{text-decoration:underline;}
       <div class="yoga-block-text">
         <span class="section-label" style="color:var(--yolk-dark);">Kostenlos & für alle</span>
         <h3>🧘 Yoga im Hofgarten</h3>
-        <p>Bei gutem Wetter rollen wir sonntags gemeinsam die Matte im Garten aus — mitten zwischen Hühnern, frischer Luft und dem Duft von frisch gebrühtem Kaffee. Die Einheit ist bewusst offen gehalten: ob totaler Anfänger oder geübte Yogini, jede und jeder ist herzlich willkommen. Es geht nicht um Perfektion, sondern um ein paar ruhige Minuten für dich, bevor der Trubel der Woche wieder losgeht.</p>
-        <p>Geleitet wird die Einheit von mir persönlich — mit der gleichen Sorgfalt und Achtsamkeit, mit der ich auch unsere Hühner und unseren Garten betreue. Wer tiefer in das Thema Bewegung, Beweglichkeit und einen aktiven Lebensstil eintauchen möchte, findet auf meiner Seite <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">MaraMove</a> noch viele weitere Impulse, Übungen und meinen ganz persönlichen Trainingsalltag.</p>
-        <p style="font-size:0.85rem;color:var(--muted);font-style:italic;">Bitte eigene Matte und bequeme Kleidung mitbringen — für alles Weitere ist gesorgt. Kostenlos, ohne Anmeldung.</p>
+        <p>Bei gutem Wetter rollen wir sonntags gemeinsam die Matte im Garten aus — offen für Anfänger und Geübte.</p>
+        <details class="milk-info">
+          <summary>Mehr lesen</summary>
+          <p>Geleitet wird die Einheit von mir persönlich. Wer tiefer ins Thema Bewegung eintauchen möchte, findet auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Lebensfreude</a> weitere Impulse und meinen Trainingsalltag.</p>
+          <p><strong>Gut zu wissen:</strong> Eigene Matte und bequeme Kleidung mitbringen — kostenlos, ohne Anmeldung.</p>
+        </details>
       </div>
     </div>
  
@@ -419,9 +427,12 @@ footer .footer-social a:hover{text-decoration:underline;}
       </div>
       <div class="yoga-block-text">
         <span class="section-label" style="color:var(--yolk-dark);">Wissen zum Mitnehmen</span>
-        <h3>💊 Sonntagsfreude NEM-Infos</h3>
-        <p>Nahrungsergänzungsmittel sind ein Dschungel — viele Versprechen, wenig Durchblick. Deshalb gibt es bei uns sonntags eine kleine, unaufgeregte Info-Ecke rund um Nährstoffe, sinnvolle Ergänzung und worauf es bei der Qualität wirklich ankommt. Kein Verkaufsgespräch, sondern ehrliche Beratung aus erster Hand — basierend auf dem, was ich selbst tagtäglich anwende und wofür ich stehe.</p>
-        <p>Ob Fragen zu Protein, Vitaminen, Mineralstoffen oder einfach dazu, wie du deinen Alltag mit einfachen Mitteln gesünder gestalten kannst — komm gerne vorbei und sprich mich an. Alle Hintergründe, Produkte und mein volles Angebot rund um Nahrungsergänzung und einen aktiven Lebensstil findest du gebündelt auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">MaraMove</a>.</p>
+        <h3>💊 Sonntagsfreude NEM — Nahrungsergänzung erklärt</h3>
+        <p>Eine kleine, unaufgeregte Info-Ecke rund um Nährstoffe und sinnvolle Nahrungsergänzungsmittel — kein Verkaufsgespräch.</p>
+        <details class="milk-info">
+          <summary>Mehr lesen</summary>
+          <p>Ehrliche Beratung aus erster Hand, basierend auf dem, was ich selbst anwende. Komm vorbei und sprich mich an — mein volles Angebot rund um Nahrungsergänzung findest du auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Lebensfreude</a>.</p>
+        </details>
       </div>
     </div>
   </div>
@@ -462,7 +473,7 @@ footer .footer-social a:hover{text-decoration:underline;}
         <p><strong>Warum A2-Milch bzw. Ziegenmilch:</strong> Ziegenmilch enthält von Natur aus nur das A2-Beta-Casein, während viele moderne Kuhrassen überwiegend A1-Protein produzieren. A2-Protein gilt als bekömmlicher und wird von vielen Menschen deutlich besser vertragen. Deshalb achten wir bewusst darauf, dass unsere Kuhmilch von Rassen mit hohem A2-Anteil stammt.</p>
         <p><strong>Warum Bio:</strong> Bio-Haltung bedeutet mehr Weidegang, keine Anbindehaltung, keine Antibiotika im Regelbetrieb und Futter ohne chemisch-synthetische Pestizide. Das schmeckt man nicht nur – es ist uns auch aus Respekt vor dem Tier wichtig.</p>
         <p><strong>Warum Frischmilch:</strong> Unbehandelte, nicht homogenisierte Frischmilch behält mehr natürliche Enzyme und Aromastoffe. Wir kennen die Höfe, von denen sie kommt, persönlich – das ist uns wichtiger als lange Haltbarkeit.</p>
-        <p>Mehr zum Thema bewusste Ernährung, Bewegung und Lifestyle gibt's auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">MaraMove</a>.</p>
+        <p><a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Mehr auf Lebensfreude →</a></p>
       </details>
     </div>
   </div>
@@ -556,16 +567,16 @@ footer .footer-social a:hover{text-decoration:underline;}
     </div>
  
     <details class="milk-info reveal" style="max-width:1100px;margin:2rem auto 0;">
-      <summary>Warum bei uns nie Zucker oder Süßstoff drin ist</summary>
-      <p><strong>Warum kein Zucker:</strong> Raffinierter Zucker lässt den Blutzuckerspiegel schnell steigen und genauso schnell wieder fallen — das Ergebnis sind Heißhunger, Müdigkeit und auf Dauer eine unnötige Belastung für den Körper. Das passt nicht zu dem, wofür Sonntagsfreude steht.</p>
-      <p><strong>Warum keine Süßstoffe:</strong> Chemisch hergestellte Süßstoffe stehen im Verdacht, den Stoffwechsel und die Darmflora negativ zu beeinflussen — und sie gaukeln dem Körper eine Süße vor, die er am Ende doch einfordert.</p>
-      <p><strong>Was wir stattdessen nutzen:</strong> Ausschließlich hochwertige Bio-Datteln und die natürliche Süße der Zutaten selbst. Mehr rund um bewusste Ernährung, Blutzucker und einen aktiven Stoffwechsel gibt's vertieft auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">MaraMove</a>.</p>
+      <summary>Warum nie Zucker oder Süßstoff? Mehr lesen</summary>
+      <p><strong>Warum kein Zucker:</strong> Er lässt den Blutzuckerspiegel schnell steigen und fallen — Heißhunger und Müdigkeit sind die Folge.</p>
+      <p><strong>Warum keine Süßstoffe:</strong> Sie stehen im Verdacht, Stoffwechsel und Darmflora negativ zu beeinflussen.</p>
+      <p><strong>Stattdessen:</strong> Hochwertige Bio-Datteln. Mehr auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Lebensfreude</a>.</p>
     </details>
  
     <div class="bio-banner reveal">
       <div class="bio-banner-text">
         <h4>🌱 Unser Qualitäts-Versprechen</h4>
-        <p>ALLES bei uns ist 100 % BIO — vom Kaffee bis zum Kuchen. Gesüßt wird ausschließlich natürlich mit hochwertigen Bio-Datteln. Warum uns das so wichtig ist? Mehr zu bewusster Ernährung und einem gesunden Lifestyle auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--yolk);text-decoration:underline;">MaraMove</a>.</p>
+        <p>ALLES bei uns ist 100 % BIO — gesüßt wird ausschließlich mit hochwertigen Bio-Datteln.</p>
       </div>
       <span class="bio-badge-big">100% BIO</span>
     </div>
@@ -624,10 +635,9 @@ footer .footer-social a:hover{text-decoration:underline;}
       <p>Unser Sauerteigbrot braucht Zeit. Viel Zeit. Zwei volle Tage, in denen Wildhefen und Milchsäurebakterien arbeiten, Aromen entwickeln und das Brot zu etwas machen, das wirklich nach Brot schmeckt.</p>
       <p>Kein Hefe-Schnellverfahren, keine Backmischung. Nur Mehl aus alten Getreidesorten, Wasser, Salz und ein aktiver Sauerteig-Starter, der seit Jahren gepflegt wird.</p>
       <details class="milk-info">
-        <summary>Warum wir auf modernes Weizenmehl verzichten</summary>
-        <p><strong>Warum keine moderne Hochleistungsweizen-Sorte:</strong> Moderne Weizensorten sind über Jahrzehnte auf möglichst hohen Ertrag und Backfähigkeit gezüchtet worden — dabei ist der Glutengehalt gestiegen und die Sortenvielfalt geschrumpft. Viele Menschen vertragen genau das schlechter, als sie denken.</p>
-        <p><strong>Was wir stattdessen verwenden:</strong> Mehl aus alten, ursprünglichen Getreidesorten wie Dinkel, Emmer und Einkorn. Sie liefern mehr Nährstoffe und Aromen und werden durch unsere lange 48-Stunden-Fermentation zusätzlich besser bekömmlich gemacht.</p>
-        <p><strong>Warum das für uns zu Sonntagsfreude passt:</strong> Ein Brot, das dir guttut, ist für mich echte Lebensfreude — genau wie ein Sonntag mit Bewegung und bewusster Ernährung. Mehr dazu auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">MaraMove</a>.</p>
+        <summary>Warum kein modernes Weizenmehl? Mehr lesen</summary>
+        <p><strong>Warum nicht:</strong> Moderne Weizensorten sind auf hohen Ertrag gezüchtet, mit gestiegenem Glutengehalt — viele vertragen das schlechter, als sie denken.</p>
+        <p><strong>Was wir nutzen:</strong> Alte Getreidesorten wie Dinkel, Emmer und Einkorn, zusätzlich bekömmlicher durch unsere 48h-Fermentation. Mehr auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Lebensfreude</a>.</p>
       </details>
       <div class="brot-highlight">
         <p><strong>Bestellschluss: Freitag, 18 Uhr.</strong> Abholung am Sonntag beim Café. Begrenzte Stückzahl — wer früh fragt, bekommt sicher eins.</p>
@@ -741,8 +751,8 @@ footer .footer-social a:hover{text-decoration:underline;}
       <div class="info-card">
         <span class="info-card-icon">🧘</span>
         <h3>Yoga & Sonntagsfreude NEM</h3>
-        <p>Kostenloses Yoga und die kleine NEM-Infoecke finden bei gutem Wetter zusammen mit dem Café statt — ohne Anmeldung, einfach vorbeikommen.</p>
-        <p style="margin-top:1rem;"><a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Mehr auf MaraMove →</a></p>
+        <p>Kostenloses Yoga und unsere Info-Ecke zu Nahrungsergänzungsmitteln (NEM) finden bei gutem Wetter zusammen mit dem Café statt — ohne Anmeldung.</p>
+        <p style="margin-top:1rem;"><a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Mehr auf Lebensfreude →</a></p>
       </div>
     </div>
   </div>
@@ -811,7 +821,7 @@ footer .footer-social a:hover{text-decoration:underline;}
     &nbsp;·&nbsp;
     <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
     &nbsp;·&nbsp;
-    <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">MaraMove</a>
+    <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Lebensfreude</a>
   </span>
 </footer>
  
