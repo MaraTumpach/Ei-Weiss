@@ -18,10 +18,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 h1,h2,h3,h4{font-family:'Playfair Display',serif;}
  
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:space-between;justify-content:space-between;padding:0 40px;height:64px;}
-.nav-logo{font-family:'Playfair Display',serif;font-size:18px;color:var(--yolk);letter-spacing:1.5px;text-decoration:none;white-space:nowrap;}
-.nav-links{display:-webkit-flex;display:flex;gap:24px;}
-.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:300;letter-spacing:1px;text-transform:uppercase;transition:color .2s;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--forest);display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:space-between;justify-content:space-between;padding:0 24px;height:64px;gap:12px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:18px;color:var(--yolk);letter-spacing:1.5px;text-decoration:none;white-space:nowrap;flex-shrink:0;}
+.nav-links{display:-webkit-flex;display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;margin:0 12px;}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:12.5px;font-weight:300;letter-spacing:0.5px;text-transform:uppercase;transition:color .2s;white-space:nowrap;}
 .nav-links a:hover,.nav-links a.active{color:var(--yolk);}
 .hamburger{display:none;-webkit-flex-direction:column;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
 .hamburger span{display:block;width:22px;height:1.5px;background:rgba(255,255,255,0.8);}
@@ -255,9 +255,9 @@ footer .footer-social a:hover{text-decoration:underline;}
   .what-section,.menu-section,.brot-section,.order-section,.info-section,.matcha-section,.map-section{padding:5rem 2rem;}
   .photo-strip-section{padding:3rem 2rem 0;}
 }
-@media (max-width:768px){
+@media (max-width:980px){
   nav{padding:0 16px;height:56px;}
-  .nav-links{display:none;-webkit-flex-direction:column;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--forest);padding:1.2rem 1.5rem;gap:1rem;box-shadow:0 8px 30px rgba(0,0,0,0.2);z-index:99;}
+  .nav-links{display:none;-webkit-flex-direction:column;flex-direction:column;align-items:flex-start;position:absolute;top:100%;left:0;right:0;background:var(--forest);padding:1.2rem 1.5rem;gap:1rem;box-shadow:0 8px 30px rgba(0,0,0,0.2);z-index:99;margin:0;}
   .nav-links.open{display:-webkit-flex;display:flex;}
   .nav-links a{font-size:14px;padding:0.3rem 0;}
   .hamburger{display:-webkit-flex;display:flex;}
@@ -313,18 +313,19 @@ footer .footer-social a:hover{text-decoration:underline;}
   <div class="hero-content">
     <div class="hero-eyebrow">Sonntags · 11:30–19:30 Uhr · Hofgarten</div>
     <h1>Das <span>Sonntags-</span><br>café.</h1>
-    <p class="hero-sub">Kaffee, cremiger Matcha, frische Kräutertees, knusprige Eierchips und unser legendäres 48h-Sauerteigbrot — bei gutem Wetter direkt bei uns auf dem Hof. Alles 100&nbsp;% Bio. Neu: kostenloses Yoga & Sonntagsfreude NEM, unsere Info-Ecke zu Nahrungsergänzungsmitteln.</p>
-    <details class="milk-info" style="max-width:520px;margin:0 0 1.6rem;">
-      <summary>Was ist "Sonntagsfreude NEM"? Mehr lesen</summary>
-      <p><strong>NEM</strong> steht für <strong>N</strong>ahrungs<strong>e</strong>rgänzungs<strong>m</strong>ittel. Unter dem Namen Sonntagsfreude NEM bieten wir sonntags eine kleine, unaufgeregte Info-Ecke dazu an — für mich gehören Sonntagsfreude und Lebensfreude untrennbar zusammen. Mehr zu Bewegung und bewusstem Lebensstil findest du auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Lebensfreude</a>.</p>
-    </details>
+    <p class="hero-sub">Kaffee, cremiger Matcha, frische Kräutertees, knusprige Eierchips und unser legendäres 48h-Sauerteigbrot — bei gutem Wetter direkt bei uns auf dem Hof. Alles 100&nbsp;% Bio.</p>
+    <p class="hero-sub" style="margin-bottom:1rem;">Jeder ist herzlich eingeladen, einfach sonntags vorbeizukommen: in die kostenlose Yogastunde reinschnuppern, unseren Hofladen entdecken, unser Café kennenlernen — oder einfach die Hühner besuchen.</p>
+    <p style="font-size:0.92rem;color:rgba(255,255,255,0.7);margin-bottom:1.8rem;">
+      <a href="#matcha" style="color:var(--yolk);text-decoration:underline;" onclick="document.getElementById('matcha').scrollIntoView({behavior:'smooth'});return false;">Warum unser Matcha besonders ist →</a>
+      &nbsp;·&nbsp;
+      <a href="#brot" style="color:var(--yolk);text-decoration:underline;" onclick="document.getElementById('brot').scrollIntoView({behavior:'smooth'});return false;">Warum unser Sauerteigbrot so gesund ist →</a>
+    </p>
     <div class="hero-info-pills">
       <span class="info-pill">📅 Sonntags bei Wetter</span>
       <span class="info-pill">⏰ 11:30–19:30 Uhr</span>
       <span class="info-pill">📍 Oberottmarshausen</span>
       <span class="info-pill">🌱 100% Bio</span>
       <span class="info-pill">🧘 Kostenlos Yoga</span>
-      <span class="info-pill">💊 Nahrungsergänzung (NEM)</span>
       <span class="info-pill">🐔 Hühner inklusive</span>
     </div>
     <div class="hero-btns">
@@ -345,7 +346,7 @@ footer .footer-social a:hover{text-decoration:underline;}
     <img src="assets/bild3.jpg" alt="Hühner im Hofgarten">
     <img src="assets/bild1.jpg" alt="Henne mit Küken">
     <img src="assets/bild6.jpg" alt="Hühner im Garten von oben">
-    <img src="assets/bild4.jpg" alt="Huhn im Auslauf">
+    <img src="assets/bild4.jpg" alt="Huhn im Auslauf" style="object-position: top;">
   </div>
 </section>
  
@@ -357,10 +358,6 @@ footer .footer-social a:hover{text-decoration:underline;}
       <h2 class="section-title" style="margin-bottom:1.5rem;">Einfach schön.<br>Keine Reservierung.</h2>
       <p>Bei schönem Wetter öffnen wir sonntags von 11:30 bis 19:30 Uhr unseren Hofgarten. Kein Restaurant, kein Trubel — einfach gemütliches Zusammensein bei Kaffee, cremigem Matcha, frischen Kräutertees und dem Besten, was unser Hof zu bieten hat.</p>
       <p>Mitgebracht werden darf alles. Kinder und Hunde herzlich willkommen. Die Hühner schauen sowieso vorbei.</p>
-      <details class="milk-info">
-        <summary>Sonntagsfreude wird ganzheitlich. Mehr lesen</summary>
-        <p>Lebensfreude findet für mich nie nur auf dem Teller statt. Deshalb gibt's jetzt auch kostenloses Yoga und eine Info-Ecke zu Nahrungsergänzung. Wer tiefer einsteigen möchte, findet auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Lebensfreude</a> meine zweite Seite dazu.</p>
-      </details>
       <p style="font-size:0.88rem;color:var(--yolk-dark);font-style:italic;margin-top:1.5rem;">☀️ Wir machen nur bei gutem Wetter auf — folge uns auf <a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener" style="color:var(--yolk-dark);">Instagram</a> & <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener" style="color:var(--yolk-dark);">Facebook</a> für kurzfristige Ankündigungen.</p>
     </div>
     <div class="what-visual reveal">
@@ -389,50 +386,22 @@ footer .footer-social a:hover{text-decoration:underline;}
         <h4>Kostenlos Yoga</h4>
         <p>Neu: für alle, direkt im Hofgarten</p>
       </div>
-      <div class="what-card" onclick="document.getElementById('yoga').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
-        <span class="what-card-icon">💊</span>
-        <h4>Nahrungsergänzung</h4>
-        <p>Sonntagsfreude NEM — ehrliches Wissen zum Mitnehmen</p>
-      </div>
     </div>
   </div>
 </section>
  
-<!-- YOGA & NEM -->
+<!-- YOGA (kompakt & kuschelig) -->
 <section class="yoga-nem-section" id="yoga">
   <div class="yoga-nem-inner">
-    <span class="section-label">Mehr als nur Kaffee</span>
-    <h2 class="section-title" style="margin-bottom:1.2rem;">Bewegung, Wissen<br>und ein bisschen Sonntagsfreude.</h2>
-    <p class="section-body">Sonntagsfreude ist für mich ein anderes Wort für Lebensfreude — und die endet nicht am Frühstückstisch.</p>
- 
-    <div class="yoga-block reveal">
+    <div class="yoga-block reveal" style="margin-bottom:0;">
       <div class="yoga-block-img">
         <img src="assets/gallery-2.jpg" alt="Kostenloses Yoga im Hofgarten">
       </div>
       <div class="yoga-block-text">
         <span class="section-label" style="color:var(--yolk-dark);">Kostenlos & für alle</span>
         <h3>🧘 Yoga im Hofgarten</h3>
-        <p>Bei gutem Wetter rollen wir sonntags gemeinsam die Matte im Garten aus — offen für Anfänger und Geübte.</p>
-        <details class="milk-info">
-          <summary>Mehr lesen</summary>
-          <p>Geleitet wird die Einheit von mir persönlich. Wer tiefer ins Thema Bewegung eintauchen möchte, findet auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Lebensfreude</a> weitere Impulse und meinen Trainingsalltag.</p>
-          <p><strong>Gut zu wissen:</strong> Eigene Matte und bequeme Kleidung mitbringen — kostenlos, ohne Anmeldung.</p>
-        </details>
-      </div>
-    </div>
- 
-    <div class="yoga-block reverse reveal">
-      <div class="yoga-block-img">
-        <img src="assets/gallery-1%20(1).jpg" alt="Mara beim Sport">
-      </div>
-      <div class="yoga-block-text">
-        <span class="section-label" style="color:var(--yolk-dark);">Wissen zum Mitnehmen</span>
-        <h3>💊 Sonntagsfreude NEM — Nahrungsergänzung erklärt</h3>
-        <p>Eine kleine, unaufgeregte Info-Ecke rund um Nährstoffe und sinnvolle Nahrungsergänzungsmittel — kein Verkaufsgespräch.</p>
-        <details class="milk-info">
-          <summary>Mehr lesen</summary>
-          <p>Ehrliche Beratung aus erster Hand, basierend auf dem, was ich selbst anwende. Komm vorbei und sprich mich an — mein volles Angebot rund um Nahrungsergänzung findest du auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Lebensfreude</a>.</p>
-        </details>
+        <p>Bei gutem Wetter rollen wir sonntags gemeinsam die Matte im Garten aus — offen für Anfänger und Geübte, ganz ohne Anmeldung. Eigene Matte und bequeme Kleidung einfach mitbringen.</p>
+        <p style="font-size:0.85rem;color:var(--muted);"><a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--forest);font-weight:500;">Mehr auf Lebensfreude →</a></p>
       </div>
     </div>
   </div>
@@ -750,8 +719,8 @@ footer .footer-social a:hover{text-decoration:underline;}
       </div>
       <div class="info-card">
         <span class="info-card-icon">🧘</span>
-        <h3>Yoga & Sonntagsfreude NEM</h3>
-        <p>Kostenloses Yoga und unsere Info-Ecke zu Nahrungsergänzungsmitteln (NEM) finden bei gutem Wetter zusammen mit dem Café statt — ohne Anmeldung.</p>
+        <h3>Kostenlos Yoga</h3>
+        <p>Findet bei gutem Wetter zusammen mit dem Café statt — ohne Anmeldung, einfach die Matte mitbringen.</p>
         <p style="margin-top:1rem;"><a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Mehr auf Lebensfreude →</a></p>
       </div>
     </div>
@@ -796,7 +765,7 @@ footer .footer-social a:hover{text-decoration:underline;}
       <p>Gretl</p>
     </div>
     <div class="chicken-mini">
-      <img src="assets/bild4.jpg" alt="Hildegard das Huhn">
+      <img src="assets/bild4.jpg" alt="Hildegard das Huhn" style="object-position: top;">
       <p>Hildegard</p>
     </div>
     <div class="chicken-mini">
