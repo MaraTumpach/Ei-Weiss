@@ -293,6 +293,17 @@
   footer .footer-social a { color: var(--yolk); text-decoration: none; }
   footer .footer-social a:hover { text-decoration: underline; }
  
+  /* FLOATING CONTACT BUTTONS */
+  .fab-stack { position: fixed; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 12px; z-index: 1100; }
+  .fab-item { position: relative; }
+  .fab-btn { width: 52px; height: 52px; border-radius: 50%; background: var(--forest); color: var(--yolk); display: flex; align-items: center; justify-content: center; font-size: 22px; box-shadow: 0 8px 24px rgba(0,0,0,0.25); border: none; cursor: pointer; text-decoration: none; transition: transform .15s, background .2s; }
+  .fab-btn:hover { transform: translateY(-3px); background: var(--forest-light); }
+  .fab-menu { position: absolute; right: 62px; bottom: 0; background: var(--white); border: 1.5px solid var(--warm); border-radius: 14px; box-shadow: 0 12px 30px rgba(0,0,0,0.18); padding: 8px; display: none; flex-direction: column; gap: 4px; min-width: 200px; }
+  .fab-menu.open { display: flex; }
+  .fab-menu a { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 8px; color: var(--text); text-decoration: none; font-size: 13.5px; font-weight: 500; white-space: nowrap; font-family: 'DM Sans', sans-serif; }
+  .fab-menu a:hover { background: var(--cream); }
+  @media (max-width: 600px) { .fab-stack { right: 14px; bottom: 14px; gap: 10px; } .fab-btn { width: 46px; height: 46px; font-size: 19px; } .fab-menu { right: 56px; min-width: 180px; } }
+ 
   /* NEWSLETTER POPUP */
   .nl-overlay { position: fixed; inset: 0; background: rgba(20,30,15,0.42); z-index: 1200; display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(2px); }
   .nl-overlay.active { display: flex; }
@@ -351,13 +362,34 @@
     <div class="hero-eyebrow">Bio · Hofladen · Lebensfreude</div>
     <h1>Das <span>Ei</span> neu<br>gedacht.</h1>
     <p class="hero-sub">Bio-Eier, Hofladen-Schätze und süße wie herzhafte Leckereien — frisch vom Hof in Oberottmarshausen.</p>
-    <details class="milk-info" style="text-align:left;max-width:480px;margin:0 auto 24px;">
-      <summary>Warum "Sonntagsfreude"? Mehr lesen</summary>
-      <p>Der Name ist Programm: Echte Lebensfreude entsteht für mich in genau solchen bewussten, einfachen Momenten. Wer diesen Gedanken weiterspinnen möchte — auch mit Blick auf Bewegung, Ernährung und einen aktiven Alltag — findet auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--yolk);">Lebensfreude</a> meine zweite Seite dazu.</p>
-    </details>
+    <p class="hero-sub" style="font-style:italic;color:var(--yolk);margin-top:-24px;margin-bottom:28px;font-size:16px;">Immer alles Bio. Ohne Zucker, ohne Süßstoff. Gut für Herz, Seele und die Welt.</p>
+    <div style="max-width:520px;margin:0 auto 24px;text-align:left;">
+      <p style="color:rgba(255,255,255,0.6);font-size:14.5px;font-weight:300;line-height:1.7;margin-bottom:14px;">Unser Konzept ist einfach: gut für dich, gut für die Umwelt, gut für die Tiere. Alles im Einklang — echter Genuss, ehrlich gemacht, aus eigenen Produkten.</p>
+      <details class="milk-info">
+        <summary>Warum eigentlich alles Bio? Mehr lesen</summary>
+        <p>Bio bedeutet für uns mehr Weidegang, keine Anbindehaltung, kein Antibiotika-Einsatz im Regelbetrieb und Futter ohne chemisch-synthetische Pestizide. Für mich eine Frage des Respekts vor Tier, Boden und Mensch — und man schmeckt den Unterschied.</p>
+      </details>
+      <details class="milk-info">
+        <summary>Warum 48h-Sauerteigbrot statt Hefebrot? Mehr lesen</summary>
+        <p>Zwei volle Tage Fermentation machen unser Brot bekömmlicher: Wildhefen und Milchsäurebakterien bauen einen Teil des Glutens ab und setzen mehr Nährstoffe frei, als es ein Schnellbrot je könnte. Dazu alte Getreidesorten wie Dinkel und Emmer statt Hochleistungsweizen.</p>
+      </details>
+      <details class="milk-info">
+        <summary>Warum nie Zucker oder Süßstoff? Mehr lesen</summary>
+        <p>Raffinierter Zucker lässt den Blutzucker schnell steigen und fallen — Heißhunger und Müdigkeit sind die Folge. Chemische Süßstoffe stehen im Verdacht, Stoffwechsel und Darmflora zu belasten. Deshalb süßen wir ausschließlich mit hochwertigen Bio-Datteln.</p>
+      </details>
+      <details class="milk-info">
+        <summary>Warum nur rohe A2-/Ziegenmilch? Mehr lesen</summary>
+        <p>Ziegenmilch enthält von Natur aus nur das bekömmlichere A2-Beta-Casein, viele moderne Kuhrassen dagegen überwiegend A1-Protein. Unbehandelte, nicht homogenisierte Frischmilch behält zudem mehr natürliche Enzyme und Aromastoffe — und wir kennen die Höfe persönlich.</p>
+      </details>
+      <details class="milk-info">
+        <summary>Warum "Sonntagsfreude"? Mehr lesen</summary>
+        <p>Der Name ist Programm: Echte Lebensfreude entsteht für mich in genau solchen bewussten, einfachen Momenten. Wer diesen Gedanken weiterspinnen möchte — auch mit Blick auf Bewegung, Ernährung und einen aktiven Alltag — findet auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--yolk);">Lebensfreude</a> meine zweite Seite dazu.</p>
+      </details>
+    </div>
     <div class="hero-btns">
       <button class="btn-primary" onclick="document.getElementById('hofladen').scrollIntoView({behavior:'smooth'})">Zum Hofladen</button>
       <button class="btn-outline" onclick="document.getElementById('paten').scrollIntoView({behavior:'smooth'})">Patenschaft</button>
+      <a href="sonntagscafe.html" class="btn-outline">Zum Sonntagscafé</a>
     </div>
     <div class="chickens-row">
       <div class="chicken-card">
@@ -581,13 +613,17 @@
       </div>
     </div>
  
-    <!-- Protein-Text -->
+    <!-- Ei-Power-Text -->
     <div style="background:var(--forest);border-radius:20px;padding:48px;margin-top:60px;text-align:center;">
-      <div style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(232,160,32,0.7);margin-bottom:14px;">Warum Bio-Protein?</div>
-      <h3 style="font-size:30px;color:white;margin-bottom:20px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.2;">Das reinste Protein<br>kommt vom Huhn.</h3>
+      <div style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(232,160,32,0.7);margin-bottom:14px;">Warum das Ei?</div>
+      <h3 style="font-size:30px;color:white;margin-bottom:20px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.2;">Ein echtes Powerpaket<br>der Natur.</h3>
       <p style="color:rgba(255,255,255,0.65);font-size:16px;max-width:680px;margin:0 auto;line-height:1.85;font-weight:300;">
-        Das Ei ist eines der vollständigsten Nahrungsmittel der Natur — mit einer biologischen Wertigkeit von 100. Unsere Bio-Freilandeier stammen ausschließlich von geretteten Hühnern aus Oberottmarshausen, die ein artgerechtes Leben mit Garten und Auslauf führen. Kein Stress, keine Massentierhaltung — das schmeckt man. Schonend gedörrt bei Niedrigtemperatur bleiben alle Aminosäuren vollständig erhalten. Das Ergebnis: ein Snack mit echtem Mehrwert — 12g Protein pro 30g-Packung, nur 80 Kalorien, null Zusatzstoffe.
+        Das Ei zählt zu den vollständigsten Nahrungsmitteln überhaupt — mit einer biologischen Wertigkeit von 100 liefert es hochwertiges Eiweiß, das der Körper besonders gut verwerten kann, dazu Vitamin A, B12, D und wichtige Mineralstoffe wie Eisen und Zink. Unsere Bio-Freilandeier stammen ausschließlich von geretteten Hühnern aus Oberottmarshausen, die ein artgerechtes Leben mit Garten und Auslauf führen. Kein Stress, keine Massentierhaltung — das schmeckt man.
       </p>
+      <details class="milk-info" style="max-width:680px;margin:20px auto 0;text-align:left;background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.15);">
+        <summary style="color:var(--yolk);">Kleines Ei, großer Auftritt: das Wachtelei. Mehr lesen</summary>
+        <p style="color:rgba(255,255,255,0.65);">Ein Wachtelei wiegt nur etwa ein Fünftel eines Hühnereis — steckt pro Gramm aber erstaunlich viel drin: mehr Eisen, Vitamin A und B12 als ein Hühnerei, dazu rund 15&nbsp;% weniger Cholesterin. Kein Wunder, dass die kleinen gesprenkelten Eier gerne als Superfood gehandelt werden.</p>
+      </details>
       <p style="margin-top:16px;"><a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--yolk);font-size:14px;">Mehr über Protein & Bewegung auf Lebensfreude →</a></p>
       <div style="display:flex;gap:32px;justify-content:center;margin-top:36px;flex-wrap:wrap;">
         <div style="text-align:center;"><div style="font-size:32px;font-family:'Playfair Display',serif;color:var(--yolk);">100</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Biologische Wertigkeit</div></div>
@@ -621,7 +657,7 @@
         <h2 class="section-title">Vom Stall<br>zur Packung.</h2>
         <div style="height:20px"></div>
         <p style="font-size:17px;color:var(--muted);font-weight:300;line-height:1.85;margin-bottom:18px;">Wir retten Hühner aus der Massentierhaltung und geben älteren Legehennen, die sonst geschlachtet würden, ein liebevolles Zuhause in Oberottmarshausen — mit Garten, Auslauf und echter Fürsorge.</p>
-        <p style="font-size:17px;color:var(--muted);font-weight:300;line-height:1.85;margin-bottom:18px;">Ihre Eier verarbeiten wir schonend zu Protein-Chips. Gedörrt bei Niedrigtemperatur, gewürzt mit natürlichen Zutaten — kein Frittieren, keine Chemie.</p>
+        <p style="font-size:17px;color:var(--muted);font-weight:300;line-height:1.85;margin-bottom:18px;">Ihre Eier verarbeiten wir schonend zu Protein-Chips.</p>
         <p style="font-size:17px;color:var(--muted);font-weight:300;line-height:1.85;">Jede Packung erzählt eine Geschichte. Die von Gretl, Hildegard und ihrer zukünftigen Freundin.</p>
       </div>
       <div class="story-photos" style="height:440px;">
@@ -924,6 +960,25 @@
   </div>
 </div>
  
+<!-- FLOATING CONTACT BUTTONS -->
+<div class="fab-stack" id="fabStack">
+  <div class="fab-item">
+    <button class="fab-btn" onclick="toggleFab('fabMail')" aria-label="E-Mail">✉️</button>
+    <div class="fab-menu" id="fabMail">
+      <a href="#" onclick="closeFabs(); openNewsletter(); return false;">💌 Newsletter abonnieren</a>
+      <a href="#" onclick="closeFabs(); openKontakt(); return false;">📩 Nachricht schreiben</a>
+    </div>
+  </div>
+  <div class="fab-item">
+    <button class="fab-btn" onclick="toggleFab('fabInsta')" aria-label="Instagram">📸</button>
+    <div class="fab-menu" id="fabInsta">
+      <a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener">👀 Profil ansehen &amp; folgen</a>
+      <a href="https://ig.me/m/mara.tum" target="_blank" rel="noopener">💬 Nachricht schreiben</a>
+    </div>
+  </div>
+  <a class="fab-btn" href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+</div>
+ 
 <!-- NEWSLETTER POPUP -->
 <div class="nl-overlay" id="nl-overlay">
   <div class="nl-modal">
@@ -1087,6 +1142,18 @@ document.getElementById('nl-overlay').addEventListener('click', function(e){ if(
 document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeNewsletter(); });
 window.addEventListener('load', function(){
   setTimeout(openNewsletter, 900);
+});
+ 
+/* FLOATING CONTACT BUTTONS */
+function toggleFab(id) {
+  document.querySelectorAll('.fab-menu').forEach(function(m){ if(m.id !== id) m.classList.remove('open'); });
+  document.getElementById(id).classList.toggle('open');
+}
+function closeFabs() {
+  document.querySelectorAll('.fab-menu').forEach(function(m){ m.classList.remove('open'); });
+}
+document.addEventListener('click', function(e){
+  if (!e.target.closest('.fab-stack')) closeFabs();
 });
 </script>
 </body>
