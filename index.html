@@ -18,14 +18,22 @@
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     background: var(--forest); display: flex; align-items: center; justify-content: space-between;
-    padding: 0 40px; height: 64px;
+    padding: 0 24px; height: 64px; gap: 12px;
   }
-  .nav-logo { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--yolk); letter-spacing: 1.5px; white-space: nowrap; }
-  .nav-links { display: flex; gap: 28px; }
-  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 13px; font-weight: 300; letter-spacing: 1px; text-transform: uppercase; transition: color .2s; }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--yolk); letter-spacing: 1.5px; white-space: nowrap; flex-shrink: 0; }
+  .nav-links { display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-end; align-items: center; margin: 0 12px; }
+  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 12.5px; font-weight: 300; letter-spacing: 0.5px; text-transform: uppercase; transition: color .2s; white-space: nowrap; }
   .nav-links a:hover { color: var(--yolk); }
-  .nav-cart { background: var(--yolk); color: var(--text); border: none; border-radius: 40px; padding: 7px 18px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; position: relative; }
+  .nav-cart { background: var(--yolk); color: var(--text); border: none; border-radius: 40px; padding: 7px 18px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; position: relative; flex-shrink: 0; white-space: nowrap; }
   .cart-count { position: absolute; top: -6px; right: -6px; background: #E84040; color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center; font-weight: 500; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; flex-shrink: 0; }
+  .hamburger span { display: block; width: 22px; height: 1.5px; background: rgba(255,255,255,0.85); }
+  @media (max-width: 980px) {
+    .nav-links { display: none; flex-direction: column; align-items: flex-start; position: absolute; top: 100%; left: 0; right: 0; background: var(--forest); padding: 1.2rem 1.5rem; gap: 1rem; box-shadow: 0 8px 30px rgba(0,0,0,0.2); z-index: 99; margin: 0; }
+    .nav-links.open { display: flex; }
+    .nav-links a { font-size: 14px; padding: 0.3rem 0; }
+    .hamburger { display: flex; }
+  }
  
   .hero { min-height: 100vh; background: var(--forest); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding-top: 64px; }
   .hero-bg { position: absolute; inset: 0; pointer-events: none; }
@@ -317,7 +325,7 @@
  
 <nav>
   <div class="nav-logo">SONNTAGSFREUDE</div>
-  <div class="nav-links">
+  <div class="nav-links" id="navLinks">
     <a href="#hofladen">Hofladen</a>
     <a href="#story">Unser Hof</a>
     <a href="#about">Über mich</a>
@@ -328,6 +336,9 @@
     <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Lebensfreude</a>
   </div>
   <button class="nav-cart" onclick="openCart()">🛒 Warenkorb <span class="cart-count" id="cart-count" style="display:none">0</span></button>
+  <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
  
 <!-- HERO -->
@@ -355,7 +366,7 @@
         <div class="chicken-status">Patin: Familie Tumper</div>
       </div>
       <div class="chicken-card">
-        <img class="chicken-photo" src="assets/bild4.jpg" alt="Hildegard das Huhn">
+        <img class="chicken-photo" src="assets/bild4.jpg" alt="Hildegard das Huhn" style="object-position: top;">
         <div class="chicken-name">Hildegard</div>
         <div class="chicken-status">Patin: Familie Bernds</div>
       </div>
@@ -429,6 +440,13 @@
           <div>
             <h4>Kleine Überraschungen</h4>
             <p>Selbstgemachte Snacks, Schmuck und andere kleine Produkte — lass dich einfach überraschen.</p>
+          </div>
+        </div>
+        <div class="hofladen-feature">
+          <div class="hofladen-feature-icon">💊</div>
+          <div>
+            <h4>Nahrungsergänzungsmittel</h4>
+            <p>Kleine, sorgfältig ausgewählte Auswahl — bei Fragen sprich mich einfach an. Mehr auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--forest);font-weight:500;">Lebensfreude</a>.</p>
           </div>
         </div>
       </div>
@@ -588,7 +606,7 @@
         <a href="#paten"><img src="assets/bild6.jpg" alt="Hühner beim Erkunden des Gartens"></a>
         <a href="#paten"><img src="assets/bild1.jpg" alt="Henne mit Küken im Stall"></a>
         <a href="#paten"><img src="assets/bild2.jpg" alt="Weißes Huhn im Garten"></a>
-        <a href="#paten"><img src="assets/bild4.jpg" alt="Schwarzes Huhn im Auslauf"></a>
+        <a href="#paten"><img src="assets/bild4.jpg" alt="Schwarzes Huhn im Auslauf" style="object-position: top;"></a>
       </div>
     </div>
   </div>
@@ -609,7 +627,7 @@
       <div class="story-photos" style="height:440px;">
         <img src="assets/bild1.jpg" alt="Henne mit Küken auf dem Hof">
         <img src="assets/bild3.jpg" alt="Hühner im Freilauf">
-        <img src="assets/bild4.jpg" alt="Huhn im Garten">
+        <img src="assets/bild4.jpg" alt="Huhn im Garten" style="object-position: top;">
       </div>
     </div>
   </div>
@@ -627,7 +645,7 @@
       </div>
       <div class="about-text">
         <p>Ich bin <strong>Mara</strong> und lebe schon mein ganzes Leben in Oberottmarshausen – ein Ort, der mich tief mit der Natur und den Tieren verbunden hat. Tiere sind seit jeher ein zentraler Teil meines Lebens.</p>
-        <p>Ich ernähre mich bewusst ayurvedisch und achte dabei besonders auf Tierwohl. Tierische Produkte konsumiere ich nur sehr achtsam – ausschließlich Eier von unseren eigenen Hühnern sowie Milch von Kühen und Ziegen, die ich persönlich kenne und deren Haltung ich verantworten kann.</p>
+        <p>Ich ernähre mich bewusst ayurvedisch und achte dabei besonders auf Tierwohl. Tierische Produkte konsumiere ich nur sehr achtsam – ausschließlich Eier von unseren eigenen Hühnern sowie Milch von <a href="https://www.andechser-natur.de/de/bio-bauernhoefe/kugelmann" target="_blank" rel="noopener" style="color:var(--forest);text-decoration:underline;">Kühen aus Bobingen</a> und <a href="https://www.ziegenhof-gebauer.de" target="_blank" rel="noopener" style="color:var(--forest);text-decoration:underline;">Ziegen aus Scheuring</a>, die ich persönlich kenne und deren Haltung ich verantworten kann.</p>
         <details class="milk-info">
           <summary>Warum für mich A2-Kuhmilch oder Ziegenmilch die einzig gute Milch ist</summary>
           <p><strong>Warum A2-Milch bzw. Ziegenmilch:</strong> Ziegenmilch enthält von Natur aus nur das A2-Beta-Casein, während viele moderne Kuhrassen überwiegend A1-Protein produzieren. A2-Protein gilt als bekömmlicher und wird von vielen Menschen deutlich besser vertragen — deshalb achte ich bewusst darauf, woher meine Milch kommt.</p>
@@ -639,10 +657,11 @@
         <details class="milk-info">
           <summary>Warum "Sonntagsfreude"? Mehr lesen</summary>
           <p>Für mich hängt echte Lebensfreude eng mit kleinen, bewussten Momenten zusammen – einem ruhigen Sonntag im Garten, einem frischen Bio-Ei, einer Runde Bewegung an der frischen Luft. Sport, Ayurveda und einen aktiven Alltag teile ich auf meiner zweiten Seite <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--forest);font-weight:500;">Lebensfreude</a>.</p>
+          <p>Deshalb bist du jeden Sonntag herzlich eingeladen, einfach vorbeizukommen: schnupper in die kostenlose Yogastunde rein, stöbere durch unseren Hofladen, lern unser Café kennen — oder besuch einfach unsere Hühner.</p>
         </details>
         <div style="margin-top:20px;display:flex;align-items:center;gap:16px;background:var(--cream);border:1.5px solid var(--warm);border-radius:16px;padding:16px 20px;">
           <img src="assets/gallery-1%20(1).jpg" alt="Mara beim Sport" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--yolk);flex-shrink:0;">
-          <p style="font-size:14px;color:var(--muted);margin:0;">Auch beim Sport bin ich mit vollem Herzen dabei — mehr auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--forest);font-weight:500;">Lebensfreude</a>.</p>
+          <p style="font-size:14px;color:var(--muted);margin:0;">Auch beim Sport bin ich mit vollem Herzen dabei — wer mehr zu Sport oder tiefergreifenden Therapieansätzen erfahren möchte, wird auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--forest);font-weight:500;">Lebensfreude</a> fündig.</p>
         </div>
         <div class="about-signature">— Mara</div>
       </div>
@@ -657,7 +676,7 @@
     <h2 class="section-title" style="color:white;">Sonntags bei uns<br>auf dem Hof.</h2>
     <div class="cafe-grid">
       <div class="cafe-info">
-        <p>Bei schönem Wetter öffnen wir sonntags von 11:30 bis 19:30 Uhr unseren Hofgarten. Kaffee, Matcha, Eierchips — und neu auch kostenloses Yoga sowie Sonntagsfreude NEM, unsere kleine Info-Ecke zu Nahrungsergänzungsmitteln. Entspannt, informell, mit Hühnern im Hintergrund.</p>
+        <p>Bei schönem Wetter öffnen wir sonntags von 11:30 bis 19:30 Uhr unseren Hofgarten. Kaffee, cremiger Matcha, unser 48h-Sauerteigbrot und Eierchips zum Probieren — dazu, wer mag, eine kostenlose Runde Yoga. Entspannt, informell, mit Hühnern im Hintergrund.</p>
         <p>
           Unseren <strong style="color:var(--yolk);">Matcha</strong> gibt es wahlweise mit frischer
           <a href="https://www.andechser-natur.de/de/bio-bauernhoefe/kugelmann" target="_blank" rel="noopener" style="color:var(--yolk);text-decoration:underline;">Kuhmilch aus Bobingen</a>
@@ -702,10 +721,6 @@
         <div class="cafe-item">
           <h4>🧘 Kostenloses Yoga</h4>
           <p>Neu &amp; gratis im Hofgarten — alle Infos auf <a href="sonntagscafe.html#yoga" style="color:var(--yolk);">der Sonntagscafé-Seite</a></p>
-        </div>
-        <div class="cafe-item">
-          <h4>💊 Sonntagsfreude NEM</h4>
-          <p>Nahrungsergänzungsmittel verständlich erklärt — vertieft auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--yolk);">Lebensfreude</a></p>
         </div>
         <div class="cafe-item">
           <h4>📱 Folg uns</h4>
@@ -767,7 +782,7 @@
         </ul>
       </div>
       <div class="paten-card">
-        <img class="paten-photo" src="assets/bild4.jpg" alt="Hildegard das Huhn">
+        <img class="paten-photo" src="assets/bild4.jpg" alt="Hildegard das Huhn" style="object-position: top;">
         <span class="paten-badge badge-taken">Vergeben</span>
         <h3 class="paten-chicken-name">🐓 Hildegard</h3>
         <p class="paten-family">Patin: Familie Bernds</p>
@@ -1043,6 +1058,9 @@ function submitKontakt() {
  
 document.getElementById('paten-modal').addEventListener('click', function(e){ if(e.target===this) closePatenModal(); });
 document.getElementById('kontakt-modal').addEventListener('click', function(e){ if(e.target===this) closeKontakt(); });
+document.getElementById('hamburger').addEventListener('click', function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
  
 /* NEWSLETTER POPUP LOGIC */
 function openNewsletter() {
