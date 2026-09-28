@@ -294,17 +294,25 @@
   footer .footer-social a:hover { text-decoration: underline; }
  
   /* FLOATING CONTACT BUTTONS */
-  .fab-stack { position: fixed; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 12px; z-index: 1100; }
-  .fab-item { position: relative; }
-  .fab-btn { width: 52px; height: 52px; border-radius: 50%; background: var(--forest); color: var(--yolk); display: flex; align-items: center; justify-content: center; font-size: 22px; box-shadow: 0 8px 24px rgba(0,0,0,0.25); border: none; cursor: pointer; text-decoration: none; transition: transform .15s, background .2s; }
-  .fab-btn:hover { transform: translateY(-3px); background: var(--forest-light); }
-  .fab-menu { position: absolute; right: 62px; bottom: 0; background: var(--white); border: 1.5px solid var(--warm); border-radius: 14px; box-shadow: 0 12px 30px rgba(0,0,0,0.18); padding: 8px; display: none; flex-direction: column; gap: 4px; min-width: 200px; }
-  .fab-menu.open { display: flex; }
-  .fab-menu a { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 8px; color: var(--text); text-decoration: none; font-size: 13.5px; font-weight: 500; white-space: nowrap; font-family: 'DM Sans', sans-serif; }
-  .fab-menu a:hover { background: var(--cream); }
-  @media (max-width: 600px) { .fab-stack { right: 14px; bottom: 14px; gap: 10px; } .fab-btn { width: 46px; height: 46px; font-size: 19px; } .fab-menu { right: 56px; min-width: 180px; } }
+.fab-stack{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;align-items:flex-end;gap:12px;z-index:1100;}
+.fab-item{position:relative;display:flex;align-items:center;gap:10px;}
+.fab-label{background:#fff;color:var(--forest);padding:9px 16px;border-radius:40px;font-size:13.5px;font-weight:500;white-space:nowrap;box-shadow:0 6px 20px rgba(0,0,0,0.18);font-family:'DM Sans',sans-serif;border:1.5px solid var(--warm);cursor:pointer;transition:background .2s,color .2s;}
+.fab-btn{position:relative;width:54px;height:54px;border-radius:50%;background:var(--forest);color:var(--yolk);border:none;box-shadow:0 8px 22px rgba(45,74,45,0.4);display:flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:transform .15s,background .2s;flex-shrink:0;padding:0;}
+.fab-btn svg{width:24px;height:24px;display:block;}
+.fab-btn:hover{transform:translateY(-3px);background:var(--forest-light);}
+.fab-mail{background:var(--yolk);color:var(--forest);}
+.fab-mail:hover{background:#F5B830;}
+.fab-mail::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--yolk);animation:fabRing 2.6s ease-out infinite;pointer-events:none;}
+@keyframes fabRing{0%{transform:scale(.95);opacity:.8;}100%{transform:scale(1.45);opacity:0;}}
+@media (prefers-reduced-motion:reduce){.fab-mail::after{animation:none;opacity:0;}}
+.fab-menu{position:absolute;right:68px;bottom:0;background:var(--white);border:1.5px solid var(--warm);border-radius:16px;box-shadow:0 14px 36px rgba(0,0,0,0.2);padding:8px;display:none;flex-direction:column;gap:2px;min-width:236px;}
+.fab-menu.open{display:flex;}
+@media (hover:hover){.fab-item:hover .fab-menu{display:flex;}.fab-item:hover .fab-label{background:var(--forest);color:#fff;border-color:var(--forest);}}
+.fab-menu a{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;color:var(--text);text-decoration:none;font-size:14px;font-weight:400;white-space:nowrap;font-family:'DM Sans',sans-serif;}
+.fab-menu a:hover{background:var(--cream);}
+@media (max-width:600px){.fab-stack{right:8px;bottom:8px;gap:9px;}.fab-btn{width:48px;height:48px;}.fab-btn svg{width:22px;height:22px;}.fab-label{font-size:12.5px;padding:7px 12px;}.fab-menu{right:60px;min-width:214px;}footer{padding-bottom:200px;}}
  
-  /* NEWSLETTER POPUP */
+/* NEWSLETTER POPUP */
   .nl-overlay { position: fixed; inset: 0; background: rgba(20,30,15,0.42); z-index: 1200; display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(2px); }
   .nl-overlay.active { display: flex; }
   .nl-modal { background: linear-gradient(160deg, var(--white) 0%, #F3F8EC 100%); border-radius: 26px; max-width: 340px; width: 100%; overflow: visible; position: relative; box-shadow: 0 24px 60px rgba(45,74,45,0.28); border: 1.5px solid rgba(139,195,74,0.35); text-align: center; padding: 30px 26px 24px; animation: nlPop .35s ease; }
@@ -362,30 +370,7 @@
     <div class="hero-eyebrow">Bio · Hofladen · Lebensfreude</div>
     <h1>Das <span>Ei</span> neu<br>gedacht.</h1>
     <p class="hero-sub">Bio-Eier, Hofladen-Schätze und süße wie herzhafte Leckereien — frisch vom Hof in Oberottmarshausen.</p>
-    <p class="hero-sub" style="font-style:italic;color:var(--yolk);margin-top:-24px;margin-bottom:28px;font-size:16px;">Immer alles Bio. Ohne Zucker, ohne Süßstoff. Gut für Herz, Seele und die Welt.</p>
-    <div style="max-width:520px;margin:0 auto 24px;text-align:left;">
-      <p style="color:rgba(255,255,255,0.6);font-size:14.5px;font-weight:300;line-height:1.7;margin-bottom:14px;">Unser Konzept ist einfach: gut für dich, gut für die Umwelt, gut für die Tiere. Alles im Einklang — echter Genuss, ehrlich gemacht, aus eigenen Produkten.</p>
-      <details class="milk-info">
-        <summary>Warum eigentlich alles Bio? Mehr lesen</summary>
-        <p>Bio bedeutet für uns mehr Weidegang, keine Anbindehaltung, kein Antibiotika-Einsatz im Regelbetrieb und Futter ohne chemisch-synthetische Pestizide. Für mich eine Frage des Respekts vor Tier, Boden und Mensch — und man schmeckt den Unterschied.</p>
-      </details>
-      <details class="milk-info">
-        <summary>Warum 48h-Sauerteigbrot statt Hefebrot? Mehr lesen</summary>
-        <p>Zwei volle Tage Fermentation machen unser Brot bekömmlicher: Wildhefen und Milchsäurebakterien bauen einen Teil des Glutens ab und setzen mehr Nährstoffe frei, als es ein Schnellbrot je könnte. Dazu alte Getreidesorten wie Dinkel und Emmer statt Hochleistungsweizen.</p>
-      </details>
-      <details class="milk-info">
-        <summary>Warum nie Zucker oder Süßstoff? Mehr lesen</summary>
-        <p>Raffinierter Zucker lässt den Blutzucker schnell steigen und fallen — Heißhunger und Müdigkeit sind die Folge. Chemische Süßstoffe stehen im Verdacht, Stoffwechsel und Darmflora zu belasten. Deshalb süßen wir ausschließlich mit hochwertigen Bio-Datteln.</p>
-      </details>
-      <details class="milk-info">
-        <summary>Warum nur rohe A2-/Ziegenmilch? Mehr lesen</summary>
-        <p>Ziegenmilch enthält von Natur aus nur das bekömmlichere A2-Beta-Casein, viele moderne Kuhrassen dagegen überwiegend A1-Protein. Unbehandelte, nicht homogenisierte Frischmilch behält zudem mehr natürliche Enzyme und Aromastoffe — und wir kennen die Höfe persönlich.</p>
-      </details>
-      <details class="milk-info">
-        <summary>Warum "Sonntagsfreude"? Mehr lesen</summary>
-        <p>Der Name ist Programm: Echte Lebensfreude entsteht für mich in genau solchen bewussten, einfachen Momenten. Wer diesen Gedanken weiterspinnen möchte — auch mit Blick auf Bewegung, Ernährung und einen aktiven Alltag — findet auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--yolk);">Lebensfreude</a> meine zweite Seite dazu.</p>
-      </details>
-    </div>
+    <p class="hero-sub" style="font-style:italic;color:var(--yolk);margin-bottom:28px;font-size:16px;">Immer alles Bio. Ohne Zucker, ohne Süßstoff. Gut für Herz, Seele und die Welt.</p>
     <div class="hero-btns">
       <button class="btn-primary" onclick="document.getElementById('hofladen').scrollIntoView({behavior:'smooth'})">Zum Hofladen</button>
       <button class="btn-outline" onclick="document.getElementById('paten').scrollIntoView({behavior:'smooth'})">Patenschaft</button>
@@ -489,6 +474,11 @@
     </div>
  
     <details class="milk-info" style="margin-top:24px;">
+      <summary>Warum eigentlich alles Bio? Mehr lesen</summary>
+      <p>Bio bedeutet für uns mehr Weidegang, keine Anbindehaltung, kein Antibiotika-Einsatz im Regelbetrieb und Futter ohne chemisch-synthetische Pestizide. Für mich eine Frage des Respekts vor Tier, Boden und Mensch — und man schmeckt den Unterschied.</p>
+    </details>
+ 
+    <details class="milk-info" style="margin-top:14px;">
       <summary>Warum nie Zucker oder Süßstoff? Mehr lesen</summary>
       <p><strong>Warum kein Zucker:</strong> Raffinierter Zucker lässt den Blutzuckerspiegel schnell steigen und genauso schnell wieder fallen — das Ergebnis sind Heißhunger und Müdigkeit.</p>
       <p><strong>Warum keine Süßstoffe:</strong> Sie stehen im Verdacht, Stoffwechsel und Darmflora negativ zu beeinflussen.</p>
@@ -728,6 +718,10 @@
         </details>
         <p>Fast alles, was bei uns auf den Tisch kommt, stammt aus unserem eigenen Garten. Und was nicht von uns selbst kommt, ist genauso mit Sorgfalt ausgesucht: <strong style="color:var(--yolk);">bei uns ist wirklich alles Bio</strong> — ausnahmslos.</p>
         <p>Unser <strong style="color:var(--yolk);">48h-Sauerteigbrot</strong> gibt es nur auf Vorbestellung. Zwei Tage Fermentation, handgeformt — das schmeckt man bei jedem Bissen.</p>
+        <details class="milk-info" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.15);">
+          <summary style="color:var(--yolk);">Warum 48h-Sauerteigbrot statt Hefebrot? Mehr lesen</summary>
+          <p style="color:rgba(255,255,255,0.65);">Zwei volle Tage Fermentation machen unser Brot bekömmlicher: Wildhefen und Milchsäurebakterien bauen einen Teil des Glutens ab und setzen mehr Nährstoffe frei, als es ein Schnellbrot je könnte. Dazu alte Getreidesorten wie Dinkel und Emmer statt Hochleistungsweizen.</p>
+        </details>
         <div class="cafe-contact" style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
           <a href="sonntagscafe.html" style="background:var(--yolk);">☕ Alles zum Sonntagscafé →</a>
           <a href="sonntagscafe.html#brot" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.2);">🍞 48h-Brot vorbestellen</a>
@@ -759,8 +753,12 @@
           <p>Neu &amp; gratis im Hofgarten — alle Infos auf <a href="sonntagscafe.html#yoga" style="color:var(--yolk);">der Sonntagscafé-Seite</a></p>
         </div>
         <div class="cafe-item">
+          <h4>🪑 Tisch reservieren &amp; feiern</h4>
+          <p>Einen Tisch buchen oder das ganze Café für Geburtstag, Hochzeit &amp; Co. — <a href="sonntagscafe.html#reservieren" style="color:var(--yolk);">hier anfragen</a></p>
+        </div>
+        <div class="cafe-item">
           <h4>📱 Folg uns</h4>
-          <p><a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener" style="color:var(--yolk);">Instagram</a> &amp; <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener" style="color:var(--yolk);">Facebook</a> für kurzfristige Ankündigungen</p>
+          <p><a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener" style="color:var(--yolk);">Instagram</a> &amp; <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener" style="color:var(--yolk);">Facebook</a> für Live-Musik, Sonderöffnungszeiten &amp; kurzfristige Ankündigungen</p>
         </div>
         <div style="margin-top:16px;padding:14px 18px;background:rgba(232,160,32,0.15);border-radius:12px;border:1px solid rgba(232,160,32,0.3);">
           <p style="color:var(--yolk);font-size:14px;margin:0;"><strong>Wann?</strong> Sonntags bei gutem Wetter, 11:30–19:30 Uhr · Oberottmarshausen · Alles bei uns ist Bio 🌱</p>
@@ -949,7 +947,7 @@
       <p>Sauerteigbrot vorbestellen oder einfach Hallo sagen — wir freuen uns!</p>
       <input type="text" id="kontakt-name" placeholder="Dein Name" />
       <input type="email" id="kontakt-email" placeholder="Deine E-Mail" />
-      <textarea id="kontakt-msg" placeholder="Deine Nachricht (z.B. Brotbestellung für Sonntag, 12. Mai)"></textarea>
+      <textarea id="kontakt-msg" placeholder="Deine Nachricht (z.B. Tischreservierung, Brotbestellung, Feier anfragen)"></textarea>
       <button class="btn-primary" style="width:100%;margin-top:8px;" onclick="submitKontakt()">Nachricht senden</button>
     </div>
     <div class="modal-success" id="kontakt-success">
@@ -963,20 +961,37 @@
 <!-- FLOATING CONTACT BUTTONS -->
 <div class="fab-stack" id="fabStack">
   <div class="fab-item">
-    <button class="fab-btn" onclick="toggleFab('fabMail')" aria-label="E-Mail">✉️</button>
+    <span class="fab-label" onclick="toggleFab('fabMail')">Schreib uns ❤️</span>
+    <button class="fab-btn fab-mail" onclick="toggleFab('fabMail')" aria-label="Nachricht schreiben oder Newsletter abonnieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7.5l8.5 6 8.5-6"/></svg></button>
     <div class="fab-menu" id="fabMail">
+      <a href="#" onclick="closeFabs(); openKontakt(''); return false;">❓ Fragen stellen</a>
+      <a href="#" onclick="closeFabs(); openKontakt('Tischreservierung für Sonntag – Datum / Personenzahl: '); return false;">🪑 Tisch reservieren</a>
+      <a href="#" onclick="closeFabs(); openKontakt('Anfrage Feier im Café (Geburtstag, Hochzeit …) – Datum / Gästezahl: '); return false;">🎉 Feier anfragen</a>
       <a href="#" onclick="closeFabs(); openNewsletter(); return false;">💌 Newsletter abonnieren</a>
-      <a href="#" onclick="closeFabs(); openKontakt(); return false;">📩 Nachricht schreiben</a>
     </div>
   </div>
   <div class="fab-item">
-    <button class="fab-btn" onclick="toggleFab('fabInsta')" aria-label="Instagram">📸</button>
+    <span class="fab-label" onclick="toggleFab('fabInsta')">Folg für Infos ❤️</span>
+    <button class="fab-btn fab-insta" onclick="toggleFab('fabInsta')" aria-label="Instagram: folgen oder Nachricht schreiben"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></button>
     <div class="fab-menu" id="fabInsta">
-      <a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener">👀 Profil ansehen &amp; folgen</a>
+      <a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener">❤️ Folgen für Infos</a>
+      <a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener">🎶 Live-Musik &amp; Neuigkeiten</a>
+      <a href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener">🕐 Längere &amp; frühere Öffnungszeiten</a>
+      <a href="https://ig.me/m/mara.tum" target="_blank" rel="noopener">🪑 Tisch anfragen</a>
       <a href="https://ig.me/m/mara.tum" target="_blank" rel="noopener">💬 Nachricht schreiben</a>
     </div>
   </div>
-  <a class="fab-btn" href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+  <div class="fab-item">
+    <span class="fab-label" onclick="toggleFab('fabFb')">Folg für Infos ❤️</span>
+    <button class="fab-btn fab-fb" onclick="toggleFab('fabFb')" aria-label="Facebook: folgen oder Nachricht schreiben"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.5 1.6-1.5h1.7V3.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.6V13h2.7v8h3.2z"/></svg></button>
+    <div class="fab-menu" id="fabFb">
+      <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener">❤️ Folgen für Infos</a>
+      <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener">🎶 Live-Musik &amp; Neuigkeiten</a>
+      <a href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener">🕐 Längere &amp; frühere Öffnungszeiten</a>
+      <a href="https://m.me/mara.tum.98" target="_blank" rel="noopener">🪑 Tisch anfragen</a>
+      <a href="https://m.me/mara.tum.98" target="_blank" rel="noopener">💬 Nachricht schreiben</a>
+    </div>
+  </div>
 </div>
  
 <!-- NEWSLETTER POPUP -->
@@ -1090,8 +1105,9 @@ function submitPaten() {
   document.getElementById('paten-success').style.display = 'block';
 }
  
-function openKontakt() {
+function openKontakt(preset) {
   document.getElementById('kontakt-modal').classList.add('active');
+  if (typeof preset === 'string') { document.getElementById('kontakt-msg').value = preset; }
   return false;
 }
 function closeKontakt() {
