@@ -302,9 +302,12 @@
 .fab-btn:hover{transform:translateY(-3px);background:var(--forest-light);}
 .fab-mail{background:var(--yolk);color:var(--forest);}
 .fab-mail:hover{background:#F5B830;}
-.fab-mail::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--yolk);animation:fabRing 2.6s ease-out infinite;pointer-events:none;}
+/* Pulsieren: alle drei Buttons, nur Desktop */
+.fab-btn::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--forest-light);animation:fabRing 2.6s ease-out infinite;pointer-events:none;}
+.fab-mail::after{border-color:var(--yolk);}
 @keyframes fabRing{0%{transform:scale(.95);opacity:.8;}100%{transform:scale(1.45);opacity:0;}}
-@media (prefers-reduced-motion:reduce){.fab-mail::after{animation:none;opacity:0;}}
+@media (max-width:600px){.fab-btn::after{display:none;}}
+@media (prefers-reduced-motion:reduce){.fab-btn::after{animation:none;opacity:0;}}
 .fab-menu{position:absolute;right:68px;bottom:0;background:var(--white);border:1.5px solid var(--warm);border-radius:16px;box-shadow:0 14px 36px rgba(0,0,0,0.2);padding:8px;display:none;flex-direction:column;gap:2px;min-width:236px;}
 .fab-menu.open{display:flex;}
 @media (hover:hover){.fab-item:hover .fab-menu{display:flex;}.fab-item:hover .fab-label{background:var(--forest);color:#fff;border-color:var(--forest);}}
@@ -380,12 +383,12 @@
       <div class="chicken-card">
         <img class="chicken-photo" src="assets/bild2.jpg" alt="Gretl das Huhn">
         <div class="chicken-name">Gretl</div>
-        <div class="chicken-status">Patin: Familie Tumper</div>
+        <div class="chicken-status">Pate: Familie Schipf</div>
       </div>
       <div class="chicken-card">
         <img class="chicken-photo" src="assets/bild4.jpg" alt="Hildegard das Huhn" style="object-position: top;">
         <div class="chicken-name">Hildegard</div>
-        <div class="chicken-status">Patin: Familie Bernds</div>
+        <div class="chicken-status">Pate: Familie Bernds</div>
       </div>
       <div class="chicken-card">
         <img class="chicken-photo" src="assets/bild1.jpg" alt="Noch freies Huhn">
@@ -433,9 +436,21 @@
         </div>
         <div class="hofladen-feature">
           <div class="hofladen-feature-icon">🌶️</div>
-          <div>
+          <div style="flex:1;">
             <h4>Bio-Gewürze</h4>
-            <p>Saisonal wechselnde Auswahl, sorgfältig zusammengestellt.</p>
+            <p>Saisonal wechselnde Auswahl, sorgfältig zusammengestellt – mit Fokus auf ayurvedische Gewürze.</p>
+            <details class="milk-info" style="background:var(--white);">
+              <summary>Ayurvedische Gewürze &amp; ihre Wirkung · Mehr lesen</summary>
+              <p>In der ayurvedischen Tradition sind Gewürze Heilmittel im Alltag. Die folgenden Wirkungen stammen aus der Erfahrungsheilkunde; sie ersetzen keine ärztliche Behandlung.</p>
+              <p><strong>Kurkuma (Gelbwurz):</strong> Der Inhaltsstoff Curcumin wirkt in Studien entzündungshemmend und antioxidativ. Traditionell unterstützt Kurkuma Verdauung, Leber und Gelenke. Curcumin wird allein schlecht aufgenommen. Fett und schwarzer Pfeffer verbessern die Aufnahme deutlich. Bei Gallensteinen oder blutverdünnenden Medikamenten bitte vorher ärztlich abklären.</p>
+              <p><strong>Schwarzer Pfeffer:</strong> Das enthaltene Piperin regt die Verdauungssäfte an und wärmt von innen. Es kann die Aufnahme von Curcumin stark erhöhen (Shoba et al., <em>Planta Medica</em>, 1998: ca. 2000&nbsp;% höhere Bioverfügbarkeit). Deshalb gehören Kurkuma und Pfeffer zusammen, etwa in der „Goldenen Milch".</p>
+              <p><strong>Ingwer:</strong> Wärmend, regt das „Verdauungsfeuer" (Agni) an und hilft bei Übelkeit und Völlegefühl.</p>
+              <p><strong>Zimt:</strong> Wärmend und süßlich. Er kann den Blutzuckerspiegel sanft unterstützen und ersetzt bei uns den Zucker.</p>
+              <p><strong>Kardamom:</strong> Mild, ausgleichend und verdauungsfördernd. Er macht schwere Speisen und Milchgetränke bekömmlicher.</p>
+              <p><strong>Kreuzkümmel, Koriander &amp; Fenchel (CCF-Mischung):</strong> Ein ayurvedischer Klassiker für die Verdauung. Er wirkt beruhigend und entgiftend und hilft gegen Blähungen.</p>
+              <p><strong>Asafoetida (Hing):</strong> Ein traditioneller Helfer gegen Blähungen, besonders bei Hülsenfrüchten.</p>
+              <p>Welche Gewürze zu dir passen, hängt von deinem Dosha ab. <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--forest);font-weight:500;">Mehr auf Lebensfreude →</a></p>
+            </details>
           </div>
         </div>
         <div class="hofladen-feature">
@@ -449,7 +464,7 @@
           <div class="hofladen-feature-icon">🧂</div>
           <div>
             <h4>Protein-Eierchips</h4>
-            <p>Gedörrte Bio-Protein-Chips aus unseren eigenen Eiern, in drei Sorten — Original Salz, Salz &amp; Pfeffer, Olivenöl &amp; Kräuter. <a href="#shop" style="color:var(--forest);font-weight:500;">Alle Sorten im Shop →</a></p>
+            <p>Bio-Protein-Chips aus unseren eigenen Eiern, in drei Sorten — Original Salz, Salz &amp; Pfeffer, Olivenöl &amp; Kräuter. <a href="#shop" style="color:var(--forest);font-weight:500;">Alle Sorten im Shop →</a></p>
           </div>
         </div>
         <div class="hofladen-feature">
@@ -461,9 +476,16 @@
         </div>
         <div class="hofladen-feature">
           <div class="hofladen-feature-icon">💊</div>
-          <div>
+          <div style="flex:1;">
             <h4>Nahrungsergänzungsmittel</h4>
             <p>Kleine, sorgfältig ausgewählte Auswahl — bei Fragen sprich mich einfach an. Mehr auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--forest);font-weight:500;">Lebensfreude</a>.</p>
+            <details class="milk-info" style="background:var(--white);">
+              <summary>Warum ich nicht blind supplementiere · Mehr lesen</summary>
+              <p>Ich halte nichts davon, Nahrungsergänzungsmittel auf Verdacht zu schlucken. Sinnvoll sind sie nur nach einer <strong>Ernährungsanalyse und Beratung</strong>, also wenn klar ist, was dir wirklich fehlt. Einfach einzunehmen verfehlt oft die gewünschte Wirkung und kann sogar schaden.</p>
+              <p><strong>Beispiel Magnesium:</strong> Magnesium allein macht selten Sinn, denn es wirkt im Zusammenspiel mit anderen Nährstoffen. Eine Studie zeigte, dass Magnesium eng mit dem Vitamin-D-Stoffwechsel verknüpft ist. Der Körper braucht es, um Vitamin D überhaupt zu aktivieren (Dai et al., <em>American Journal of Clinical Nutrition</em>, 2018). Zu viel davon kann außerdem Durchfall und Herzrhythmusstörungen auslösen, vor allem bei eingeschränkter Nierenfunktion.</p>
+              <p><strong>Mehr ist nicht besser:</strong> In der großen SELECT-Studie erhöhte die Einnahme von Vitamin E sogar das Prostatakrebs-Risiko (Klein et al., <em>JAMA</em>, 2011).</p>
+              <p>Darum: erst Analyse, dann gezielt ergänzen. Sprich mich gerne an.</p>
+            </details>
           </div>
         </div>
       </div>
@@ -807,11 +829,11 @@
         <img class="paten-photo" src="assets/bild2.jpg" alt="Gretl das Huhn">
         <span class="paten-badge badge-taken">Vergeben</span>
         <h3 class="paten-chicken-name">🐔 Gretl</h3>
-        <p class="paten-family">Patin: Familie Tumper</p>
+        <p class="paten-family">Pate: Familie Schipf</p>
         <ul class="paten-includes">
           <li>Monatlich 10 frische Bio-Eier</li>
           <li>Foto-Updates von Gretl</li>
-          <li>Urkunde als Hühnerpatin</li>
+          <li>Urkunde als Hühnerpate</li>
           <li>10% auf jedes Sauerteigbrot</li>
         </ul>
       </div>
@@ -819,11 +841,11 @@
         <img class="paten-photo" src="assets/bild4.jpg" alt="Hildegard das Huhn" style="object-position: top;">
         <span class="paten-badge badge-taken">Vergeben</span>
         <h3 class="paten-chicken-name">🐓 Hildegard</h3>
-        <p class="paten-family">Patin: Familie Bernds</p>
+        <p class="paten-family">Pate: Familie Bernds</p>
         <ul class="paten-includes">
           <li>Monatlich 10 frische Bio-Eier</li>
           <li>Foto-Updates von Hildegard</li>
-          <li>Urkunde als Hühnerpatin</li>
+          <li>Urkunde als Hühnerpate</li>
           <li>10% auf jedes Sauerteigbrot</li>
         </ul>
       </div>
