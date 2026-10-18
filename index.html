@@ -361,6 +361,9 @@
   .feature-fold .fold-body p { font-size: 14.5px; color: var(--muted); line-height: 1.75; font-weight: 300; margin-bottom: 12px; }
   .feature-fold .fold-body strong { color: var(--forest); font-weight: 500; }
   @media (max-width: 600px) { .feature-fold .fold-body { padding: 0 20px 20px; } }
+
+  .news-link { display: inline-block; background: var(--forest); color: var(--white); text-decoration: none; font-size: 13.5px; font-weight: 500; padding: 8px 18px; border-radius: 40px; transition: background .2s; }
+  .news-link:hover { background: var(--forest-light); }
 </style>
 </head>
 <body>
@@ -454,25 +457,20 @@
             <p>Mit Anleitung zum Zubereiten — auf Wunsch individuell auf dein Dosha abgestimmt. <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--forest);font-weight:500;">Mehr auf Lebensfreude →</a></p>
           </div>
         </div>
-        <div class="hofladen-feature">
-          <div class="hofladen-feature-icon">🌶️</div>
-          <div style="flex:1;">
-            <h4>Bio-Gewürze</h4>
-            <p>Saisonal wechselnde Auswahl, sorgfältig zusammengestellt – mit Fokus auf ayurvedische Gewürze.</p>
-            <details class="milk-info" style="background:var(--white);">
-              <summary>Ayurvedische Gewürze &amp; ihre Wirkung · Mehr lesen</summary>
-              <p>In der ayurvedischen Tradition sind Gewürze Heilmittel im Alltag. Die folgenden Wirkungen stammen aus der Erfahrungsheilkunde; sie ersetzen keine ärztliche Behandlung.</p>
-              <p><strong>Kurkuma (Gelbwurz):</strong> Der Inhaltsstoff Curcumin wirkt in Studien entzündungshemmend und antioxidativ. Traditionell unterstützt Kurkuma Verdauung, Leber und Gelenke. Curcumin wird allein schlecht aufgenommen. Fett und schwarzer Pfeffer verbessern die Aufnahme deutlich. Bei Gallensteinen oder blutverdünnenden Medikamenten bitte vorher ärztlich abklären.</p>
-              <p><strong>Schwarzer Pfeffer:</strong> Das enthaltene Piperin regt die Verdauungssäfte an und wärmt von innen. Es kann die Aufnahme von Curcumin stark erhöhen (Shoba et al., <em>Planta Medica</em>, 1998: ca. 2000&nbsp;% höhere Bioverfügbarkeit). Deshalb gehören Kurkuma und Pfeffer zusammen, etwa in der „Goldenen Milch".</p>
-              <p><strong>Ingwer:</strong> Wärmend, regt das „Verdauungsfeuer" (Agni) an und hilft bei Übelkeit und Völlegefühl.</p>
-              <p><strong>Zimt:</strong> Wärmend und süßlich. Er kann den Blutzuckerspiegel sanft unterstützen und ersetzt bei uns den Zucker.</p>
-              <p><strong>Kardamom:</strong> Mild, ausgleichend und verdauungsfördernd. Er macht schwere Speisen und Milchgetränke bekömmlicher.</p>
-              <p><strong>Kreuzkümmel, Koriander &amp; Fenchel (CCF-Mischung):</strong> Ein ayurvedischer Klassiker für die Verdauung. Er wirkt beruhigend und entgiftend und hilft gegen Blähungen.</p>
-              <p><strong>Asafoetida (Hing):</strong> Ein traditioneller Helfer gegen Blähungen, besonders bei Hülsenfrüchten.</p>
-              <p>Welche Gewürze zu dir passen, hängt von deinem Dosha ab. <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--forest);font-weight:500;">Mehr auf Lebensfreude →</a></p>
-            </details>
+        <details class="hofladen-feature feature-fold">
+          <summary><span class="hofladen-feature-icon">🌶️</span><span class="fold-title">Bio-Gewürze<small>Saisonal wechselnde Auswahl, sorgfältig zusammengestellt – mit Fokus auf ayurvedische Gewürze · Mehr lesen</small></span></summary>
+          <div class="fold-body">
+            <p>In der ayurvedischen Tradition sind Gewürze Heilmittel im Alltag. Die folgenden Wirkungen stammen aus der Erfahrungsheilkunde; sie ersetzen keine ärztliche Behandlung.</p>
+                <p><strong>Kurkuma (Gelbwurz):</strong> Der Inhaltsstoff Curcumin wirkt in Studien entzündungshemmend und antioxidativ. Traditionell unterstützt Kurkuma Verdauung, Leber und Gelenke. Curcumin wird allein schlecht aufgenommen. Fett und schwarzer Pfeffer verbessern die Aufnahme deutlich. Bei Gallensteinen oder blutverdünnenden Medikamenten bitte vorher ärztlich abklären.</p>
+                <p><strong>Schwarzer Pfeffer:</strong> Das enthaltene Piperin regt die Verdauungssäfte an und wärmt von innen. Es kann die Aufnahme von Curcumin stark erhöhen (Shoba et al., <em>Planta Medica</em>, 1998: ca. 2000&nbsp;% höhere Bioverfügbarkeit). Deshalb gehören Kurkuma und Pfeffer zusammen, etwa in der „Goldenen Milch".</p>
+                <p><strong>Ingwer:</strong> Wärmend, regt das „Verdauungsfeuer" (Agni) an und hilft bei Übelkeit und Völlegefühl.</p>
+                <p><strong>Zimt:</strong> Wärmend und süßlich. Er kann den Blutzuckerspiegel sanft unterstützen und ersetzt bei uns den Zucker.</p>
+                <p><strong>Kardamom:</strong> Mild, ausgleichend und verdauungsfördernd. Er macht schwere Speisen und Milchgetränke bekömmlicher.</p>
+                <p><strong>Kreuzkümmel, Koriander &amp; Fenchel (CCF-Mischung):</strong> Ein ayurvedischer Klassiker für die Verdauung. Er wirkt beruhigend und entgiftend und hilft gegen Blähungen.</p>
+                <p><strong>Asafoetida (Hing):</strong> Ein traditioneller Helfer gegen Blähungen, besonders bei Hülsenfrüchten.</p>
+                <p>Welche Gewürze zu dir passen, hängt von deinem Dosha ab. <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--forest);font-weight:500;">Mehr auf Lebensfreude →</a></p>
           </div>
-        </div>
+        </details>
         <div class="hofladen-feature">
           <div class="hofladen-feature-icon">🥕</div>
           <div>
@@ -871,22 +869,26 @@
     <h2 class="section-title">Was gerade<br>passiert.</h2>
     <div class="news-grid">
       <div class="news-card">
-        <div class="news-date">Mai 2025</div>
-        <span class="news-tag">Neu</span>
-        <h3>Olivenöl &amp; Kräuter ist da!</h3>
-        <p>Unsere dritte Sorte ist ab sofort im Shop erhältlich. Rosmarin, Thymian, Knoblauch — mediterran und aromatisch. Perfekt zum Aperitivo.</p>
+        <span class="news-tag">In Arbeit</span>
+        <h3>🐔 Neuer Stall wird ausgebaut</h3>
+        <p>Für unsere Hühner entsteht gerade ein neuer, größerer Stall mit mehr Platz und Auslauf. Sobald er fertig ist, zeigen wir ihn euch hier und auf Social Media – und es ziehen neue gerettete Hennen ein.</p>
       </div>
       <div class="news-card">
-        <div class="news-date">April 2025</div>
-        <span class="news-tag">Sonntagscafé</span>
-        <h3>Die Saison ist eröffnet!</h3>
-        <p>Ab sofort wieder sonntags bei gutem Wetter auf dem Hof. Das Sauerteigbrot gibt es wieder auf Vorbestellung — meldet euch bis Freitag!</p>
+        <span class="news-tag">In Entwicklung</span>
+        <h3>📱 Die App kommt</h3>
+        <p>Rund um Sport, Ernährung und Heilung entwickle ich gerade eine eigene App. Alles dazu findest du auf <a href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener" style="color:var(--forest);font-weight:500;">Lebensfreude by Mara Tumpach</a>.</p>
       </div>
       <div class="news-card">
-        <div class="news-date">März 2025</div>
-        <span class="news-tag">Tierschutz</span>
-        <h3>Hildegard ist eingezogen</h3>
-        <p>Unsere neueste Rettung aus einer Legebatterie: Hildegard, 3 Jahre alt, gesprenkelt und schon jetzt die Chefin im Garten. Familie Bernds hat gleich die Patenschaft übernommen.</p>
+        <span class="news-tag">Folg uns</span>
+        <h3>💛 Immer auf dem Laufenden</h3>
+        <p>Live-Musik, Sonderöffnungszeiten und kurzfristige Ankündigungen findest du hier:</p>
+        <p style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="news-link" href="https://www.instagram.com/mara.tum/" target="_blank" rel="noopener">Instagram</a>
+          <a class="news-link" href="https://www.facebook.com/share/1Dco4Kyd8E/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+          <!-- YouTube: Link einfügen und Kommentar entfernen
+          <a class="news-link" href="HIER-YOUTUBE-LINK" target="_blank" rel="noopener">YouTube</a> -->
+          <a class="news-link" href="https://maratumpach.github.io/maramove/index.html" target="_blank" rel="noopener">Lebensfreude</a>
+        </p>
       </div>
     </div>
   </div>
