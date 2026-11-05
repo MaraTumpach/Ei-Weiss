@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://maratumpach.github.io/Ei-Weiss/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://maratumpach.github.io/Ei-Weiss/assets/bild3.jpg</image:loc>
+      <image:caption>Hühner im Freilauf auf dem Bio-Hof in Oberottmarshausen</image:caption>
+      <image:title>Hühner im Freilauf</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://maratumpach.github.io/Ei-Weiss/assets/bild2.jpg</image:loc>
+      <image:caption>Gretl, weißes Huhn und gerettete Legehenne auf dem Bio-Hof in Oberottmarshausen</image:caption>
+      <image:title>Gretl das Huhn</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://maratumpach.github.io/Ei-Weiss/assets/bild4.jpg</image:loc>
+      <image:caption>Hildegard, schwarzes Huhn und gerettete Legehenne auf dem Bio-Hof in Oberottmarshausen</image:caption>
+      <image:title>Hildegard das Huhn</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://maratumpach.github.io/Ei-Weiss/assets/bild1.jpg</image:loc>
+      <image:caption>Gerettete Henne mit gelben Küken im Strohstall auf dem Bio-Hof in Oberottmarshausen</image:caption>
+      <image:title>Henne mit Küken</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://maratumpach.github.io/Ei-Weiss/assets/bild6.jpg</image:loc>
+      <image:caption>Garten und Auslauf auf dem Bio-Hof in Oberottmarshausen</image:caption>
+      <image:title>Garten und Auslauf</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://maratumpach.github.io/Ei-Weiss/assets/bild5.jpg</image:loc>
+      <image:caption>Mara Tumpach mit einem ihrer Hühner auf dem Bio-Hof in Oberottmarshausen</image:caption>
+      <image:title>Mara Tumpach</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://maratumpach.github.io/Ei-Weiss/sonntagscafe.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://maratumpach.github.io/Ei-Weiss/assets/gallery-2.jpg</image:loc>
+      <image:caption>Kostenloses Yoga im Hofgarten beim Sonntagscafé in Oberottmarshausen</image:caption>
+      <image:title>Yoga im Hofgarten</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://maratumpach.github.io/Ei-Weiss/assets/bild3.jpg</image:loc>
+      <image:caption>Hühner im Hofgarten des Sonntagscafés in Oberottmarshausen</image:caption>
+      <image:title>Hühner im Hofgarten</image:title>
+    </image:image>
+  </url>
+</urlset>
